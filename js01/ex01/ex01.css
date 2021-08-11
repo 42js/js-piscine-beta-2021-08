@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=B612+Mono&display=swap');
+
+* {
+	font-family: 'B612 Mono', monospace;
+}
+.left {
+	float: left;
+	width: 30%;
+}
+
+.right {
+	float: right;
+	width: 30%;
+}
+
+.top {
+	padding: 10px;
+	width: 600px;
+	display: flex;
+}
+
+h1 {
+	margin: 10px;
+	padding: 10px;
+	font-family: 'B612 Mono', monospace;
+	color: red;
+}
+
+progress {
+	background-color: var(--c, #47D932);
+}
+
+progress::-webkit-progress-bar {
+	background-color: #eeeeee;
+}
+
+progress::-webkit-progress-value {
+	background-color: var(--c, #47D932);
+}
+
+.poo {
+
+}
+
+.hungry {
+
+}
+
+.energy {
+
+}
+
+.coding {
+
+}
+
+.love {
+
+}
+
+.wash {
+
+}

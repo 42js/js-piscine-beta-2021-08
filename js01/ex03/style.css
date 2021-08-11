@@ -1,0 +1,42 @@
+body {
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 16px;
+}
+
+main {
+	max-width: 720px;
+}
+
+section {
+	display: flex;
+    flex-direction: column;
+	margin-bottom: 16px;
+    align-items: center;
+    background: skyblue;
+	border-radius: 0.3rem;
+}
+
+ul {
+	display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: flex-start;
+	margin: 1em;
+	margin-top: 0;
+    padding: 0;
+	background: lightcyan;
+    width: 95%;
+    list-style: none;
+	border-radius: 0.35rem;
+}
+
+li {
+	margin: 10px;
+    padding: 1em;
+    width: 15%;
+    background: cornflowerblue;
+	border-radius: 1rem;
+}

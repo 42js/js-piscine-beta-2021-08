@@ -1,0 +1,22 @@
+main {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 750px;
+}
+article {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: 1em;
+	padding: 1em;
+	border: 1px solid;
+	height: 350px;
+}
+h2 {
+	margin-top: 0;
+}
+a {
+	align-self: flex-end;
+}

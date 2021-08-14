@@ -24,8 +24,8 @@
 앞으로의 JS 기본 서브젝트들은 Node라는 JS 런타임으로 구현하고 테스트할 것입니다. Node를 클러스터 컴퓨터에 설치하는 방법은 brew를 사용하면 됩니다. brew는 어떻게 설치하냐고요? 42born2code Slack에서 #tools_bot을 찾아가보세요!
 
 ### [Exercise 00 - 안녕 JS!](ex00.md)
-### [Exercise 01 - 변하지 않는 것](ex01.md)
-### [Exercise 02 - 누군지 모르겠지만 안녕!](ex02.md)
+### [Exercise 01 - 누군지 모르겠지만 안녕!](ex01.md)
+### [Exercise 02 - 변하지 않는 것](ex02.md)
 ### [Exercise 03 - Time to change!](ex03.md)
 ### [Exercise 04 - 위아래 위위아래 위아래 위위아래](ex04.md)
 ### [Exercise 05 - 배열로 만드는 스택](ex05.md)

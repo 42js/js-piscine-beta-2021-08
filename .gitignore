@@ -1,3 +1,5 @@
 // .gitignre
 package.json
 package-lock.json
+.prettierrc
+.eslintrc.js

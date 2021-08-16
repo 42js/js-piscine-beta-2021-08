@@ -1,5 +1,5 @@
 const dynamicType = {
-  variable: 11,
+  variable: 0,
   putCalled: false,
   put: function put(param) {
     try {
@@ -7,12 +7,14 @@ const dynamicType = {
         throw new Error('Error (put): put already called once');
       else if (isNaN(param))
         throw new Error('Error (put): Parameter is not a number');
+
       if (typeof this.variable === 'object') {
         if (Array.isArray(this.variable)) this.variable[0] = param;
         else this.variable.value = Number(param);
       } else if (typeof this.variable === 'string')
         this.variable = String(param);
       else this.variable = Number(param);
+
       this.putCalled = true;
     } catch (error) {
       console.error(error);

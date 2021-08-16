@@ -14,5 +14,3 @@ const exidMethodChaining = {
 		console.log(this.count);
 	},
 };
-
-exidMethodChaining.up().down().up().up().down().up().down().up().up().down().showCount()

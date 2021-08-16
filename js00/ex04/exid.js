@@ -11,15 +11,3 @@ const exid = {
 		console.log(this.count);
 	},
 };
-
-exid.up();
-exid.down();
-exid.up();
-exid.up();
-exid.down();
-exid.up();
-exid.down();
-exid.up();
-exid.up();
-exid.down();
-exid.showCount();

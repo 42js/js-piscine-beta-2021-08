@@ -1,0 +1,15 @@
+{
+    "type": "module",
+    "name": "ex05",
+    "version": "1.0.0",
+    "description": "js00/ex05",
+    "main": "stack.js",
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+    "stack"
+    ],
+    "author": "gipark",
+    "license": "ISC"
+}

@@ -11,7 +11,7 @@ const stackEmpty = function (stack) {
 const stackPush = function (stack, data) {
   if (stack == undefined)
     throw 'undefined stack!';
-  if (typeof data == 'undefined')
+  if (data == undefined)
     throw 'undefined data!';
   stack.arr[stack.arr.length] = data;
 }

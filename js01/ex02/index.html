@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discount calculator</title>
+</head>
+<body>
+    <h1>Discount calculator</h1>
+    <form method="POST">
+        <div>
+            <label for="name">상품명 : </label>
+            <input type="text" id="name" onchange="printName()">
+        </div>
+        <div>
+            <label for="price">금액 : </label>
+            <input type="text" id="price" onchange="printPrice()">
+        </div>
+        <div>
+            <label for="member">멤버십 회원입니까 ? </label>
+            <input type="checkbox" id="member" onclick="checkRank()">
+        </div>
+        <div>
+            <label for="rank">멤버십 등급 : </label>
+            <select type="submit" name="rank" id="rank" onchange="selectRank(this)" disabled>
+                <option value="select">-- 선택 --</option>
+                <option value="one">LV. 1</option>
+                <option value="two">LV. 2</option>
+                <option value="three">LV. 3</option>
+            </select>
+        </div>
+    </form>
+    <hr>
+    <time datetime=""></time>
+    <ul>
+        <li class="receipt_name"></li>
+        <li class="receipt_price"></li>
+        <li class="receipt_discount"></li>
+    </ul>
+    <script src="calc.js"></script>
+</body>
+</html>

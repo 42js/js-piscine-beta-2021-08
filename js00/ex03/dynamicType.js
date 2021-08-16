@@ -6,7 +6,9 @@ const dynamicType = {
       else if (typeof this.variable === 'object') {
         if (Array.isArray(this.variable)) this.variable[0] = param;
         else this.variable.value = Number(param);
-      } else this.variable = Number(param);
+      } else if (typeof this.variable === 'string')
+        this.variable = String(param);
+      else this.variable = Number(param);
     } catch (error) {
       console.error('Error (put): Parameter is not a number');
     }

@@ -1,23 +1,23 @@
-const stackCreate = () => ({
+export const stackCreate = () => ({
     arr: []
 });
 
-const stackEmpty = (stack) => {
+export const stackEmpty = (stack) => {
     return (stack.arr.length === 0);
 };
 
-const stackPush = (stack, data) => {
+export const stackPush = (stack, data) => {
     stack.arr[stack.arr.length] = data;
 };
 
-const stackPeek = (stack) => {
+export const stackPeek = (stack) => {
     if (stackEmpty(stack))
         console.error('error');
     else
         return (stack.arr[stack.arr.length - 1]);
 };
 
-const stackPop = (stack) => {
+export const stackPop = (stack) => {
     if (stackEmpty(stack))
         console.error('error');
     else

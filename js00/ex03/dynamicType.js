@@ -74,7 +74,7 @@ const dynamicType = {
   },
 };
 
-const type = dynamicType;
+// const type = dynamicType;
 
 // // case set #1 - multiple change
 // type.put(14);

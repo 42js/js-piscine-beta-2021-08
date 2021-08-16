@@ -1,0 +1,15 @@
+{
+  "name": "ex01",
+  "version": "1.0.0",
+  "main": "helloSomeone.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-jest": "^24.4.0",
+    "jest": "^27.0.6"
+  }
+}

@@ -1,5 +1,5 @@
 const dynamicType = {
-  variable: 0,
+  variable: 1,
   putCalled: false,
   put: function put(param) {
     try {

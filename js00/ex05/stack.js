@@ -1,28 +1,28 @@
-const stackCreate = () => ({
+export const stackCreate = () => ({
     arr: [],
 });
 
-function stackEmpty(stack) {
+export function stackEmpty(stack) {
     if (stack.arr.length === 0) return true;
     else return false;
 }
 
-function stackPush(stack, data) {
+export function stackPush(stack, data) {
     stack.arr[stack.arr.length] = data;
 }
 
-function stackPeek(stack) {
+export function stackPeek(stack) {
     if (stackEmpty(stack)) {
-        console.error('stack is empty');
+        console.error("stack is empty");
         return;
     } else {
         return stack.arr[stack.arr.length];
     }
 }
 
-function stackPop(stack) {
+export function stackPop(stack) {
     if (stackEmpty(stack)) {
-        console.log('stack is empty');
+        console.log("stack is empty");
         return;
     }
     let temp = new Array(stack.arr.length - 1);

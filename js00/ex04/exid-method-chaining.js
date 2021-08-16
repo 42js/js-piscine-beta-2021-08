@@ -1,4 +1,4 @@
-let exidMethodChaining = {
+const exidMethodChaining = {
     count: 40,
     up() {
         this.count++;

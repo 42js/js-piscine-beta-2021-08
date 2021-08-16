@@ -1,4 +1,4 @@
-let exid = {
+const exid = {
     count: 40,
     up() {
         this.count++;

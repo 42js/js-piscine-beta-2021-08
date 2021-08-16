@@ -34,4 +34,4 @@ const stackPop = function (stack) {
   stack.arr.length = stack.arr.length - 1;
 }
 
-export {stackCreate, stackEmpty, stackPush, stackPeek, stackPop};
+export { stackCreate, stackEmpty, stackPush, stackPeek, stackPop };

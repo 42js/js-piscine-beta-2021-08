@@ -48,17 +48,18 @@ const dynamicType = {
 		} else if (value == "Number") {
 			to_number(this, value);  // number format 으로 변환시킨다.
 		} else if (value == "Object") {
-			to_object(this);  // object format 으로 변환시킨다.
+			to_object(this, value);  // object format 으로 변환시킨다.
 		} else if (value == "Array") {
-			to_array(this);  // array format 으로 변환시킨다.
+			to_array(this, value);  // array format 으로 변환시킨다.
 		}
 	},
 	printType: function (value) {
+		console.log("val type is " + typeof this.val);
 		console.log("- " + this.print_val);  // "- 42" 이런 format 으로 출력
 	}
 }
 
-/* test
+//test
 type = dynamicType;
 type.put(42);
 type.change("String");
@@ -81,4 +82,3 @@ type.printType();
 
 type.change("Array");
 type.printType();
-*/

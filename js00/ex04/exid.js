@@ -1,12 +1,12 @@
 const exid = {
     count: 40,
-    up: function () {
+    up() {
         this.count++;
     },
-    down: function () {
+    down() {
         this.count--;
     },
-    showCount: function () {
+    showCount() {
         console.log(this.count);
     },
 };

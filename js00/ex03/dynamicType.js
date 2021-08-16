@@ -1,10 +1,12 @@
 const dynamicType = {
-    num: 0,
-    changed: '',
+    num: null,
+    changed: null,
     put: function (arg) {
         this.num = Number(arg);
     },
     change: function (type) {
+        if (this.num === null)
+            return;
         if (type === 'String')
             this.changed = this.num.toString();
         else if (type === 'Number')
@@ -19,8 +21,8 @@ const dynamicType = {
     }
 };
 
-dynamicType.put(42);
-dynamicType.change("Array");
+//dynamicType.put(42);
+dynamicType.change("Object");
 dynamicType.printType();
 
 

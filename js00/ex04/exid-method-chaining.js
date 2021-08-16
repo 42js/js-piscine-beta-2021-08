@@ -1,14 +1,14 @@
 const exidMethodChaining = {
     count: 40,
-    up: function () {
+    up() {
         this.count++;
         return this;
     },
-    down: function () {
+    down() {
         this.count--;
         return this;
     },
-    showCount: function () {
+    showCount() {
         console.log(this.count);
         return this;
     },

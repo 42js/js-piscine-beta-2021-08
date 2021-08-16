@@ -1,4 +1,7 @@
 node_modules
 .DS_Store
 yarn.lock
-/^((?!test).)*$/
+/test/
+.eslintrc.json
+helloSomeone.test.js
+dynamicType.test.js

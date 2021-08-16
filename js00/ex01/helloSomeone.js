@@ -20,5 +20,4 @@ function helloSomeone(param) {
   }
 }
 
-// export default helloSomeone;
-module.exports = helloSomeone;
+export default helloSomeone;

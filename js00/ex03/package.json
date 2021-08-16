@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@types/jest": "^27.0.1"
+  }
+}

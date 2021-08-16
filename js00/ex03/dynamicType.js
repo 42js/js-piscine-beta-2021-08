@@ -7,6 +7,8 @@ const dynamicType = {
 }
 
 function put (input) {
+	if (isNaN(input) || typeof input !== 'number')
+		return console.log('Wrong Input!');
 	dynamicType.value = input;
 	dynamicType.changeValue = input;
 }
@@ -26,6 +28,7 @@ function change (input) {
 			dynamicType.changeValue = [dynamicType.value];
 			break;
 		default:
+			return console.log('Wrong Input!');
 			break;
 	}
 }

@@ -3,41 +3,26 @@ const stackCreate = () => ({
 });
 
 export function stackEmpty(stack){
-	if (stack[0] === undefined)
+	if (stack.arr.length === 0)
 		return true;
 	return false;
 }
 
 export function stackPush(stack, data){
-	let index = 0;
-	while (stack[index] !== undefined) {
-		index++;
-	}
-	stack[index] = data;
+	const length = stack.arr.length;
+	stack.arr[length] = data;
 }
 
 export function stackPeek(stack){
 	if (stackEmpty(stack) === true)
 		return undefined;
-	let index = 0;
-	while (stack[index] !== undefined) {
-		index++;
-	}
-	return stack[index - 1];
+	const length = stack.arr.length;
+	return stack.arr[length - 1];
 }
 
 export function stackPop(stack){
 	if (stackEmpty(stack) === true)
 		return console.log('Empty Array!');
-	let index = 0;
-	while (stack[index] !== undefined) {
-		index++;
-	}
+	const length = stack.arr.length;
+	stack.arr.length = length - 1
 }
-
-const stack = stackCreate().arr
-stackPush(stack, 'a')
-stackPush(stack, 'b')
-console.log(stackPeek(stack))
-console.log(stack);
-

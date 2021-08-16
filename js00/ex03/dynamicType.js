@@ -3,6 +3,7 @@ function to_string(object, value) {
 	if (object.type != value) {
 		object.print_val = "\"" + object.val + "\"";
 		object.type = value;
+		object.val = String(object.val);  // type setting
 	}
 }
 
@@ -11,6 +12,7 @@ function to_number(object, value) {
 	if (object.type != value) {
 		object.print_val = object.val;
 		object.type = value
+		object.val = Number(object.val);
 	}
 }
 
@@ -19,6 +21,7 @@ function to_object(object, value) {
 	if (object.type != value) {
 		object.print_val = "{" + object.val + "}";
 		object.type = value;
+		object.val = Object(object.val);
 	}
 }
 
@@ -27,6 +30,7 @@ function to_array(object, value) {
 	if (object.type != value) {
 		object.print_val = "[" + object.val + "]";
 		object.type = value;
+		object.val = Array(object.val);
 	}
 }
 

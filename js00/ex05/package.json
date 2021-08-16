@@ -10,5 +10,6 @@
     "stack"
   ],
   "author": "jiwlee",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }

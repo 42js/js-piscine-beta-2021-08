@@ -2,12 +2,12 @@ const stackCreate = () => ({
   arr: [],
 });
 
-function stackEmpty(stack) {
+export function stackEmpty(stack) {
   if (stack === null || typeof stack !== 'object' || !(stack.arr instanceof Array)) throw String('Invalid stack!');
   return stack.arr.length === 0;
 }
 
-function stackPush(stack, data) {
+export function stackPush(stack, data) {
   if (stack === null || typeof stack !== 'object' || !(stack.arr instanceof Array)) throw String('Invalid stack!');
   if (data === undefined) throw String('Push data is undefined!');
   if (data === null) throw String('Push data is null!');
@@ -15,13 +15,13 @@ function stackPush(stack, data) {
   stackArr[stackArr.length] = data;
 }
 
-function stackPeek(stack) {
+export function stackPeek(stack) {
   if (stack === null || typeof stack !== 'object' || !(stack.arr instanceof Array)) throw String('Invalid stack!');
   const stackArr = stack.arr;
   return stackArr[stackArr.length - 1];
 }
 
-function stackPop(stack) {
+export function stackPop(stack) {
   if (stack === null || typeof stack !== 'object' || !(stack.arr instanceof Array)) throw String('Invalid stack!');
   if (stackEmpty(stack)) throw String('Can\'t pop because stack is empty!');
   const stackArr = stack.arr;

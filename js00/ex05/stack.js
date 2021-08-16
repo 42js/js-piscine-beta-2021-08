@@ -3,40 +3,50 @@ const stackCreate = () => ({
 });
 
 function stackEmpty(stack) {
+  if (stack === null || typeof stack !== 'object' || !(stack.arr instanceof Array)) throw String('Invalid stack!');
   return stack.arr.length === 0;
 }
 
 function stackPush(stack, data) {
+  if (stack === null || typeof stack !== 'object' || !(stack.arr instanceof Array)) throw String('Invalid stack!');
+  if (data === undefined) throw String('Push data is undefined!');
+  if (data === null) throw String('Push data is null!');
   const stackArr = stack.arr;
-  if (!stackEmpty(stack) && typeof data !== typeof stackArr[0]) {
-    console.log(`It's ${typeof stackArr[0]} stack. Push number value!`);
-  } else stackArr[stackArr.length] = data;
+  stackArr[stackArr.length] = data;
 }
 
 function stackPeek(stack) {
+  if (stack === null || typeof stack !== 'object' || !(stack.arr instanceof Array)) throw String('Invalid stack!');
   const stackArr = stack.arr;
   return stackArr[stackArr.length - 1];
 }
 
 function stackPop(stack) {
-  const stackArr = stack.arr;
+  if (stack === null || typeof stack !== 'object' || !(stack.arr instanceof Array)) throw String('Invalid stack!');
   if (stackEmpty(stack)) throw String('Can\'t pop because stack is empty!');
+  const stackArr = stack.arr;
   stackArr[stackArr.length - 1] = undefined;
   stackArr.length -= 1;
 }
 
-// try {
-//   const arr1 = stackCreate();
-//   console.log(`Check empty: ${stackEmpty(arr1)}`);
-//   stackPush(arr1, 10);
-//   stackPush(arr1, 20);
-//   stackPush(arr1, '3030');
-//   console.log(`Check top value: ${stackPeek(arr1)}`);
-//   stackPop(arr1);
-//   console.log(`Check empty: ${stackEmpty(arr1)}`);
-//   stackPop(arr1);
-//   console.log(`Check empty: ${stackEmpty(arr1)}`);
-//   stackPop(arr1);
-// } catch (e) {
-//   console.log(e);
-// }
+try {
+  const stack1 = stackCreate();
+  console.log(`Check empty: ${stackEmpty(stack1)}`);
+  stackPush(stack1, 10);
+  stackPush(stack1, 20);
+  stackPush(stack1, '3030');
+  console.log(`Check top value: ${stackPeek(stack1)}`);
+  stackPop(stack1);
+  console.log(`Check empty: ${stackEmpty(stack1)}`);
+  stackPop(stack1);
+  console.log(`Check empty: ${stackEmpty(stack1)}`);
+  stackPop(stack1);
+
+  const stack2 = null;
+  stackPush(stack2);
+
+  const stack3 = undefined;
+  stackPush(stack3);
+} catch (e) {
+  console.log(e);
+}

@@ -11,3 +11,13 @@ export default function helloSomeone(x) {
   }
   if (typeof x === "undefined") console.log("Nobody can define me!");
 }
+
+// console.log(typeof NaN); // number
+// helloSomeone("42");
+// helloSomeone("");
+// helloSomeone(null);
+// helloSomeone(42);
+// helloSomeone(-1);
+// helloSomeone(NaN);
+// helloSomeone(undefined);
+

@@ -1,6 +1,6 @@
 const stackCreate = () => ({
-	arr: [1]
-}); // object 리턴
+	arr: []
+});
 
 const st = stackCreate();
 
@@ -29,9 +29,3 @@ const stackPop = (stack) => {
 		stack.arr = newArr;
 	}
 }
-
-stackPop(st);
-console.log(st);
-stackPop(st);
-console.log(st);
-console.log(stackPeek(st));

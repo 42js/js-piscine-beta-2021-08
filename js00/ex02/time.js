@@ -6,9 +6,9 @@ const timeWarp = (newMonth, newDay) => {
 	month.month = newMonth;
 }
 
-timeWarp(5, 10);
-console.log(`month=${month.month}, day=${day}`);
-timeWarp(11, 20);
-console.log(`month=${month.month}, day=${day}`);
+// timeWarp(5, 10);
+// console.log(`month=${month.month}, day=${day}`);
+// timeWarp(11, 20);
+// console.log(`month=${month.month}, day=${day}`);
 
 

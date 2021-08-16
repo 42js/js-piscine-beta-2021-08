@@ -2,13 +2,15 @@ const stackCreate = () => ({
 	arr: []
 });
 
-function stackEmpty(stack) {
+// export { stackEmpty, stackPush, stackPeek, stackPop };
+
+export function stackEmpty(stack) {
 	if (stack.arr[0])  // arr[0] 가 존재하면 false, is not empty
 		return (false);
 	return (true);
 }
 
-function stackPush(stack, data) {
+export function stackPush(stack, data) {
 	var index;
 	for (index = 0; stack.arr[index]; ++index) {
 		// console.log("push horse goes round " + index);
@@ -17,7 +19,7 @@ function stackPush(stack, data) {
 	stack.arr[index] = data;
 }
 
-function stackPeek(stack) {
+export function stackPeek(stack) {
 	var index;
 	for (index = 0; stack.arr[index]; ++index) {
 		// console.log("peek horse goes round " + index);
@@ -25,7 +27,7 @@ function stackPeek(stack) {
 	return (stack.arr[index - 1]);
 }
 
-function stackPop(stack) {
+export function stackPop(stack) {
 	if (!stack.arr[0])  // 없으면 동작 안함...
 		return;
 	// arr[0] 를 arr[1] 로 덮어쓴다.

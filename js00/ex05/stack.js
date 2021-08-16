@@ -1,26 +1,26 @@
 const stackCreate = () => ({
-	arr: []
+	arr: [1,2,3,4]
 });
 
-const st = stackCreate();
-
-const stackEmpty = (stack) => {
+export const stackEmpty = (stack) => {
 	if (stack.arr.length ===  0) 
 		return true;
 	return false;
 };
 
-const stackPush = (stack, data) => {
+export const stackPush = (stack, data) => {
 	stack.arr[stack.arr.length] = data;
-} 
-const stackPeek = (stack) => {
+}
+
+export const stackPeek = (stack) => {
 	if (!(stack.arr[0]))
 		throw new Error ("stackPeek error: Empty stack!");
 	else
 		return (stack.arr[stack.arr.length - 1]);
 		
 }
-const stackPop = (stack) => {
+
+export const stackPop = (stack) => {
 	if (!(stack.arr[0])) throw new Error ("stackPop error: Empty Stack!");
 	else {
 		let newArr = [];
@@ -29,3 +29,12 @@ const stackPop = (stack) => {
 		stack.arr = newArr;
 	}
 }
+
+// let stk = stackCreate();
+// console.log(stk);
+// console.log(stackEmpty(stk));
+// console.log(stackPeek(stk));
+// stackPush(stk, 5);
+// console.log(stk);
+// stackPop(stk);
+// console.log(stk);

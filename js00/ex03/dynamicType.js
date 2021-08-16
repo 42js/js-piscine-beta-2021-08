@@ -1,30 +1,49 @@
 const dynamicType = {
-	val: 0,
+	val: null,
+	changedVal: null,
+	printFlag: 0,
     put : function(x) {
-		this.val = x;
-		// console.log(this.val);
+		if (this.printFlag === 0) {
+			this.val = x;
+			this.printFlag = 1;
+		} 
+		else console.log("put error: only one time before printType!");
 	},
     change : function(type) {
-		if (type === "Number") ;
+		if (this.printFlag === 0 && this.val === null) {
+			console.log("change error: put before change!")
+			return ;
+		}
+		if (type === "Number") this.changedVal = this.val;
 		if (type === "String") {
-			this.val = this.val.toString();
-			// console.log(this.val);
+			this.changedVal = String(this.val);
 		}
 		if (type === "Object") {
-			this.val = {value: this.val};
+			this.changedVal = {value: this.val};
 		}
 		if (type === "Array") {
-			this.val = [this.val];	
+			this.changedVal = [this.val];	
 		}
 	},
     printType : function() {
-		// console.log(typeof this.val);
-		console.log(this.val);
+		console.log(this.changedVal);
+		this.printFlag = 0;
 	} 
 }
 
 const type = dynamicType;
 
-// type.put({1: "one"}); // type === Number
-// type.change("Array"); // convert to array with the input;
+// type.put(42);
+// type.change("Array");
+// type.change("Object");
+// type.printType();
+
+// type.put(42); // type === Number
+// type.put(20);
+// type.put(1);
+// type.change("String"); // convert to array with the input;
 // type.printType(); // print the converted value on console;
+
+// type.put(1994);
+// type.change("String");
+// type.printType();

@@ -1,0 +1,20 @@
+{
+  "name": "ex05",
+  "version": "1.0.0",
+  "description": "stack methods",
+  "main": "stack.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nonoaa/piscine.git"
+  },
+  "author": "byahn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nonoaa/piscine/issues"
+  },
+  "homepage": "https://github.com/nonoaa/piscine#readme"
+}

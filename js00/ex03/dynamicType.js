@@ -41,30 +41,30 @@ const dynamicType = {
   },
   printType: function printType() {
     if (this.putCalled === true) this.putCalled = false;
-
     if (typeof this.variable === 'string') console.log(`"${this.variable}"`);
     else console.log(this.variable);
   },
 };
 
-// const type = dynamicType;
+const type = dynamicType;
 
-// type.put(13);
-// type.change('String');
-// type.printType();
+type.put(13);
+type.put(14);
+type.change('String');
+type.printType();
 
-// type.put('0');
-// type.change('Array');
-// type.printType();
+type.put('0');
+type.change('Array');
+type.printType();
 
-// type.put(-12e1342);
-// // type.change('Number');
-// type.printType();
+type.put(-12e1342);
+// type.change('Number');
+type.printType();
 
-// type.put('dddd');
-// type.change('String');
-// type.printType();
+type.put('dddd');
+type.change('String');
+type.printType();
 
-// type.put('333');
-// type.change('Object');
-// type.printType();
+type.put('333');
+type.change('Object');
+type.printType();

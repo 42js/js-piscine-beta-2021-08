@@ -5,7 +5,7 @@ const dynamicType = {
     try {
       if (this.putCalled === true)
         throw new Error('Error (put): put already called once');
-      else if (isNaN(param))
+      else if (Number.isNaN(param))
         throw new Error('Error (put): Parameter is not a number');
 
       if (typeof this.variable === 'object') {

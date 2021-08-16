@@ -1,0 +1,14 @@
+{
+  "name": "stack.js",
+  "version": "1.0.0",
+  "description": "make stack with array",
+  "main": "stack.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stack"
+  ],
+  "author": "jiwlee",
+  "license": "ISC"
+}

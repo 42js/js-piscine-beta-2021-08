@@ -1,0 +1,16 @@
+{
+  "name": "ex05",
+  "version": "1.0.0",
+  "description": "42seoul cadet JS Piscine: js00/ex05",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "grading": "node test.js | cat -e"
+  },
+  "author": "Ruby Kim",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "ESLinter": "7.x"
+  }
+}

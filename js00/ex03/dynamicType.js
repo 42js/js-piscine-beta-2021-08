@@ -1,40 +1,38 @@
 function to_string(object, value) {
 	if (object.type != "String") {
-		object.copy_val = "\"" + object.val + "\"";
+		object.print_val = "\"" + object.val + "\"";
 		object.type = value;
 	}
 }
 
 function to_number(object, value) {
 	if (object.type != "Number") {
-		object.copy_val = object.val;
+		object.print_val = object.val;
 		object.type = value
 	}
 }
 
 function to_object(object, value) {
 	if (object.type != "Object") {
-		object.copy_val = {
-			val: object.val
-		}
+		object.print_val = "{" + object.val + "}";
 		object.type = value;
 	}
 }
 
 function to_array(object, value) {
 	if (object.type != "Array") {
-		object.copy_val = [object.val];
+		object.print_val = "[" + object.val + "]";
 		object.type = value;
 	}
 }
 
 const dynamicType = {
-	val: 0,
-	copy_val: 0,
-	type: "Number",
+	val: undefined,  // 진짜 값
+	print_val: undefined,  // 출력용
+	type: undefined,
 	put: function (value) {
 		this.val = value;
-		this.copy_val = this.val;
+		this.print_val = this.val;  // 안해도 된다.
 	},
 	change: function (value) {
 		if (value == "String") {
@@ -42,15 +40,13 @@ const dynamicType = {
 		} else if (value == "Number") {
 			to_number(this, value);
 		} else if (value == "Object") {
-			this.type = value;
 			to_object(this);
 		} else if (value == "Array") {
-			this.type = value;
 			to_array(this);
 		}
 	},
 	printType: function (value) {
-		console.log(this.copy_val);
+		console.log("- " + this.print_val);
 	}
 }
 
@@ -66,4 +62,8 @@ type.printType();
 
 type.put(29);
 type.change("Object");
+type.printType();
+
+type.put(1);
+type.change("Number");
 type.printType();

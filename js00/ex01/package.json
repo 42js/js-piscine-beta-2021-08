@@ -1,0 +1,23 @@
+{
+  "name": "hellosomeone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "helloSomeone.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hyunn2/piscine.git"
+  },
+  "keywords": [
+    "jspiscine"
+  ],
+  "author": "nahkim@student.42seoul.kr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyunn2/piscine/issues"
+  },
+  "homepage": "https://github.com/hyunn2/piscine#readme",
+  "type": "module"
+}

@@ -74,7 +74,7 @@ const dynamicType = {
   },
 };
 
-// const type = dynamicType;
+const type = dynamicType;
 
 // // case set #1 - multiple change
 // type.put(14);
@@ -97,6 +97,63 @@ const dynamicType = {
 // type.printType();
 
 // type.change('String');
+// type.printType();
+
+// type.put(15);
+// type.change('Array');
+// type.printType();
+// type.change('String');
+// type.printType();
+
+// type.change('Array');
+// type.printType();
+// type.change('Object');
+// type.printType();
+
+// type.change('Array');
+// type.printType();
+// type.change('Number');
+// type.printType();
+
+// type.change('Array');
+// type.printType();
+
+// type.put(16);
+// type.change('Number');
+// type.printType();
+// type.change('String');
+// type.printType();
+
+// type.change('Number');
+// type.printType();
+// type.change('Object');
+// type.printType();
+
+// type.change('Number');
+// type.printType();
+// type.change('Array');
+// type.printType();
+
+// type.change('Number');
+// type.printType();
+
+// type.put(17);
+// type.change('Object');
+// type.printType();
+// type.change('String');
+// type.printType();
+
+// type.change('Object');
+// type.printType();
+// type.change('Number');
+// type.printType();
+
+// type.change('Object');
+// type.printType();
+// type.change('Array');
+// type.printType();
+
+// type.change('Object');
 // type.printType();
 
 // // case set #1 - done

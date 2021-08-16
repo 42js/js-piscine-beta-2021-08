@@ -2,13 +2,13 @@
 const dynamicType = {
   arg: null,
   put(val) {
-    if (val == null) throw String('Please initialize arg with not null value!');
+    if (val === null) throw String('Please initialize arg with not null value!');
     if (this.arg != null) throw String('Arg is already initialized!');
     if (typeof val !== 'number') throw String('Arg must init with Number type value!');
     this.arg = val;
   },
   change(type) {
-    if (this.arg == null) throw String('You must initialize arg through put function!');
+    if (this.arg === null) throw String('You must initialize arg through put function!');
     switch (type) {
       case 'String':
         this.arg = String(this.arg);
@@ -20,9 +20,7 @@ const dynamicType = {
         this.arg = Object(this.arg);
         break;
       case 'Array': {
-        const temp = this.arg;
         this.arg = Array(this.arg);
-        this.arg.push(temp);
         break;
       }
       default:
@@ -38,7 +36,7 @@ const dynamicType = {
         console.log(`- ${this.arg}`);
         break;
       case 'object':
-        if (this.arg == null) console.log('null: uninitialized');
+        if (this.arg === null) console.log('null: uninitialized');
         else if (Array.isArray(this.arg)) {
           this.arg.forEach((item) => {
             console.log(`- [${item}]`);
@@ -54,9 +52,27 @@ const dynamicType = {
 // try {
 //   const type = dynamicType;
 //   type.printType();
-// //   type.put("42");
+//   type.put('42');
 //   type.put(42);
 //   type.change('Array');
+//   type.printType();
+//   type.put(14);
+//   type.change('String');
+//   type.printType();
+
+//   type.change('Array');
+//   type.printType();
+
+//   type.change('String');
+//   type.printType();
+
+//   type.change('Object');
+//   type.printType();
+
+//   type.change('String');
+//   type.printType();
+
+//   type.change('Number');
 //   type.printType();
 // } catch (e) {
 //   console.log(e);

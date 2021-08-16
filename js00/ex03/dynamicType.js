@@ -15,7 +15,7 @@ const dynamicType = {
 			return console.log("error : Cannot change data type.");
 		if (typeof param == "string")
 			value = String(value);
-		else if (typeof param == "object")
+		else if (typeof param == "Object")
 
 		else if (Array.isArray(param))
 			value = Array(value);
@@ -34,12 +34,6 @@ const dynamicType = {
 	}
 }
 
-dynamicType.put("a");
-dynamicType.change("number");
-dynamicType.printType();
-/*dynamicType.put(NaN);
+dynamicType.put("42");
 dynamicType.change("String");
 dynamicType.printType();
-dynamicType.put(hello);
-dynamicType.change("String");
-dynamicType.printType();*/

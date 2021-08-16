@@ -1,5 +1,5 @@
 const exidMethodChaining = {
-	count: 0,
+	count: 40,
 	up() {
 		++this.count;
 		return this;  // method chaining 을 위해 exidMethodChaining 객체타입을 반환한다.

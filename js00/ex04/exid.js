@@ -1,5 +1,5 @@
 const exid = {
-	count: 0,
+	count: 40,
 	up() {
 		this.count++;
 	},

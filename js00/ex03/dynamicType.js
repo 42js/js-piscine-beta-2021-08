@@ -59,6 +59,7 @@ const dynamicType = {
 	}
 }
 
+/*
 //test
 type = dynamicType;
 type.put(42);
@@ -82,3 +83,4 @@ type.printType();
 
 type.change("Array");
 type.printType();
+*/

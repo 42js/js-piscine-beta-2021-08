@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="calc.js" defer></script>
+    <title>
+      Discount calculator
+    </title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Discount calculator
+      </h1>
+    </header>
+    <form id="receipt">
+      <label for="menu">상품명: </label>
+      <input type="text" id="menu" name="menu" onkeyup="makeReceipt()"><br>
+      <label for="price">금액: </label>
+      <input type="number" id="price" name="price" onkeyup="makeReceipt()"><br>
+      <label for="membership">멤버십 회원입니까? </label>
+      <input type="checkbox" id="membership" name="membership" onclick="makeReceipt()"><br>
+      <label for="level">멤버십 등급</label>
+      <select name="level" id="level" onchange="makeReceipt()" disabled>
+        <option value=0 selected>--선택--</option>
+        <option value=0.05>Lv1</option>
+        <option value=0.10>Lv2</option>
+        <option value=0.15>Lv3</option>
+      </select>
+    </form>
+    <hr>
+    <time datetime></time>
+    <ul>
+      <!--menu, price, and discounted price-->
+    </ul>
+  </body>
+</html>

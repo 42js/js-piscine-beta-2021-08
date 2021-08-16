@@ -13,16 +13,3 @@ const exidMethodChaining = {
         return this;
     }
 };
-
-exidMethodChaining
-    .up()
-    .down()
-    .up()
-    .up()
-    .down()
-    .up()
-    .down()
-    .up()
-    .up()
-    .down()
-    .showCount()

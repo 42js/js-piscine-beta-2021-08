@@ -1,0 +1,12 @@
+{
+  "name": "ex01",
+  "version": "1.0.0",
+  "description": "ex01",
+  "main": "helloSomeone.js",
+  "scripts": {
+    "test": "node test.js | cat -e"
+  },
+  "author": "nkim",
+  "license": "ISC",
+  "type": "module"
+}

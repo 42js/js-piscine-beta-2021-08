@@ -21,8 +21,8 @@ const timeWarp = (newMonth, newDay) => {
   day = month.getDate();
 };
 
-console.log(month.getMonth(), day);
-timeWarp(5, 10);
-console.log(month.getMonth(), day);
-timeWarp(11, 20);
-console.log(month.getMonth(), day);
+// console.log(month.getMonth(), day);
+// timeWarp(5, 10);
+// console.log(month.getMonth(), day);
+// timeWarp(11, 20);
+// console.log(month.getMonth(), day);

@@ -4,4 +4,4 @@ package-lock.json
 .prettierrc
 .eslintrc.js
 
-!js00
+!js00/**

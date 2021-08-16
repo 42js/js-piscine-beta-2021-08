@@ -1,22 +1,22 @@
-const stackCreate = () => ({
+export const stackCreate = () => ({
     arr: []
 });
 
-const stackEmpty = function (stack) {
+export const stackEmpty = function (stack) {
     let len = 0;
 
     while (stack.arr[len]) len++;
     return len ? false : true
 };
 
-const stackPush = function (stack, data) {
+export const stackPush = function (stack, data) {
     let len = 0;
 
     if (stackEmpty(stack) == false) while (stack.arr[len]) len++;
     stack.arr[len] = data;
 };
 
-const stackPeek = function (stack) {
+export const stackPeek = function (stack) {
     let len = 0;
 
     if (stackEmpty(stack) == false) {
@@ -25,7 +25,7 @@ const stackPeek = function (stack) {
     }
 };
 
-const stackPop = function (stack) {
+export const stackPop = function (stack) {
     let len = 0;
     let arr = [];
 

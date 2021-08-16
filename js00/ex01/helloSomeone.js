@@ -1,4 +1,3 @@
-
 export default function helloSomeone(arg) {
 	const type = typeof(arg);
 	console.log

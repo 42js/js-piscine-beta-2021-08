@@ -1,12 +1,19 @@
 const dynamicType = {
     before: { type: "Number", value: undefined },
     after: { type: undefined, value: undefined },
+    isEmpty: true,
     put: function(input){
+        if(this.isEmpty === true){
+            return ;
+        }
         this.before.value = input;
+        this.isEmpty = false;
     },
     change: function(type){
+        if(this.isEmpty === true){
+            return ;
+        }
         this.after.type = type;
-        this.after.value
         if(type === "Number"){
             this.after.value = this.before.value;
         } else if(type === "String"){
@@ -29,3 +36,13 @@ const dynamicType = {
         }
     }
 }
+
+// dynamicType.put(42);
+// dynamicType.change("String");
+// dynamicType.printType();
+// dynamicType.change("Number");
+// dynamicType.printType();
+// dynamicType.change("Object");
+// dynamicType.printType();
+// dynamicType.change("Array");
+// dynamicType.printType();

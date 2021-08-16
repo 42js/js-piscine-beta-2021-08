@@ -16,13 +16,22 @@ function stackPush(stack, data){
 }
 
 function stackPeek(stack){
+    if(stack.arr.length === 0){
+        return null;
+    }
     return stack.arr[stack.arr.length - 1];
 }
 
 function stackPop(stack){
+    if(stack.arr.length === 0){
+        throw Error;
+    }
     const temp = new Array(stack.arr.length - 1);
     for(let i = 0; i < stack.arr.length - 1; i++){
         temp[i] = stack.arr[i];
     }
     stack.arr = temp;
 }
+
+// let test = stackCreate();
+// stackEmpty(test);

@@ -11,14 +11,14 @@ const exid = {
     }
 }
 
-exid.up();
-exid.down();
-exid.up();
-exid.up();
-exid.down();
-exid.up();
-exid.down();
-exid.up();
-exid.up();
-exid.down();
-exid.showCount();
+// exid.up();
+// exid.down();
+// exid.up();
+// exid.up();
+// exid.down();
+// exid.up();
+// exid.down();
+// exid.up();
+// exid.up();
+// exid.down();
+// exid.showCount();

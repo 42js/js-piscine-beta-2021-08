@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "ESLinter": "7.x"
+  }
+}

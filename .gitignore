@@ -5,3 +5,5 @@ package-lock.json
 .eslintrc.js
 
 !js00/**
+
+js00/ex01/test.js

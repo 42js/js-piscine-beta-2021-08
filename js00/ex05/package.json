@@ -1,0 +1,19 @@
+{
+  "name": "ex05",
+  "version": "1.0.0",
+  "description": "42JS js00",
+  "main": "stack.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackey1318/piscine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hackey1318/piscine/issues"
+  },
+  "homepage": "https://github.com/hackey1318/piscine#readme"
+}

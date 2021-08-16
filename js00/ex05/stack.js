@@ -2,7 +2,7 @@ const stackCreate = () => ({
   arr: [],
 });
 
-function stackEmpty(stack) {
+export function stackEmpty(stack) {
   if (
     stack === undefined ||
     stack === null ||
@@ -12,7 +12,7 @@ function stackEmpty(stack) {
   return stack.arr.length === 0;
 }
 
-function stackPush(stack, data) {
+export function stackPush(stack, data) {
   if (
     stack === undefined ||
     stack === null ||
@@ -28,7 +28,7 @@ function stackPush(stack, data) {
   stack.arr = temp;
 }
 
-function stackPeek(stack) {
+export function stackPeek(stack) {
   if (
     stack === undefined ||
     stack === null ||
@@ -40,7 +40,7 @@ function stackPeek(stack) {
   return stack.arr[stack.arr.length - 1];
 }
 
-function stackPop(stack) {
+export function stackPop(stack) {
   if (
     stack === undefined ||
     stack === null ||

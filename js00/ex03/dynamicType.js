@@ -1,16 +1,21 @@
 const dynamicType = {
   variable: 11,
+  putCalled: false,
   put: function put(param) {
     try {
-      if (isNaN(param)) throw error;
+      if (this.putCalled === true)
+        throw new Error('Error (put): put already called once');
+      else if (isNaN(param))
+        throw new Error('Error (put): Parameter is not a number');
       else if (typeof this.variable === 'object') {
         if (Array.isArray(this.variable)) this.variable[0] = param;
         else this.variable.value = Number(param);
       } else if (typeof this.variable === 'string')
         this.variable = String(param);
       else this.variable = Number(param);
+      this.putCalled = true;
     } catch (error) {
-      console.error('Error (put): Parameter is not a number');
+      console.error(error);
     }
   },
   change: function change(param) {
@@ -35,6 +40,8 @@ const dynamicType = {
     else console.error('Error (change): invalid input');
   },
   printType: function printType() {
+    if (this.putCalled === true) this.putCalled = false;
+
     if (typeof this.variable === 'string') console.log(`"${this.variable}"`);
     else console.log(this.variable);
   },

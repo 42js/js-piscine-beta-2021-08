@@ -41,6 +41,20 @@
     text-align: center;
 }
 
+.display-flex {
+    display: flex;
+}
+
+.content-text {
+    width: 80%;
+}
+
+.content-button {
+    font-size: 20px;
+    margin-top: 0px;
+    margin-left: 40%;
+}
+
 .content-list {
     background-color: blanchedalmond;
     width: 95%;

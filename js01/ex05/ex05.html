@@ -14,19 +14,11 @@
             <div class="content">
                 <form>
                     <input class="input-box" type="text">
-                    <button class="button-box">ADD</button>
+                    <input type="button" class="button-box" onclick="addText(document.querySelector('.input-box'));"></button>
                 </form>
             </div>
-            <div class="box content content-box">
-                <div class="content-list" style="display: flex;">
-                    <div>
-                        asdf
-                    </div>
-                    <div style="display: flex;">
-                        <p style="font-size: 25px;">&#9997;</p>
-                        <p style="font-size: 25px;">&#10006;</p>
-                    </div>
-                </div>
+            <div class="box content content-box" id="box">
+                
             </div>
         </div>
     </div>

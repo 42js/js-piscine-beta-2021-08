@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="calc.js" defer></script>
+    <title>Discount calculator</title>
+</head>
+<body>
+	<header>
+		<h1>Discount calculator</h1>
+	</header>
+    <form>
+        <div>
+            상품명: <input type="text" id="name" onkeyup="createBill()">
+        </div>
+        <div>
+            금액: <input type="text" id="cost" onkeyup="createBill()">
+        </div>
+        <div>
+            멤버십 회원입니까? <input type="checkbox" id="membership" onclick="selectGrade()">
+        </div>
+        <div id="grade"></div>
+    </form>
+    <hr>
+    <main>
+        <time datetime=""></time>
+        <ul></ul>
+    </main>
+</body>
+</html>

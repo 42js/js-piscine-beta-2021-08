@@ -1,7 +1,7 @@
 /* eslint no-restricted-globals: ["off"] */
 
 const currentTime = new Date();
-const datetime = currentTime.toLocaleTimeString('ko-ko');
+const datetime = currentTime.toLocaleTimeString('ko-KR');
 // const time = document.body.firstElementChild.nextElementSibling.firstChild;
 // const time = document.getElementsByTagName('time');
 const time = document.body.children[1].children[0];

@@ -62,5 +62,5 @@ function calculate() {
 			break;
 	}
 	if (sale != undefined)
-		document.querySelector('.sale').innerHTML = sale;
+		document.querySelector('.sale').innerHTML = addComma(sale);
 }

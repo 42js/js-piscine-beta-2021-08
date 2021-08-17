@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discount calculator</title>
+    <script src="calc.js" defer></script>
+  </head>
+  <body>
+    <h1>Discount calculator</h1>
+    <form>
+      <div>
+        상품명:
+        <input type="text" id="productName" onkeyup="printProductName()" />
+      </div>
+      <div>
+        금액: <input type="number" id="price" onchange="printPrice()" />
+      </div>
+      <div>
+        멤버십 회원입니까?
+        <input type="checkbox" id="membership" />
+      </div>
+      <div>
+        멤버십 등급:
+        <select id="membership-select" disabled onchange="printDiscountPrice()">
+          <option value="">--선택--</option>
+          <option value="1" data-percent="5">Lv1</option>
+          <option value="2" data-percent="10">Lv2</option>
+          <option value="3" data-percent="15">Lv3</option>
+        </select>
+      </div>
+    </form>
+    <hr style="width: 30%; text-align: left; margin-left: 0" />
+    <time datetime="" id="clock"></time>
+    <ul>
+      <li id="data1"></li>
+      <li id="data2"></li>
+      <li id="data3"></li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>Discount calculator</title>
+	</head>
+	<body>
+		<header>
+			<h1>Discount calculator</h1>
+		</header>
+		<main>
+			<form id = "sheet">
+				<div>
+					<label>상품명: </label>
+					<input type = "text" id = "product_name" onchange = "print_name()"/>
+				</div>
+				<div>
+					<label>금액: </label>
+					<input type = "text" id = "cost" onchange = "print_org_val()"/>
+				</div>
+				<div>
+					<label>멤버십 회원입니까? </label>
+					<input type = "checkbox" id = "membership" onclick = "checkRank(), print_after_val(this)"/>
+				</div>
+				<div>
+					<label>멤버십 등급: </label>
+					<select id = "grade" onchange = "print_after_val(this)" disabled>
+						<option value = "">--선택--</option>
+						<option value = "lv1">Lv1</option>
+						<option value = "lv2">Lv2</option>
+						<option value = "lv3">Lv3</option>
+					</select>
+				</div>
+			</form>
+			<hr />
+				<time datetime=""></time>
+				<ul id = "receipt">
+					<li class="name">상품명: </li>
+					<li class="price">원가: </li>
+					<li class="price_after">할인가: </li>
+				</ul>
+				<script src="calc.js"></script>
+		</main>
+	</body>
+</html>
+

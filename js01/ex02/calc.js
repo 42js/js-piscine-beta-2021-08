@@ -21,4 +21,20 @@ const getTime = () => {
     timeArea.innerHTML = `${year}. ${month}. ${day}. ${hours}:${minutes}:${seconds}`;
 }
 
+const form = document.forms.product_form;
+
+const form_item = {
+    name: form.product_name,
+    price: form.price,
+    isMember: form.isMember,
+    grade: form.grade
+};
+
+
+
+
+
+
+
+
 getTime();

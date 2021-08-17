@@ -1,6 +1,9 @@
 const energyBar = document.querySelector('.energy');
-energyBar.value -= 10;
-energyBar.style.setProperty('--c', 'red');
+
+setTimeout(() => {
+    energyBar.value -= 10;
+    energyBar.style.setProperty('--c', 'red');
+})
 
 const progressBars = document.querySelectorAll('.progress');
 

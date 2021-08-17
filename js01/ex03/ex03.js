@@ -1,9 +1,22 @@
 const foods = document.querySelectorAll('li');
 
-const handleFoodClick = (e) => {
+const handleFoodMouseOver = (e) => {
     e.stopPropagation();
     e.target.style.backgroundColor = 'red';
-    alert(`you clicked ${e.target.innerHTML}`);
 };
 
-foods.forEach((food) => food.addEventListener('click', handleFoodClick));
+const handleFooldMouseOut = (e) => {
+    e.stopPropagation();
+    e.target.style.backgroundColor = 'cornflowerblue';
+}
+
+const handleFoodClick = (e) => {
+    e.stopPropagation();
+    alert(`you clicked ${e.target.innerHTML}`);
+}
+
+foods.forEach((food) => {
+    food.addEventListener('mouseover', handleFoodMouseOver);
+    food.addEventListener('mouseout', handleFooldMouseOut);
+    food.addEventListener('click', handleFoodClick);
+});

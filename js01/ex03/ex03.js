@@ -1,5 +1,10 @@
-const li = document.querySelector('li');
+const li = document.querySelectorAll('li');
 
-li.addEventListener('click', function() {
-    alert('click');
-});
+for (var i = 0; i < 9; i++) {
+    li[i].addEventListener('click', function (e) {
+        if (e.target) {
+            e.target.style = 'background: red;';
+            alert(e.target.innerText);
+        };
+    });
+};

@@ -1,7 +1,7 @@
 {
+  "type": "module",
   "name": "ex01",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
   "main": "helloSomeone.js",
   "scripts": {

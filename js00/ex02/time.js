@@ -7,5 +7,5 @@ const timeWarp = (newMonth, newDay) => {
 }
 
 timeWarp(5, 10);
-console.log(month);
+console.log(month.value);
 console.log(day);

@@ -8,7 +8,7 @@ export default function helloSomeone(e){
 		console.log(`My age is ${e}`);
 	if (typeof e === 'number' && e <= 0)
 		console.log('I am Benjamin Button!');
-	if (typeof e === 'null')
+	if (typeof e === 'null') //null => object바꿔야함.
 		console.log('I am null and void');
 	if (typeof e === 'string' && e.length === 0)
 		console.log('Who are you?');

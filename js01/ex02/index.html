@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Discount calculator</title>
+	<script src="./calc.js" defer></script>
+</head>
+<style>
+	img{
+		width: 300px;
+		height: 300px;
+	}
+	div{
+		margin: 10px;
+	}
+</style>
+<body>
+	<h1>Discount calculator</h1>
+	<form>
+		<div>
+			<label for="text">상품명:</label>
+			<input id="product" type="text" name="productName" onkeyup="setProduct()">
+		</div>
+		<div>
+			<label for="text">금액:</label>
+			<input id='price' type="text" name="priceName" onkeyup="setPrice()">
+		</div>
+		<div>
+			<label for="text">멤버십 회원입니까?</label>
+			<input id="checkbox" type="checkbox" name="checkbox" onclick="setMember()">
+		</div>
+		<div>
+			<label for="text">멤버십 등급:</label>
+			<select disabled class="membership" onchange="setMembership()">
+				<option value="">--선택--</option>
+				<option value="Lv1" data-percent="5">Lv1</option>
+				<option value="Lv2" data-percent="10">Lv2</option>
+				<option value="Lv3" data-percent="15">Lv3</option>
+			</select>
+		</div>
+	</form>
+
+	<img src="https://images.velog.io/images/dlfehd54/post/65fc5351-c13a-4df7-9e37-f3d1af25bddf/%E1%84%8C%E1%85%B5%E1%84%83%E1%85%A9%E1%86%BC.jpeg" alt="">
+	<hr>
+	<div>
+		<time datetime=""></time>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

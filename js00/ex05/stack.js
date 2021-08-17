@@ -39,3 +39,7 @@ export function stackPop(stack){
 		console.log(error);
 	}
 }
+
+const stk = stackCreate();
+stackPush(stk, undefined);
+console.log(stackPeek(stk));

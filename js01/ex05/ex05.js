@@ -6,7 +6,7 @@ const doneList = document.querySelector('#doneList');
 
 const todos = [];
 
-let index = 0;
+let count = 0;
 
 const saveTodos = () => {
     localStorage.setItem("TODOS", JSON.stringify(todos));
@@ -16,19 +16,44 @@ const addItem = () => {
     if (addButton.className === 'edit')
         return;
     const todo = 
+        `<li class="todo${count}" >
+            <span class="value${count} todoValue" onClick="handleChecked(${count})">${input.value}</span>
+            <span class="update">
+                <img src="edit-regular.svg" class="editButton" onClick="editItem(${count})">
+                <img src="times-solid.svg" class="deleteButton" onClick="deleteItem(${count})">
+            </span>
+        </li>`;
+    todos[count] = {text: input.value, index: count};
+    list.innerHTML += todo;
+    count++;
+    input.value = "";
+    input.focus();
+    saveTodos();
+}
+
+const loadItem = (value, index) => {
+    const todo = 
         `<li class="todo${index}" >
-            <span class="value${index} todoValue" onClick="handleChecked(${index})">${input.value}</span>
+            <span class="value${index} todoValue" onClick="handleChecked(${index})">${value}</span>
             <span class="update">
                 <img src="edit-regular.svg" class="editButton" onClick="editItem(${index})">
                 <img src="times-solid.svg" class="deleteButton" onClick="deleteItem(${index})">
             </span>
         </li>`;
-    todos[index] = {text: input.value, index: index};
     list.innerHTML += todo;
-    index++;
+    count++;
     input.value = "";
     input.focus();
-    saveTodos();
+}
+
+const loadTodos = () => {
+    const loadedTodos = localStorage.getItem("TODOS");
+    if (loadedTodos !== null) {
+        const parsedTodos = JSON.parse(loadedTodos);
+        parsedTodos.forEach((todoObj) => {
+            loadItem(todoObj.text, todoObj.index);
+        })
+    }
 }
 
 const editItem = (index) => {
@@ -70,3 +95,4 @@ const handleChecked = (index) => {
 }
 
 addButton.addEventListener('click', addItem);
+loadTodos();

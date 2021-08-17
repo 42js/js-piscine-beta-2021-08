@@ -1,0 +1,53 @@
+ul {
+	margin: 0 auto;
+	display: table;
+}
+ul .text {
+	display: inline-block;
+	width: 200px;
+	margin-left: 15px;
+	background-color: transparent;
+	border-right:0px; border-top:0px; border-left:0px;border-bottom:0px;
+}
+ul li {
+	margin-bottom: 8px;
+	transition: 0.2s background ease-in;
+}
+ul li:hover {
+	background: #adb5bd;
+	color: white;
+}
+
+ul .checked {
+	color: #2d63bb;
+	text-decoration: line-through;
+}
+
+form {
+	text-align: center;
+	border:none;border-right:0px; border-top:0px; border-left:0px;border-bottom:0px;
+	background-color: transparent;
+	height: 100px;
+	color: rgb(26, 125, 231);
+}
+form input {
+	background-color: transparent;
+	width: 180px;
+	border-right:0px; border-top:0px; border-left:0px;border-bottom-width:1px;
+}
+
+button {
+	margin-right: 10px;
+	background-color: #cacef2;
+	outline: none;
+	border: none;
+  border-radius: 3px;
+	color: rgb(43, 33, 33);
+	padding-left: 9px;
+	padding-right: 9px;
+	cursor: pointer;
+	transition: 0.1s background ease-in;
+}
+button:hover {
+	background: #608dba;
+}

@@ -1,0 +1,72 @@
+* {
+  font-family: "Noto Sans", "Noto Sans KR";
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+input {
+  width: calc(80vw - 60px);
+  height: 30px;
+  margin-right: 10px;
+  font-size: 17px;
+}
+
+button {
+  width: 60px;
+  height: 34px;
+}
+
+ul {
+  margin-top: 20px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+  height: 50px;
+  padding: 0 15px 0 5px;
+  background-color: #eee;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+li:hover {
+  background-color: #ccc;
+}
+
+span.update {
+  display: flex;
+  align-items: center;
+}
+
+.editButton {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.deleteButton {
+  cursor: pointer;
+}
+
+.todoValue {
+  cursor: pointer;
+}
+
+hr {
+  margin: 50px 0 30px 0;
+}
+
+#doneList > li {
+  background-color: #aaa;
+}

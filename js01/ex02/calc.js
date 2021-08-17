@@ -33,13 +33,12 @@ isMember.onclick = function () {
     if (isMember.checked === true) {
         level.disabled = false;
         level.children[0].disabled = true;
-        level.children[1].selected = true;
         if (cost.value !== "") printdiscount(0.95);
     } else {
         level.disabled = true;
         level.children[0].disabled = false;
         level.children[0].selected = true;
-        printdiscount(1);
+        if (cost.value !== "") printdiscount(1);
     }
 };
 

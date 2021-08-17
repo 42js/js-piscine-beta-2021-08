@@ -9,9 +9,7 @@ const changeColorCornflowerblue = (event) => {
 
 const li = document.getElementsByTagName('li');
 
-console.log(li);
-
-for (element of li) {
+for (const element of li) {
   element.addEventListener('mouseover', changeColorHotpink);
   element.addEventListener('mouseout', changeColorCornflowerblue);
   element.addEventListener('click', () => {alert("선택 완료")});

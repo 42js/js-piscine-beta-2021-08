@@ -1,5 +1,5 @@
 const exidMethodChaining = {
-    count: 0,
+    count: 40,
     up(){
         this.count += 1
         return this;
@@ -12,5 +12,4 @@ const exidMethodChaining = {
         console.log(this.count);
     },
   };
-  
 exidMethodChaining.up().down().up().up().down().up().down().up().up().down().showCount()

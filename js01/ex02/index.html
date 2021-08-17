@@ -13,8 +13,8 @@
         <div>금액 :  <input type="number" id = "원가" onkeyup='원가()'></div>
         <div> 멤버쉽 회원입니까? <input type="checkbox" id = "멤버쉽회원" onclick='멤버확인()'></div>
         <div> 멤버쉽 등급 : 
-            <select id = "멤버쉽등급" disabled = true>
-                <option>--선택--</option>
+            <select id = "멤버쉽등급" disabled = true onchange="할인가격()">
+                <option disabled>--선택--</option>
                 <option>Lv1</option>
                 <option>Lv2</option>
                 <option>Lv3</option>

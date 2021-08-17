@@ -23,15 +23,29 @@ function 원가(){
 }
 
 function 멤버확인(){
+    const productprice = document.getElementById("원가").value;
     let 체크여부 = document.getElementById("멤버쉽회원").checked;
-    if (체크여부 == true)
+    if (체크여부 == true){
         document.getElementById("멤버쉽등급").disabled = false
-    else
+        recipeInfo.children[2].innerText = `할인가 : ${productprice * 0.95} `;
+    }
+    else{
         document.getElementById("멤버쉽등급").disabled = true
+        recipeInfo.children[2].innerText = `할인가 : ${productprice} `;
+    }
 }
 
-function init(){
-    showTime();
+function 할인가격(){
+    const productprice = document.getElementById("원가").value;
+    const rating = document.getElementById('멤버쉽등급');
+    let 등급 = rating.options[rating.selectedIndex].text;
+    if (등급 == "Lv1"){
+        recipeInfo.children[2].innerText = `할인가 : ${productprice * 0.95} `;
+    } else if (등급 == "Lv2"){
+        recipeInfo.children[2].innerText = `할인가 : ${productprice * 0.9} `;
+    } else if (등급 == "Lv3"){
+        recipeInfo.children[2].innerText = `할인가 : ${productprice * 0.85} `;
+    }
 }
 
-init();
+showTime();

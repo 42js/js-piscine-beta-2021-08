@@ -8,10 +8,10 @@
   </head>
   <body>
     <h1>Discount calculator</h1>
-    <form>
+    <form name="product_form">
       <div class="form_item">
-        <label for="name">상품명:</label>
-        <input type="text" name="name" />
+        <label for="product_name">상품명:</label>
+        <input type="text" name="product_name" />
       </div>
       <div class="form_item">
         <label for="price">금액:</label>
@@ -22,12 +22,12 @@
         <input type="checkbox" name="isMember" />
       </div>
       <div class="form_item">
-        <label>멤버십 등급:</label>
-        <select name="" id="">
+        <label for="grade">멤버십 등급:</label>
+        <select name="grade">
           <option value="">--선택--</option>
-          <option value="">Lv1</option>
-          <option value="">Lv2</option>
-          <option value="">Lv3</option>
+          <option value="lv1">Lv1</option>
+          <option value="lv2">Lv2</option>
+          <option value="lv3">Lv3</option>
         </select>
       </div>
     </form>

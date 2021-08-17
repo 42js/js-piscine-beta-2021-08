@@ -19,7 +19,7 @@ const fifthStep = () => {
       resolve();
     }, sec5 * 1000);
   });
-  promise.then(() => { console.log('꽈배기 하나 완성!') }).catch((e) => { console.log(e); fifthStep(); });
+  promise.then(() => { console.log('꽈배기 하나 완성!'); }).catch((e) => { console.log(e); fifthStep(); });
 }
 
 const fourthStep = () => {

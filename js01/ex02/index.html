@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Discount calculator</title>
+	<script src="calc.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Discount calculator</h1>
+	</header>
+	<main>
+       <div>
+                <label>상품명:</label>
+                <input id ="pro" onkeyup='pro()'></input>
+       </div>
+        <div>
+                <label>금액:</label>
+                <input id ="money" onkeyup='mon()'></input>
+        </div>
+         <form>
+             <div>
+                <label>맴버십 회원입니까?</label>
+                <input name ="member" id ="member" type ="checkbox" onClick = "checkbox(this.form)"></input>
+            </div>
+            <div>
+                <label>맴버십 등급:</label>
+                <select name ="level" id ="level" onChange="dis(this.value)" disabled>
+                    <option id ="sel" value ="1" data-percent = "0">--선택--</option>
+                    <option id ="lv1" value ="0.95" data-percent = "5">Lv1</option>
+                    <option id ="lv2" value ="0.9" data-percent = "10">Lv2</option>
+                    <option id ="lv3" value ="0.85" data-percent = "15">Lv3</option>
+                </select>
+            </div>
+         </form>
+            <hr/>
+        <div>
+            <time datetime=""></time>
+        </div>
+        <div>
+            <ul id = "list">
+                <li id="fir"></li>
+                <li id="sec"></li>
+                <li id="thir"></li>
+            </ul>
+        </div>
+        
+   
+	</main>
+</body>
+</html>

@@ -36,3 +36,10 @@ const type = {
     }
 }
 
+type.put("hello");
+type.change("Object");
+type.change("Array");
+type.change("Number");
+type.change("String");
+type.printType();
+console.log(typeof(dynamicType.put));

@@ -53,6 +53,11 @@ function selectRank(data) {
     else if (value == 'two') ret *= 0.9;
     else if (value == 'three') ret *= 0.85;
 
-    if (isNaN(price) == false) document.querySelector('.receipt_discount').innerText = `할인가 : ${ret.toLocaleString()}`
-    else document.querySelector('.receipt_discount').innerText = ""
+    if (document.querySelector('#name').value == "" || document.querySelector('#price').value == "") {
+        document.querySelector('.receipt_discount').innerText = '상품명 또는 금액을 입력해 주세요.'
+    }
+    else {
+        if (isNaN(price) == false) document.querySelector('.receipt_discount').innerText = `할인가 : ${ret.toLocaleString()}`
+        else document.querySelector('.receipt_discount').innerText = ""
+    }
 }

@@ -5,7 +5,12 @@ const polar = {
     coding: 80,
     love: 95,
     wash: 90,
-}
+};
+
+function minus() {
+    document.querySelector('.energy').value -= 10;
+};
+
 function plus_five() {
     document.querySelector('.poo').value += 5;
     document.querySelector('.hungry').value += 5;
@@ -13,12 +18,13 @@ function plus_five() {
     document.querySelector('.coding').value += 5;
     document.querySelector('.love').value += 5;
     document.querySelector('.wash').value += 5;
-}
+};
 
 const left = document.querySelector('.left');
 const right = document.querySelector('.right');
 
-polar.energy -= 10;
+setTimeout(minus, 1000);
+
 left.children[5].style.setProperty('--c', '#FF0000');
 
 // left

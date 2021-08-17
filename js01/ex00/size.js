@@ -7,6 +7,7 @@ const date = new Date();
 const hour = date.getHours();
 const minute = date.getMinutes();
 const sec = date.getSeconds();
+time.dateTime = date.toISOString();
 
 if (hour < 12 && hour >= 0) 
 	time.innerHTML = `오전 ${hour}:${minute}:${sec}`;

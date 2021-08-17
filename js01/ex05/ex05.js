@@ -4,12 +4,18 @@ const addButton = document.querySelector('button');
 const list = document.querySelector('#list');
 const doneList = document.querySelector('#doneList');
 
+const todos = [];
+
 let index = 0;
+
+const saveTodos = () => {
+    localStorage.setItem("TODOS", JSON.stringify(todos));
+}
 
 const addItem = () => {
     if (addButton.className === 'edit')
         return;
-    let todo = 
+    const todo = 
         `<li class="todo${index}" >
             <span class="value${index} todoValue" onClick="handleChecked(${index})">${input.value}</span>
             <span class="update">
@@ -17,19 +23,21 @@ const addItem = () => {
                 <img src="times-solid.svg" class="deleteButton" onClick="deleteItem(${index})">
             </span>
         </li>`;
+    todos[index] = {text: input.value, index: index};
     list.innerHTML += todo;
     index++;
     input.value = "";
     input.focus();
+    saveTodos();
 }
 
 const editItem = (index) => {
-    let item = document.querySelector(`.value${index}`);
+    const item = document.querySelector(`.value${index}`);
     input.value = item.innerText;
     addButton.innerHTML = "UPDATE";
     addButton.className = "edit";
 
-    let editButton = document.querySelector('.edit');
+    const editButton = document.querySelector('.edit');
 
     const handleUpdateClick = () => {
         item.innerText = input.value;
@@ -38,21 +46,27 @@ const editItem = (index) => {
         addButton.className = "add";
         input.value = "";
         input.focus();
+        todos[index] = {text: item.innerText, index: index};
+        saveTodos();
     };
     editButton.addEventListener('click', handleUpdateClick);
 }
 
 const deleteItem = (index) => {
-    let item = document.querySelector(`.todo${index}`);
+    const item = document.querySelector(`.todo${index}`);
     list.removeChild(item);
+    todos.splice(index, 1);
+    saveTodos();
 }
 
 const handleChecked = (index) => {
-    let item = document.querySelector(`.todo${index}`);
-    let itemValue = document.querySelector(`.value${index}`).innerText;
+    const item = document.querySelector(`.todo${index}`);
+    const itemValue = document.querySelector(`.value${index}`).innerText;
     item.innerText = itemValue;
     list.removeChild(item);
     doneList.appendChild(item);
+    todos.splice(index, 1);
+    saveTodos();
 }
 
 addButton.addEventListener('click', addItem);

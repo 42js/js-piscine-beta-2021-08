@@ -8,16 +8,19 @@ window.onload = () => {
 	} 
 }
 
-const mouseover = (e) => {
-	e.preventDefault();
+function mouseover(e) {
+	console.log(e);
 	const menu = e.target;
-	menu.style.background = "red";
+	menu.style.background = "skyblue";
+	menu.style.cursor = "pointer";
 }
 
-const mouseout = (e) => {
-	e.preventDefault();
+function mouseout(e) {
 	const menu = e.target;
 	menu.style.background = "cornflowerblue";
 }
 
-const click = (e) => {}
+function click(e) {
+	const menu = e.target;
+	alert(`${menu.innerText}를 선택하였습니다!`);
+}

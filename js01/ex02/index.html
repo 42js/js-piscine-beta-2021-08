@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Discount calculator</title>
+	<script src="calc.js" defer></script>
+</head>
+<style>
+	body {
+		font-family: 'B612 Mono', monospace;
+	}
+</style>
+<body>
+	<header>
+		<h1>Discount calculator</h1>
+	</header>
+	<main>
+		<form name='caculator'>
+			<table border='1px'>
+				<tr>
+					<td>상품명: </td>
+					<td>
+						<input name='product' type='text'><br>
+					</td>
+				</tr>
+				<tr>
+					<td>금액: </td>
+					<td>
+						<input name='cost' type="number"><br>
+					</td>
+				</tr>
+				<tr>
+					<td>멤버십 회원입니까? </td>
+					<td>
+						<input name='member' type="checkbox"><br>
+					</td>
+				</tr>
+				<tr>
+					<td>멤버십 등급: </td>
+					<td>
+						<select name='level'>
+							<option name='default' selected>--선택--</option>
+							<option name='Lv1' data-percent=5%>Lv1</option>
+							<option name='Lv2' data-percent=10%>Lv2</option>
+							<option name='Lv3' data-percent=15%>Lv3</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<hr>
+		<time datetime="">///</time>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</main>
+</body>
+</html>

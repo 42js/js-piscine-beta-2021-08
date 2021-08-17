@@ -24,5 +24,5 @@ window.onload = function exZeroOne() {
 
   setTimeout(() => {
     addProgressAllTen();
-  }, 3000);
+  }, 5000);
 };

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Discount calculator</title>
+	<script src="calc.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Discount calculator</h1>
+	</header>
+	<main>
+		<div>
+			상품명: <input type='text' name='productName' onkeyup='updateProductName(this)'/> <br>
+			금액: <input type='text' name='productPrice' onkeyup='updateOriginPrice(this)' /> <br>
+			멤버십 회원입니까?:<input type='checkbox' id='isMembership' onclick='isMembership(this)' /> <br>
+			<label for='membership'>멤버십 레벨:</label>
+			<select id='membershipDropdown' onchange='updateDiscountPrice(this)' disabled>
+				<option data-percent='select'>--선택--</option>
+				<option data-percent='five'>Lv1</option>
+				<option data-percent='ten'>Lv2</option>
+				<option data-percent='fifteen'>Lv3</option>
+			</select>
+		</div>
+		<hr>
+		<div>
+			<time datetime=""></time>
+			<ul>
+				<li>상품명: <span id='productNameOutput'></span> </li>
+				<li>원가: <span id='originPriceOutput'></span></li>
+				<li>할인가: <span id='discountPriceOutput'></span></li>
+			</ul>
+		</div>
+	</main>
+</body>
+</html>

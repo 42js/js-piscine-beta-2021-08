@@ -1,10 +1,28 @@
-const todoStorage = [];
+var todoStorage = [];
+
+const storageNew = (t) => {
+  todoStorage.push(t);
+  localStorage.setItem("todo", JSON.stringify(todoStorage));
+};
+
+const storageUpdate = (old, update) => {
+  var idx = todoStorage.indexOf(old);
+  todoStorage[idx] = update;
+  localStorage.setItem("todo", JSON.stringify(todoStorage));
+};
+
+const storageDelete = (t) => {
+  var idx = todoStorage.indexOf(t);
+  todoStorage.splice(idx, 1);
+  localStorage.setItem("todo", JSON.stringify(todoStorage));
+};
 
 var addAction = document.querySelector("input[name=add]");
 var todoField = document.querySelector("input[name=todo]");
 var listBase = document.querySelector("section");
 
 const newTodo = (content) => {
+  var status = false;
   var list = document.createElement("li");
 
   var editImage = document.createElement("img");
@@ -20,9 +38,10 @@ const newTodo = (content) => {
     editTodoEnter.setAttribute("type", "button");
     editTodoEnter.setAttribute("value", "modify");
     editTodoEnter.addEventListener("click", () => {
+      var old = list.innerText.substr(0, list.innerText.length - 1);
+      storageUpdate(old, editTodoField.value);
       list.innerText = editTodoField.value;
       list.append(editImage, deleteImage, document.createElement("br"));
-      list.removeChild(editField);
     });
 
     var editTodoCancel = document.createElement("input");
@@ -40,14 +59,21 @@ const newTodo = (content) => {
   deleteImage.src = "./trash-solid.svg";
   deleteImage.addEventListener("click", () => {
     listBase.removeChild(list);
+    storageDelete(content);
+  });
+
+  list.addEventListener("click", () => {
+    if (!status) list.style.backgroundColor = "#858585";
+    else list.style.backgroundColor = "#b2b2b2";
+    status = !status;
   });
 
   list.addEventListener("mouseover", () => {
-    list.style.backgroundColor = "#b2b2b2";
+    if (!status) list.style.backgroundColor = "#b2b2b2";
   });
 
   list.addEventListener("mouseleave", () => {
-    list.style.backgroundColor = "#eaeaea";
+    if (!status) list.style.backgroundColor = "#ffffff";
   });
 
   list.innerText = content;
@@ -56,5 +82,24 @@ const newTodo = (content) => {
 };
 
 addAction.addEventListener("click", () => {
+  if (todoField.value === "") {
+    alert("추가할 수 없습니다");
+    return;
+  }
+  if (todoStorage.indexOf(todoField.value) !== -1) {
+    alert("이미 존재하는 항목입니다");
+    return;
+  }
+  storageNew(todoField.value);
   newTodo(todoField.value);
+  todoField.value = "";
 });
+
+if (localStorage.getItem("todo") !== null) {
+  todoStorage = JSON.parse(localStorage.getItem("todo"));
+  todoStorage.forEach((e) => {
+    newTodo(e);
+  });
+} else {
+  todoStorage = [];
+}

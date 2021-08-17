@@ -19,24 +19,24 @@
       </div>
       <div class="form_item">
         <label for="isMember">멤버십 회원입니까?</label>
-        <input type="checkbox" name="isMember" />
+        <input type="checkbox" name="isMember" value="isMember"/>
       </div>
       <div class="form_item">
         <label for="grade">멤버십 등급:</label>
-        <select name="grade">
+        <select name="grade" disabled>
           <option value="">--선택--</option>
-          <option value="lv1">Lv1</option>
-          <option value="lv2">Lv2</option>
-          <option value="lv3">Lv3</option>
+          <option value="lv1" data-percent="5">Lv1</option>
+          <option value="lv2" data-percent="10">Lv2</option>
+          <option value="lv3" data-percent="15">Lv3</option>
         </select>
       </div>
     </form>
     <hr />
       <time datetime=""></time>
       <ul>
-        <li class="name"></li>
-        <li class="price"></li>
-        <li class="sale_price"></li>
+        <li class="name">상품명: </li>
+        <li class="price">원가: </li>
+        <li class="sale_price">할인가: </li>
       </ul>
     </div>
     <script src="calc.js"></script>

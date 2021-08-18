@@ -1,4 +1,4 @@
-function randomFail() {
+const randomFail = () => {
   if (Math.random() < 0.2) throw "제작 실패..!(월급이 삭감되었다 ㅜㅜ)";
 }
 

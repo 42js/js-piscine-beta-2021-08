@@ -1,5 +1,5 @@
 function randomFail(todo, minus) {
-  if (Math.random() < 0.5) throw String(`${todo} 실패..!(월급${minus}만큼 삭감되었다 ㅜㅜ)`);
+  if (Math.random() < 0.2) throw String(`${todo} 실패..!(월급${minus}만큼 삭감되었다 ㅜㅜ)`);
 }
 
 function showSuccess(stepTodo) {

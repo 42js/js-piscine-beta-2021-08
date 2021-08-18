@@ -4,16 +4,16 @@ const fs = require('fs');
 const hostname = 'localhost';
 const port = 4242;
 
-const server = http.createServer((req, res) => {
+const server = http.createServer((request, response) => {
   fs.readFile('./index.html', (err, data) => {
     if (err) {
+      response.statusCode = 500;
+      response.end(err);
       console.log(err);
-      res.statusCode = 500;
-      res.end();
     } else {
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'text/html');
-      res.end(data);
+      response.statusCode = 200;
+      response.setHeader('Content-Type', 'text/html');
+      response.end(data);
     }
   })
 });

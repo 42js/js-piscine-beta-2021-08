@@ -1,5 +1,5 @@
 function randomFail() {
-  if (Math.random() < 0.5)
+  if (Math.random() < 0.2)
 		return "실패..!(월급이 삭감되었다 ㅜㅜ)";
 	return false;
 }
@@ -13,41 +13,29 @@ const recipe = {
 	'C.면까지 넣고 다 같이 볶기': 3000,
 };
 
+function timeout(resolve, reject, stageName){
+	setTimeout(() => {
+		let fail = randomFail();
+		if (!fail) {
+			resolve(stageName);
+		}
+		else {
+			reject([stageName, fail]);
+		}
+	}, recipe[stageName]);
+}
+
 function cook(i, stage){
 	return new Promise((resolve, reject) => {
 		let stageName = Object.keys(recipe)[i];
 		if (stage === 'A' && i === 0) {
-			setTimeout(() => {
-				let fail = randomFail();
-				if (!fail) {
-					resolve(stageName);
-				}
-				else {
-					reject([stageName, fail]);
-				}
-			}, recipe[stageName]);
+			timeout(resolve, reject, stageName);
 		}
 		else if (stage === 'B' && i < 5) {
-			setTimeout(() => {
-				let fail = randomFail();
-				if (!fail) {
-					resolve(stageName);
-				}
-				else {
-					reject([stageName, fail]);
-				}
-			}, recipe[stageName]);
+			timeout(resolve, reject, stageName);
 		}
 		else if (stage === 'C' && i === 5) {
-			setTimeout(() => {
-				let fail = randomFail();
-				if (!fail) {
-					resolve(stageName);
-				}
-				else {
-					reject([stageName, fail]);
-				}
-			}, recipe[stageName]);
+			timeout(resolve, reject, stageName);
 		}
 		else
 			return resolve(stageName);

@@ -1,0 +1,3 @@
+function setTimer(func, interval)
+{
+}

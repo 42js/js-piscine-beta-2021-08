@@ -1,103 +1,51 @@
-const receipe = {
-		dough : 3000,
-		p1st : 5000,
-		shaping : 4200,
-		p2nd : 2000,
-		frying : 5000,
-	};
-
 const process = {
-		dough : false,
-		p1st : false,
-		shaping : false,
-		p2nd : false,
-		frying : false,
+	0 : "making dough",
+	1 : "1st proofing",
+	2 : "shaping",
+	3 : "2nd proofing",
+	4 : "frying",
 };
+
+const receipe = {
+	0 : 3000,
+	1 : 5000,
+	2 : 4200,
+	3 : 2000,
+	4 : 5000,
+}
+
+function printWithTime(str)
+{
+	console.log(new Date().getSeconds() + " : " + str);
+}
 
 function randomFail()
 {
-	if (Math.random() < 0.5)
-		throw "제작 실패..!(월급이 삭감되었다 ㅜㅠ)";
+	if (Math.random() < 0.2)
+		throw "제작 실패...!(월급이 삭감되었다 ㅠㅠ)";
 }
 
-function printproc(proc)
-{
-	console.log(proc + " 끝.");
-	process[proc] = true;
-}
-
-function doUntilSuccess(func, proc)
+function doOneProc(procId)
 {
 	try
 	{
 		randomFail();
-		setTimeout(printproc, receipe[proc], proc);
+		printWithTime(process[procId] + " 끝");
+		mainProc(++procId);
 	}
-	catch (e)
+	catch (err)
 	{
-		console.error(proc + " " + e);
-		func();
-	}
-}
-function doMakeDough()
-{
-	console.log("반죽만들기 시작");
-	doUntilSuccess(doMakeDough, "dough");
-}
-function do1stProofing()
-{
-	if (process['dough'] == false)
-		setTimeout(wait, receipe['dough'], do1stProofing);
-	else
-	{
-		console.log("1차 발효 시작");
-		doUntilSuccess(do1stProofing, "p1st");
-	}
-}
-function doShaping()
-{
-	if (process['p1st'] == false)
-		setTimeout(wait, receipe['p1st'], doShaping);
-	else
-	{
-		console.log("반죽 성형 시작");
-		doUntilSuccess(doShaping, "shaping");
-	}
-}
-function do2ndProofing()
-{
-	if (process['shaping'] == false)
-		setTimeout(wait, receipe['shaping'], do2ndProofing);
-	else
-	{
-		console.log("2차 발효 시작");
-		doUntilSuccess(do2ndProofing, "p2nd");
+		console.error(new Date().getSeconds() + " : " + process[procId] + " " + err);
+		mainProc(procId);
 	}
 }
 
-function doFrying()
+function mainProc(procId)
 {
-	if (process['p2nd'] == false)
-		setTimeout(wait, receipe['p2nd'], doFrying);
-	else
-	{
-		console.log("튀기기 시작");
-		doUntilSuccess(doFrying, "frying");
-	}
+	if (!(procId in receipe))
+		return ;
+	printWithTime(process[procId] + " 시작");
+	setTimeout(doOneProc, receipe[procId], procId);
 }
 
-function wait(func)
-{
-	func();
-}
-
-function baking()
-{
-	doMakeDough();
-	do1stProofing();
-	doShaping();
-	do2ndProofing();
-	doFrying();
-}
-
-baking();
+mainProc(0);

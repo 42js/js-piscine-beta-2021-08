@@ -1,0 +1,16 @@
+{
+  "name": "ex05",
+  "version": "1.0.0",
+  "description": "",
+  "main": "placeholder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node placeholder.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "whatwg-fetch": "^3.6.2"
+  }
+}

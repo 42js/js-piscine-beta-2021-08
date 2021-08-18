@@ -1,11 +1,27 @@
-const fs = require('fs');
 const express = require('express');
+const _ = require('lodash');
 const router = express.Router();
 
+const metroAPI = require('./metroAPI.js');
+const stations = metroAPI.stations;
+const NotFound = { 404: "Not Found" };
 
-router.get('/line', (req, res) => {
+router.get('', (req, res) => {
+  let line_num;
   if (req.query['line_num'] === undefined) {
-    console.log('No "line_num" query. respond 404 Not Found.');
-    res.status(404).send({status : 404, message: 'Not Found'});
+    line_num = '01호선';
+  } else {
+    line_num = req.query['line_num'];
   }
-})
+  const line = _.filter(stations, (station) => {
+    return station['line_num'] === line_num;
+  })
+  if (line.length === 0) {
+    res.status(404).setHeader('Content-Type', 'application/json').send(NotFound);
+  }
+  else {
+    res.status(200).send(line);
+  }
+});
+
+module.exports = router;

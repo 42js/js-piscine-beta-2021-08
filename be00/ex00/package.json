@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "nodemon" : "~2.x"
+  }
+}

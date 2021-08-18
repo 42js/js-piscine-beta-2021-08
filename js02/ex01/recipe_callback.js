@@ -12,7 +12,7 @@ const receipe = {
 	2 : 4200,
 	3 : 2000,
 	4 : 5000,
-}
+};
 
 function printWithTime(str)
 {

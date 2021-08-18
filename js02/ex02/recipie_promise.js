@@ -11,43 +11,42 @@ const workSteps = {
 };
 
 const promise = function makePromise(step) {
-  while (Math.random() < 0.2) {
-    console.log(`${workSteps[step].todo} 실패...`);
-  }
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(step), workSteps[step].time);
+  return new Promise((resolve, reject) => {
+    if (step <= 5) {
+      console.log(`- ${workSteps[step].todo} 시작 -`);
+      while (Math.random() < 0.2) {
+        console.log(`${workSteps[step].todo} 실패...`);
+        console.log(`- ${workSteps[step].todo} 다시 시작 -`);
+      }
+      setTimeout(() => {
+        showSuccess(workSteps[step].todo);
+        resolve(step);
+      }, workSteps[step].time);
+    } else {
+      reject(String('꽈배기 완성@^.^@'));
+    }
   });
 };
 
 promise(1)
-  .then((result) => {
-    showSuccess(workSteps[result].todo); // 반죽만들기
-    return promise(result + 1);
-  }, (error) => {
-    console.log(error);
-  })
-  .then((result) => {
-    showSuccess(workSteps[result].todo); // 1차 발효
-    return promise(result + 1);
-  }, (error) => {
-    console.log(error);
-  })
-  .then((result) => {
-    showSuccess(workSteps[result].todo); // 성형 하기
-    return promise(result + 1);
-  }, (error) => {
-    console.log(error);
-  })
-  .then((result) => {
-    showSuccess(workSteps[result].todo); // 2차 발효
-    return promise(result + 1);
-  }, (error) => {
-    console.log(error);
-  })
-  .then((result) => {
-    showSuccess(workSteps[result].todo); // 튀기기
-    console.log('꽈배기 완성@^.^@');
-  }, (error) => {
-    console.log(error);
-  })
-  .catch((error) => promise(error));
+  .then(
+    (result) => promise(result + 1),
+    (error) => console.log(error),
+  )
+  .then(
+    (result) => promise(result + 1),
+    (error) => console.log(error),
+  )
+  .then(
+    (result) => promise(result + 1),
+    (error) => console.log(error),
+  )
+  .then(
+    (result) => promise(result + 1),
+    (error) => console.log(error),
+  )
+  .then(
+    (result) => promise(result + 1),
+    (error) => console.log(error),
+  )
+  .catch((error) => console.log(error));

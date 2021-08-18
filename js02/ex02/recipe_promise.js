@@ -29,21 +29,34 @@ promise
 */
 
 function randomFail() {
-	if (Math.random() < 0.2) throw "제작 실패..!(월급이 삭감되었다 ㅜㅜ)";
+	// if (Math.random() < 0.2) throw "제작 실패..!(월급이 삭감되었다 ㅜㅜ)";
+	if (Math.random() < 0.2)
+		return false;
+	return true;
 }
 
 // 반죽만들기
 // let step_0 = new Promise((resolve, reject) => {
 function step_0() {
+	console.log(`반죽만들기`);
 	new Promise((resolve, reject) => {
 		// 반죽만들기 3초
 		let result = setTimeout(() => {
+			/*
 			try {
 				randomFail();
 				resolve("성공 : 반죽만들기");
 			} catch (e) {
 				clearTimeout(result);
 				console.log(e);
+				reject(new Error("실패 : 반죽만들기"));
+			}
+			*/
+			// remove try/catch
+			if (randomFail()) {  // 성공
+				resolve("성공 : 반죽만들기");
+			} else {
+				clearTimeout(result);
 				reject(new Error("실패 : 반죽만들기"));
 			}
 		}, 3000);
@@ -61,15 +74,24 @@ function step_0() {
 // 1차 발효
 // let step_1 = new Promise((resolve, reject) => {
 function step_1() {
+	console.log(`1차 발효`);
 	new Promise((resolve, reject) => {
 		// 1차 발효 5초
 		let result = setTimeout(() => {
+			/*
 			try {
 				randomFail();
 				resolve("성공 : 1차 발효");
 			} catch (e) {
 				clearTimeout(result);
 				console.log(e);
+				reject(new Error("실패 : 1차 발효"));
+			}
+			*/
+			if (randomFail()) {
+				resolve("성공 : 1차 발효");
+			} else {
+				clearTimeout(result);
 				reject(new Error("실패 : 1차 발효"));
 			}
 		}, 5000);
@@ -87,14 +109,23 @@ function step_1() {
 // 성형 하기
 // let step_2 = new Promise((resolve, reject) => {
 function step_2() {
+	console.log(`성형 하기`);
 	new Promise((resolve, reject) => {
 		let result = setTimeout(() => {
+			/*
 			try {
 				randomFail();
 				resolve("성공 : 성형 하기");
 			} catch (e) {
 				clearTimeout(result);
 				console.log(e);
+				reject(new Error("실패: 성형 하기"));
+			}
+			*/
+			if (randomFail()) {
+				resolve("성공 : 성형 하기");
+			} else {
+				clearTimeout(result);
 				reject(new Error("실패: 성형 하기"));
 			}
 		}, 4200);
@@ -112,14 +143,23 @@ function step_2() {
 // 2차 발효
 // let step_3 = new Promise((resolve, reject) => {
 function step_3() {
+	console.log(`2차 발효`);
 	new Promise((resolve, reject) => {
 		let result = setTimeout(() => {
+			/*
 			try {
 				randomFail();
 				resolve("성공 : 2차 발효");
 			} catch (e) {
 				clearTimeout(result);
 				console.log(e);
+				reject(new Error("실패: 2차 발효"));
+			}
+			*/
+			if (randomFail()) {
+				resolve("성공 : 2차 발효");
+			} else {
+				clearTimeout(result);
 				reject(new Error("실패: 2차 발효"));
 			}
 		}, 2000);
@@ -136,9 +176,11 @@ function step_3() {
 
 // 튀기기
 // let step_4 = new Promise((resolve, reject) => {
-function step_4(){
+function step_4() {
+	console.log(`튀기기`);
 	new Promise((resolve, reject) => {
 		let result = setTimeout(() => {
+			/*
 			try {
 				randomFail();
 				resolve("성공 : 튀기기");
@@ -147,15 +189,22 @@ function step_4(){
 				console.log(e);
 				reject(new Error("실패: 튀기기"));
 			}
+			*/
+			if (randomFail()) {
+				resolve("성공 : 튀기기");
+			} else {
+				clearTimeout(result);
+				reject(new Error("실패: 튀기기"));
+			}
 		}, 5000);
 	})
-	.then(value => {
-		console.log(value);
-	})
-	.catch(error => {
-		console.log(error);
-		step_4();
-	});
+		.then(value => {
+			console.log(value);
+		})
+		.catch(error => {
+			console.log(error);
+			step_4();
+		});
 }
 
 step_0();

@@ -32,6 +32,7 @@ function deleteToDo(e){
 	const tg = e.target;
 	const div = tg.parentNode;
 	ToDoList.removeChild(div);
+
 	const cleanToDos = toDos.filter(e => {
 		return e.id !== parseInt(div.id);
 	});

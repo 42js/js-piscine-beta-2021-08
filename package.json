@@ -1,0 +1,27 @@
+{
+  "type": "module",
+  "name": "piscine",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">JS Piscine</h1> <h4 align=\"center\">🔥 Javascript crunch course from scratch</h4>",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --fix",
+    "prettier": "npx --write prettier"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiyong95/piscine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jiyong95/piscine/issues"
+  },
+  "homepage": "https://github.com/Jiyong95/piscine#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "prettier": "2.3.2"
+  }
+}

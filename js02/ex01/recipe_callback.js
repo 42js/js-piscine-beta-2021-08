@@ -5,7 +5,7 @@ function randomFail() {
 let flag = 1;
 
 function makeDough() {
-  console.log("반죽 만드는 중...");
+  console.log("1) 반죽 만드는 중...");
   setTimeout(() => {
     try {
       randomFail();
@@ -19,7 +19,7 @@ function makeDough() {
 }
 
 function primaryFerment() {
-  console.log("1차 발효중...");
+  console.log("2) 1차 발효중...");
   setTimeout(() => {
     try {
       randomFail();
@@ -32,7 +32,7 @@ function primaryFerment() {
 }
 
 function shape() {
-  console.log("모양 만드는 중...");
+  console.log("3) 모양 만드는 중...");
   setTimeout(() => {
     try {
       randomFail();
@@ -44,7 +44,7 @@ function shape() {
   }, 4200);
 }
 function secondaryFerment() {
-  console.log("2차 발효중...");
+  console.log("4) 2차 발효중...");
   setTimeout(() => {
     try {
       randomFail();
@@ -56,7 +56,7 @@ function secondaryFerment() {
   }, 2000);
 }
 function fry() {
-  console.log("튀기는 중...");
+  console.log("5) 튀기는 중...");
   setTimeout(() => {
     try {
       randomFail();

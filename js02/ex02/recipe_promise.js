@@ -16,7 +16,7 @@ function cooking(num) {
         if (Math.random() < 0.2)
           reject(["제작 실패..!(월급이 삭감되었다 ㅜㅜ)", num]);
         else resolve(num);
-      }, 3000);
+      }, 5000);
     }
     if (num == 3) {
       console.log("3) 성형하는 중...");
@@ -24,7 +24,7 @@ function cooking(num) {
         if (Math.random() < 0.2)
           reject(["제작 실패..!(월급이 삭감되었다 ㅜㅜ)", num]);
         else resolve(num);
-      }, 3000);
+      }, 4200);
     }
     if (num == 4) {
       console.log("4) 2차 발효중...");
@@ -32,7 +32,7 @@ function cooking(num) {
         if (Math.random() < 0.2)
           reject(["제작 실패..!(월급이 삭감되었다 ㅜㅜ)", num]);
         else resolve(num);
-      }, 3000);
+      }, 2000);
     }
     if (num == 5) {
       console.log("5) 튀기는 중...");
@@ -40,8 +40,9 @@ function cooking(num) {
         if (Math.random() < 0.2)
           reject(["제작 실패..!(월급이 삭감되었다 ㅜㅜ)", num]);
         else resolve(num);
-      }, 3000);
+      }, 5000);
     }
+    if (num > 5) console.log("제작 완성!!!");
   });
   promise
     .then((num) => {

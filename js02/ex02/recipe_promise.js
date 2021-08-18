@@ -1,10 +1,10 @@
 function frying() {
-  console.log('[2차 발효] 시작');
-  const promiseSecondPhase = new Promise((resolve, reject) => {
-    if (Math.random() <= 0.2) setTimeout(resolve, 5000);
+  console.log('[튀기기] 시작');
+  const promiseFifthPhase = new Promise((resolve, reject) => {
+    if (Math.floor(Math.random() * 100) + 1) setTimeout(resolve, 5000);
     else setTimeout(reject, 5000);
   });
-  promiseSecondPhase
+  promiseFifthPhase
     .then(() => {
       console.log('[튀기기] 성공');
       console.log('끝');
@@ -17,11 +17,11 @@ function frying() {
 
 function secondFermentation() {
   console.log('[2차 발효] 시작');
-  const promiseSecondPhase = new Promise((resolve, reject) => {
-    if (Math.random() <= 0.2) setTimeout(resolve, 2000);
+  const promiseFourthPhase = new Promise((resolve, reject) => {
+    if (Math.floor(Math.random() * 100) + 1 > 20) setTimeout(resolve, 2000);
     else setTimeout(reject, 2000);
   });
-  promiseSecondPhase
+  promiseFourthPhase
     .then(() => {
       console.log('[2차 발효] 성공');
       frying();
@@ -34,13 +34,13 @@ function secondFermentation() {
 
 function shapingBread() {
   console.log('[성형 하기] 시작');
-  const promiseSecondPhase = new Promise((resolve, reject) => {
-    if (Math.random() <= 0.2) setTimeout(resolve, 4200);
+  const promiseThirdPhase = new Promise((resolve, reject) => {
+    if (Math.floor(Math.random() * 100) + 1 > 20) setTimeout(resolve, 4200);
     else setTimeout(reject, 4200);
   });
-  promiseSecondPhase
+  promiseThirdPhase
     .then(() => {
-      console.log('[2차 발효] 성공');
+      console.log('[성형 하기] 성공');
       secondFermentation();
     })
     .catch(() => {
@@ -52,7 +52,7 @@ function shapingBread() {
 function firstFermentation() {
   console.log('[1차 발효] 시작');
   const promiseSecondPhase = new Promise((resolve, reject) => {
-    if (Math.random() <= 0.2) setTimeout(resolve, 5000);
+    if (Math.floor(Math.random() * 100) + 1) setTimeout(resolve, 5000);
     else setTimeout(reject, 5000);
   });
   promiseSecondPhase
@@ -69,7 +69,7 @@ function firstFermentation() {
 function makeBatch() {
   console.log('[반죽] 시작');
   const promiseFirstPhase = new Promise((resolve, reject) => {
-    if (Math.random() <= 0.2) setTimeout(resolve, 3000);
+    if (Math.floor(Math.random() * 100) + 1) setTimeout(resolve, 3000);
     else setTimeout(reject, 3000);
   });
   promiseFirstPhase

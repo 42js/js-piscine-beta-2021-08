@@ -1,5 +1,5 @@
-// import { setTimer } from './setTimeTimeout.js';
-import { setTimer } from './setTimerInterval.js';
+// import { setTimer } from './setTimerInterval.js';
+import { setTimer } from './setTimeTimeout.js';
 
 function printNum(count) {
 	console.log(count);

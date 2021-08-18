@@ -1,0 +1,16 @@
+{
+  "name": "station-express",
+  "version": "1.0.0",
+  "description": "express for station name API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jolim",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.12"
+  }
+}

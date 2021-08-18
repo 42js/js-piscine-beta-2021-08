@@ -9,8 +9,8 @@
   },
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
-    "node-fetch": "^2.6.1",
-    "whatwg-fetch": "^3.6.2"
+    "axios": "^0.21.1"
   }
 }

@@ -1,18 +1,18 @@
 function addTime()
 {
-	let today = new Date();
-	let hours = today.getHours();
+	let today = new Date().toLocaleTimeString('ko-KR');
+	const timetag = document.getElementsByTagName("time");
+	/*let hours = today.getHours();
 	let minutes = today.getMinutes();
 	let seconds = today.getSeconds();
 	let timetext;
-	const timetag = document.getElementsByTagName("time");
 	timetag[0].setAttribute("datetime", today.toISOString());
 	if (hours >= 12)
 		timetext = "오후 " + (hours - 12);
 	else
-		timetext = "오전 ";
-	timetext += ":" + minutes + ":" + seconds;
-	timetag[0].innerHTML = timetext;
+		timetext = "오전 " + hours;
+	timetext += ":" + minutes + ":" + seconds;*/
+	timetag[0].innerHTML = today;
 }
 
 function addList()
@@ -23,7 +23,8 @@ function addList()
 	const li2 = document.createElement("li");
 	const li3 = document.createElement("li");
 	const li4 = document.createElement("li");
-
+	li1.innerText = ".";
+		innerHTML = ">";
 	const text1 = "Screen: " + screen.width + " * " + screen.height;
 	const text2 = "Window Outer: " + window.outerWidth + " * " + window.outerHeight;
 	const text3 = "Window Inner: " + window.innerWidth + " * " + window.innerHeight;

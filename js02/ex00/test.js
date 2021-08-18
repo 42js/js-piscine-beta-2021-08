@@ -5,4 +5,4 @@ function printNum(count) {
   return count < 3;
 }
 
-setTimer(printNum, 1000); // 0 1 2 3 <= 각각 100ms의 간격으로 출력됨.
+setTimer(printNum, 100); // 0 1 2 3 <= 각각 100ms의 간격으로 출력됨.

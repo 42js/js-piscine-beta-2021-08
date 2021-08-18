@@ -1,12 +1,11 @@
 let count = 0;
 
 function setTimer(callback, interval) {
-  const result = setTimeout(() => {
-    if (!callback(count)) clearTimeout(result);
-    else {
+  setTimeout(() => {
+    if (callback(count)) {
       count += 1;
       setTimer(callback, interval);
-    }
+    } else clearTimeout(interval);
   }, interval);
 }
 

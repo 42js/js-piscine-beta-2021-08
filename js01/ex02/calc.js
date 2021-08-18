@@ -47,6 +47,7 @@ function calculate() {
 	else {
 		level.disabled = "disabled";
 		level.value = "";
+		document.querySelector('.sale').innerHTML = "";
 	}
 
 	let sale = undefined;

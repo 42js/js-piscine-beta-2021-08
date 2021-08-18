@@ -6,3 +6,4 @@ package-lock.json
 .prettierrc.json
 .eslintrc.js
 test.js
+settings.json

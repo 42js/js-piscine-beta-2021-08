@@ -9,4 +9,5 @@ function setTimer(callback, interval) {
     }
   }, interval);
 }
-export { setTimer };
+
+export default setTimer;

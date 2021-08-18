@@ -1,6 +1,7 @@
 function randomFail() {
   if (Math.random() < 0.2)
 		return "제작 실패..!(월급이 삭감되었다 ㅜㅜ)";
+	return false;
 }
 
 const recipe = {
@@ -26,7 +27,8 @@ function cook(stage) {
 			}, recipe[stageName]);
 		}
 		return;
-	}).then((stageName) => {
+	})
+	.then((stageName) => {
 		console.log(`${stageName} 성공!`);
 		return cook(stage + 1);
 	}).catch((result) => {

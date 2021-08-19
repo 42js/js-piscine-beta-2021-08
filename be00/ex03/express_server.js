@@ -14,7 +14,7 @@ app.get(`/station/:name`, (req, res) => {
 	fs.readFile(`./station/seoul_metro_station.json`, `utf8`, (err, value) => {
 		if (err) {
 			console.log(err);
-		}else {
+		} else {
 			var temp = JSON.parse(value);
 			// console.log(temp);  // 너무 잘동작하고.
 			// console.log(temp["DATA"][0]["station_nm"]);  // 잘 동작하는 것을 확인
@@ -25,6 +25,33 @@ app.get(`/station/:name`, (req, res) => {
 			// 똑같다.
 			res.status(200).set(`Content-Type`, `Application/json`).send(temp["DATA"][index]);
 			// res.status(200).set(`Content-Type`, `Application/json`).send(JSON.stringify(temp["DATA"][index]));
+		}
+	})
+})
+
+app.get(`/line`, (req, res) => {
+	console.log(req.query.line_num);
+	fs.readFile(`./station/seoul_metro_station.json`, `utf8`, (err, value) => {
+		if (err) {
+			console.log(err);
+		} else {
+			if (!req.query.line_num) {
+				console.log("have not");
+				// default 설정
+				req.query.line_num = "01호선";
+			} else {
+				var temp = JSON.parse(value);
+				var data;
+				console.log("0" + req.query.line_num + "호선");
+				console.log(`temp[DATA][index]["line_num"] = ${temp["DATA"][0]["line_num"]}`);
+				for (index = 0; index < temp["DATA"].length; ++index) {
+					// console.log(`index = ${index}`);
+					// console.log(`temp[DATA][index]["line_num"] = ${temp["DATA"][index]["line_num"]}`);
+					if (temp["DATA"][index]["line_num"] === ("0" + req.query.line_num + "호선"))
+						data += JSON.stringify(temp["DATA"][index]);
+				}
+				res.status(200).set("Content-Type", "Application/json").send(data);
+			}
 		}
 	})
 })

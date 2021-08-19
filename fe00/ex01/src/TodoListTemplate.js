@@ -1,9 +1,7 @@
-import './App.css';
+import React from 'react';
+import './TodoListTemplate.css';
 
 const TodoListTemplate = ({form, children}) => {
-
-  form = "입력할 부분";
-
   return (
     <main className="todo-list-template">
       <div className="title">
@@ -20,5 +18,6 @@ const TodoListTemplate = ({form, children}) => {
     </main>
   );
 };
+
 
 export default TodoListTemplate;

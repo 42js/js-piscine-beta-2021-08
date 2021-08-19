@@ -4,7 +4,7 @@
   "description": "",
   "main": "ex00.js",
   "scripts": {
-    "start": "nodemon ./ex01.js localhost 4242",
+    "start": "nodemon ./ex00.js localhost 4242",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

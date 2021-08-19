@@ -4,22 +4,6 @@ import ItemList from "./ItemList";
 import Input from "./Input";
 
 export default class ToDoListTemplate extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      inputValue: "",
-      items: [],
-    };
-  }
-
-  getInputValue = (value) => {
-    this.state.items.push(value);
-    this.setState({
-      inputValue: value,
-      items: this.state.items,
-    });
-  };
-
   render() {
     return (
       <div>
@@ -28,10 +12,14 @@ export default class ToDoListTemplate extends Component {
         </header>
         <main>
           <section className="inputSection">
-            <Input getInputValue={this.getInputValue} />
+            <Input
+              value={this.props.inputValue}
+              getInputValue={this.props.getInputValue}
+              onAddButtonClick={this.props.handleAddButtonClick}
+            />
           </section>
           <section className="listSection">
-            <ItemList items={this.state.items} />
+            <ItemList items={this.props.items} />
           </section>
         </main>
       </div>

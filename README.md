@@ -1,7 +1,7 @@
 <h1 align="center">JS Piscine</h1>
 <h4 align="center">🔥 Javascript crunch course from scratch</h4>
 
-42 Cadet들이 만드는 Javasciprt 단기 교육과정, 피씬(Piscine) 프로젝트입니다<br>
+42 Cadet들이 만드는 Javascript 단기 교육과정, 피씬(Piscine) 프로젝트입니다<br>
 
 ## 🗒 커리큘럼
 
@@ -42,7 +42,7 @@
 <br>
 
 ### 베타 진행 일정
-![](images/beta_schedule.png)
+![베타 진행 일정](images/beta_schedule.png)
 
 > ⏰ 제출 마감 시각은 마감일 KST 23:41:59이고, 제출한 서브젝트의 평가 기간은 마감 날짜 KST 23:42:00부터 익일 KST 23:41:59까지 입니다.
 
@@ -63,7 +63,11 @@
 
 > 🚨 모든 마감 시각 기준은 Github 서버시간 기준입니다. 기간을 지키지 않는 제출내용은 무조건 0점입니다.
 
-> 🚨 PR을 제출한 이후부턴 commit, force-push, 내용 변경을 하면 안됩니다. 이또한 기간을 지키지 않는 제출내용으로 간주해 0점을 부여할 예정입니다.
+> 🚨 마감 이후 해당 PR의 Branch에 commit, force-push, 내용 변경을 하면 안됩니다. 이 또한 기간을 지키지 않는 제출내용으로 간주해 0점을 부여할 예정입니다.
+
+> 🚨 서브젝트당 단 하나의 PR만이 존재해야 합니다. Close 후 다시 PR 날리는 것도 0점을 부여 하게 됩니다.
+
+> 🚨 또한 해당 PR에는 해당 서브젝트에 관련된 파일만을 수정하여 제출 해야 합니다. 이러한 항목을 지키지 않는 제출은 0점을 부여하게 됩니다.
 
 ## 🏊‍♀️ Piscine이란?
 

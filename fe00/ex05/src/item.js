@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './item.css';
 
 export class ItemList extends Component {
+
+	shouldComponentUpdate(nextProps, nextState) {
+		return this.props.todos !== nextProps.todos;
+	}
+
 	render() {
     	const { todos, onToggle, onRemove } = this.props;
 
@@ -27,9 +32,14 @@ export class ItemList extends Component {
 }
 
 export class Items extends Component {
+
+	shouldComponentUpdate(nextProps, nextState) {
+		return this.props.checked !== nextProps.checked;
+	}
+
     render() {
     	const { text, checked, id, onToggle, onRemove } = this.props;
-  
+//		console.log(id);
     	return (
 			<div className="todo-item" onClick={() => onToggle(id) }>
 			<div className="remove" onClick={(e) => {

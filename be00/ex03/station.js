@@ -32,11 +32,11 @@ router.get('/:name', (req, res) => {
     res.status(code).setHeader('Content-Type', 'application/json').send(NotFound);
   }
 })
-  .post('/station/id', (req, res) => {
+  .post('/id', (req, res) => {
   try {
     const code = req.body;
     if (code === undefined || code ['fr_code'] === undefined) throw 404;
-    const station = _.find(stationArr, (station) => {
+    const station = _.find(stations, (station) => {
       return station['fr_code'] === code['fr_code'];
     })
     if (station === undefined) throw 404;

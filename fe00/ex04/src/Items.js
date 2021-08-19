@@ -3,12 +3,13 @@ import './Items.css';
 
 class Items extends Component {
 	render() {
-		const { todo } = this.props;
+		const { todo, onRemove, onToggle } = this.props;
 
 		return (
 			<div className="Item">
-				<div className="text" name="text">{todo.text}</div>
-				<button className="remove">X</button>
+				{todo.checked ? <div className="checkBox">✓</div> : false}
+				<div className={"text" + (todo.checked ? ' checkText' : '')} onClick={() => onToggle(todo.id)} name="text">{todo.text}</div>
+				<button className="remove" onClick={() => onRemove(todo.id)} >X</button>
 			</div>
 		);
 	}

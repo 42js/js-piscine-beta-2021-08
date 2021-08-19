@@ -4,7 +4,7 @@ import './ItemList.css';
 
 class ItemList extends Component {
 	render() {
-		const { todos } = this.props;
+		const { todos, onRemove, onToggle } = this.props;
 
 		return (
 			<div className="List">
@@ -12,6 +12,8 @@ class ItemList extends Component {
 					<Items
 						key={todo.id}
 						todo={todo}
+						onRemove={onRemove}
+						onToggle={onToggle}
 					/>)
 				}
 			</div>

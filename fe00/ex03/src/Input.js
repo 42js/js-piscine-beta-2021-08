@@ -8,7 +8,7 @@ class Input extends Component {
 		return (
 			<div className="Insert" onSubmit={onSubmit} >
 				<form className="form">
-					<input className="todo" placeholder="할 일을 입력하세요." autoComplete="off" onChange={onChangeInput} value={input} />
+					<input className="todo" placeholder="할 일을 입력하세요." autoComplete="off" onChange={onChangeInput} value={input} required />
 					<button className="add">ADD</button>
 				</form>
 			</div>

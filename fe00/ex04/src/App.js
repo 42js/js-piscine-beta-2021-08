@@ -15,15 +15,24 @@ const App = () => {
 		const newTodo = {
 			id: Date.now(),
 			text: input,
+			checked: false,
 		};
 		setInput('');
 		setTodos(todos.concat(newTodo));
+	}
+	const onRemove = (id) => {
+		setTodos(todos.filter(todo => todo.id !== id))
+	}
+	const onToggle = (id) => {
+		setTodos(todos.map(todo =>
+			id === todo.id ? {...todo, checked: !todo.checked} : todo
+		))
 	}
 
 	return (
 		<div className="app">
 			<ToDoListTemplate onChangeInput={onChangeInput} input={input} onSubmit={onSubmit} />
-			<ItemList todos={todos} />
+			<ItemList todos={todos} onRemove={onRemove} onToggle={onToggle} />
 		</div>
 	);
 }

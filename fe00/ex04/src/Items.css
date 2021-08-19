@@ -9,6 +9,10 @@
 .Item:hover {
 	background: #dee2e6;
 }
+.checkBox {
+	font-size: 1rem;
+	color: #ff6b6b;
+}
 .text {
 	margin-left: 0.5rem;
 	flex: 1;
@@ -16,6 +20,16 @@
 	background: none;
 	border: 0;
 	border-radius: 3px;
+}
+.checkText {
+	margin-left: 0.5rem;
+	flex: 1;
+	font-size: 1rem;
+	background: none;
+	border: 0;
+	border-radius: 3px;
+	text-decoration: line-through;
+	color: #ff6b6b;
 }
 .remove {
 	display: flex;

@@ -1,5 +1,4 @@
 import "./App.css";
-import "./ToDoListTemplate";
 import ToDoListTemplate from "./ToDoListTemplate";
 
 function App() {

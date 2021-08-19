@@ -1,0 +1,14 @@
+{
+  "name": "ex02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ex02.js",
+  "scripts": {
+    "test": "nodemon ex02.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "2.0.12"
+  }
+}

@@ -1,16 +1,15 @@
 import './App.css';
 
-const TodoListTemplate = ({form, children}) => {
+const App = ({form, children}) => {
 
   form = "입력할 부분";
 
   return (
-    <main className="todo-list-template">
+    <main className="app">
       <div className="title">
         TodoList
       </div>
       <section className="form-wrapper">
-        입력할 부분
         {form}
       </section>
       <section className="todos-wrapper">
@@ -21,4 +20,4 @@ const TodoListTemplate = ({form, children}) => {
   );
 };
 
-export default TodoListTemplate;
+export default App;

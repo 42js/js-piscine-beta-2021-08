@@ -7,7 +7,7 @@ class Input extends React.Component{
             <section className="input">
                 <input value={value} onChange={onChange} onKeyPress={onKeyPress}/>
                 <div className="create-button" onClick={onCreate}>
-                    추가
+                    ADD
                 </div>
             </section>
         );

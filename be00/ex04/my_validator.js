@@ -13,7 +13,6 @@ const passwordValidator = (string) => {
 }
 
 const myValidator = (req, res, next) => {
-  console.log(userNameValidator(req.body.username));
   if (req.body.email === undefined ||
     req.body.username === undefined ||
     req.body.password === undefined) {

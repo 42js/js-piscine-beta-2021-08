@@ -1,0 +1,8 @@
+extends default.pug
+
+block main
+  each key, val in breeds
+    if (val != 'pug')
+      a(href='breeds/'+val) #{val}
+      br
+    else

@@ -31,7 +31,7 @@ function doOneproc(procId)
 						else
 							resolve(procId);
 						}, receipe[procId]);}
-			);
+			)
 	mypromise.then((procId) => {
 				printWithTime(process[procId] + " 끝");
 				doOneproc(++procId)

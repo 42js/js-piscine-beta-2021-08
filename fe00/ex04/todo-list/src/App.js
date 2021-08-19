@@ -53,7 +53,6 @@ class App extends Component {
   };
 
   handleRemove = (id) => {
-    console.log(id);
     const { todos } = this.state;
     this.setState({
       todos: todos.filter((todo) => todo.id !== id),

@@ -12,6 +12,10 @@ class Item extends Component {
     const { text, checked, id, onToggle, onRemove } = this.props;
     return (
       <div className="todo-item" onClick={() => onToggle(id)}>
+        {checked && <div className="check-mark">&#10004;</div>}
+        <div className={`todo-text ${checked && 'checked'}`}>
+          <div>{text}</div>
+        </div>
         <div
           className="remove"
           onClick={(e) => {
@@ -21,10 +25,6 @@ class Item extends Component {
         >
           &times;
         </div>
-        <div className={`todo-text ${checked && 'checked'}`}>
-          <div>{text}</div>
-        </div>
-        {checked && <div className="check-mark">✓</div>}
       </div>
     );
   }

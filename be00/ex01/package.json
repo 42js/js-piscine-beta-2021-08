@@ -1,0 +1,16 @@
+{
+  "name": "ex01",
+  "version": "1.0.0",
+  "main": "ex01.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ex01.js",
+    "start:dev": "nodemon --watch ex01.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

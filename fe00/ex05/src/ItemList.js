@@ -2,9 +2,6 @@ import { Component } from "react";
 import Item from "./Item";
 
 class ItemList extends Component {
-    shouldComponentUpdate(nextProps, nextState) {
-        return this.props.todos !== nextProps.todos;
-    }
     render() {
         const { todos, onClickRm, onClickCheck } = this.props;
         const item = todos.map((item) => (

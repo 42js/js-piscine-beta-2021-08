@@ -1,0 +1,19 @@
+section {
+    height: 30px;
+    width: 300px;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.todoBtn {
+    color: rgb(227, 94, 94);
+}
+
+section:hover {
+    background-color: rgb(189, 189, 189);
+}

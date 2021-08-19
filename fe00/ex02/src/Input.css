@@ -1,0 +1,28 @@
+.Input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 50px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px 2px rgb(220, 220, 220);
+
+    width: 300px;
+    padding: 0px 10px;
+    margin-bottom: 30px;
+}
+
+button {
+    margin-left: 10px;
+    border: 0px;
+    background-color: inherit;
+}
+
+input {
+    border: 0px;
+}
+
+input:focus {
+    border: 0px;
+}

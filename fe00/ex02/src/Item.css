@@ -1,0 +1,51 @@
+item {
+  padding: 1rem;
+  margin: 2rem;
+  display: flex;
+  align-items: center; /* 세로 가운데 정렬 */
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.item:hover {
+  background: rgb(214, 214, 214);
+}
+
+/* item 에 마우스가 있을때만 .remove 보이기 */
+.item:hover .remove {
+  opacity: 1;
+}
+
+/* item 사이에 윗 테두리 */
+.item + .item {
+  border-top: 1px solid #f1f3f5;
+}
+
+.remove {
+  padding: 1rem;
+  align-items: center; /* 세로 가운데 정렬 */
+  float: right;
+  margin-right: 0.5rem;
+  color: #e64980;
+  font-weight: 600;
+  opacity: 0;
+}
+
+.text {
+  flex: 1; /* 체크, 엑스를 제외한 공간 다 채우기 */
+  word-break: break-all;
+  padding: 1rem;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: #adb5bd;
+}
+
+.check-mark {
+  font-size: 1.5rem;
+  line-height: 1rem;
+  /* margin-left: 1rem; */
+  font-weight: 800;
+}

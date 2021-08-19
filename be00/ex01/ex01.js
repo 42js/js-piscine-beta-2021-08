@@ -18,19 +18,10 @@ server.on('request', (request, response)=>{
 				response.setHeader('Content-Type','text/html');
 				response.end(data);});
 			}
-			else
-			{
-				response.statusCode = 400;
-				response.end();
-			}
 				});
 
-server.on('connection', f_connect);
+server.on('connection', ()=>{});
 server.listen(port, hostname, f_start);
-
-function f_connect()
-{
-}
 
 function f_start()
 {

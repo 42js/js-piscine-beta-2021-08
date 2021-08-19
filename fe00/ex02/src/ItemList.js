@@ -3,7 +3,8 @@ import Item from './Item';
 
 class ItemList extends Component {
   render() {
-    const { itemlist, onToggle, onRemove } = this.props;
+    // TODO: 동작 만들기
+    // const { itemlist, onToggle, onRemove } = this.props;
 
     return (
       <div>

@@ -3,12 +3,14 @@ import "./Item.css";
 
 class Item extends Component {
     shouldComponentUpdate(nextProps, nextState) {
+        //console.log("check", this.props, nextProps);
+        if (this.props.idx !== nextProps.idx) return true;
         return this.props.checked !== nextProps.checked;
     }
 
     render() {
         const { todo, idx, checked, onClickRm, onClickCheck } = this.props;
-        console.log(idx);
+        console.log("change", todo);
         return (
             <section
                 dataId={idx}

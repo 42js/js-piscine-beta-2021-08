@@ -6,30 +6,36 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: "",
+      input: "",
       todoList: [],
     };
   }
 
-  getInputValue = (value) => {
-    this.setState({ value: value });
+  handleInputChange = (e) => {
+    this.setState({ input: e.target.value });
   };
 
   AddTodo = () => {
-    this.state.todoList.push(this.state.value);
+    const { input, todoList } = this.state;
     this.setState({
-      todoList: this.state.todoList,
+      todoList: todoList.concat(input),
     });
   };
 
+  handleKeyPress = (e) => {
+    if (e.key === "Enter") this.AddTodo();
+  };
+
   render() {
+    const { input, todoList } = this.state;
     return (
       <div className="App">
         <ToDoListTemplate
-          inputValue={this.state.value}
-          getInputValue={this.getInputValue}
-          handleAddButtonClick={this.AddTodo}
-          items={this.state.todoList}
+          inputValue={input}
+          items={todoList}
+          onInputChange={this.handleInputChange}
+          onKeyPress={this.handleKeyPress}
+          onAddButtonClick={this.AddTodo}
         />
       </div>
     );

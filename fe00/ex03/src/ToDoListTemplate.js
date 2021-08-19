@@ -5,6 +5,9 @@ import Input from "./Input";
 
 export default class ToDoListTemplate extends Component {
   render() {
+    const { inputValue, items, onInputChange, onKeyPress, onAddButtonClick } =
+      this.props;
+
     return (
       <div>
         <header>
@@ -13,13 +16,14 @@ export default class ToDoListTemplate extends Component {
         <main>
           <section className="inputSection">
             <Input
-              value={this.props.inputValue}
-              getInputValue={this.props.getInputValue}
-              onAddButtonClick={this.props.handleAddButtonClick}
+              inputValue={inputValue}
+              onInputChange={onInputChange}
+              onKeyPress={onKeyPress}
+              onAddButtonClick={onAddButtonClick}
             />
           </section>
           <section className="listSection">
-            <ItemList items={this.props.items} />
+            <ItemList items={items} />
           </section>
         </main>
       </div>

@@ -1,0 +1,12 @@
+.할일입력{
+    display:flex;
+    border-bottom: black 1px solid;
+    padding-bottom: 30px;
+    padding-left:15px;
+}
+.할일출력{
+    display:flex;
+    border-bottom: black 1px solid;
+    padding-bottom: 80px;
+
+}

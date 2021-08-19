@@ -1,14 +1,14 @@
 import http from "http";
 
-const hostname = "localhost";
 const PORT = 4242;
 
 const server = http.createServer((req, res) => {
-  // 요청이 오면 실행되는 콜백 함수
-  res.end("Helloooo Node.js!");
-  //   res.send("HELLOOOO");
+  // 서버로 오는 HTTP 요청마다 한번씩 실행되는 콜백 함수
+  res.statusCode = 200;
+  res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
+  res.end("안녕, Node.js!");
 });
 
-server.listen(PORT, hostname, () => {
+server.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
 });

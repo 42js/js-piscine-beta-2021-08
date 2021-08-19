@@ -1,31 +1,40 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import ItemList from './ItemList';
 import ToDoListTemplate from './ToDoListTemplate';
 
-const App = () => {
-	const [todos, setTodos] = useState([]);
-	const [input, setInput] = useState('');
-
-	const onChangeInput = (e) => {
-		setInput(e.target.value);
+class App extends Component {
+	state = {
+		input: '',
+		todos: [],
 	}
-	const onSubmit = (e) => {
+
+	onChangeInput = (e) => {
+		this.setState({
+			input: e.target.value
+		});
+	}
+	onSubmit = (e) => {
+		const { input, todos } = this.state;
 		e.preventDefault();
 		const newTodo = {
 			id: Date.now(),
 			text: input,
 		};
-		setInput('');
-		setTodos(todos.concat(newTodo));
+		this.setState({
+			input: '',
+			todos: todos.concat(newTodo)
+		})
 	}
 
-	return (
-		<div className="app">
-			<ToDoListTemplate onChangeInput={onChangeInput} input={input} onSubmit={onSubmit} />
-			<ItemList todos={todos} />
-		</div>
-	);
+	render () {
+		return (
+			<div className="app">
+				<ToDoListTemplate onChangeInput={this.onChangeInput} input={this.state.input} onSubmit={this.onSubmit} />
+				<ItemList todos={this.state.todos} />
+			</div>
+		);
+	}
 }
 
 export default App;

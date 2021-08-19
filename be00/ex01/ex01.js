@@ -9,6 +9,7 @@ const server = http.createServer(function(request, response) {
         fs.readFile(__dirname + 'index.html', (err, data) => {
             if (err) {
                 request.statusCode = 500;
+                response.end(err);
                 console.log(`[${request.statusCode}] Server Error`)
             }
             else response.end(data, 'utf-8');

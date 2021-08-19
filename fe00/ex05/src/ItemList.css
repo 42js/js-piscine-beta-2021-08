@@ -1,0 +1,10 @@
+.List {
+	width: 90%;
+	min-height: 320px;
+	max-height: 513px;
+	overflow-y: auto;
+	background: white;
+	border-radius: 0 0 4px 4px;
+	margin-left: auto;
+	margin-right: auto;
+}

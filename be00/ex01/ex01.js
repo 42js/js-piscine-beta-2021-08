@@ -1,4 +1,5 @@
-import http, { createServer, fs } from 'http';
+import http, { createServer } from 'http';
+import fs from 'fs';
 
 const options = {
   hostname: 'localhost',
@@ -31,17 +32,10 @@ http.get('http://localhost:4242', options, (res) => {
 
 const server = createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<html lang="en">');
-  res.write('<head><meta charset="UTF-8"><title>안녕, Node.js!</title></head>');
-  res.write('<body><h1>안녕, Node.js!</h1></body>');
-  res.write('</html>');
+  fs.readFile('./ex01.html', (err, data) => {
+    if (err) throw err;
+    res.write(data);
+  });
 });
 
 server.listen(4242);
-
-server.on('request', (req, res) => {
-  fs.readFile('./ex01.html', (err, data) => {
-    if (err) throw err;
-    console.log();
-  });
-});

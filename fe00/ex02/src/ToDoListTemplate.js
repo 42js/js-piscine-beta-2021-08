@@ -1,16 +1,40 @@
-import React from "react";
+import React, { Component } from "react";
 import "./ToDoListTemplate.css";
+import ItemList from "./ItemList";
+import Input from "./Input";
 
-export default function ToDoListTemplate() {
-  return (
-    <div>
-      <header>
-        <h1>To Do List</h1>
-      </header>
-      <main>
-        <section className="inputSection">입력할 부분</section>
-        <section className="listSection">할일 리스트 부분</section>
-      </main>
-    </div>
-  );
+export default class ToDoListTemplate extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: "",
+      items: [],
+    };
+  }
+
+  getInputValue = (value) => {
+    this.state.items.push(value);
+    this.setState({
+      inputValue: value,
+      items: this.state.items,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <header>
+          <h1>To Do List</h1>
+        </header>
+        <main>
+          <section className="inputSection">
+            <Input getInputValue={this.getInputValue} />
+          </section>
+          <section className="listSection">
+            <ItemList items={this.state.items} />
+          </section>
+        </main>
+      </div>
+    );
+  }
 }

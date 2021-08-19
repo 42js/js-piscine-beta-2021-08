@@ -2,7 +2,16 @@ header {
   border: 1px solid grey;
 }
 
+h1 {
+  text-align: center;
+}
+
 section {
-  height: 200px;
   border: 1px solid grey;
+}
+
+.inputSection {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
 }

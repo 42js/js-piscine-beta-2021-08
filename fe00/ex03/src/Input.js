@@ -6,6 +6,10 @@ export default class Input extends Component {
     this.props.getInputValue(e.target.value);
   };
 
+  handleKeyPress = (e) => {
+    if (e.key === "Enter") this.props.onAddButtonClick();
+  };
+
   render() {
     return (
       <div>
@@ -13,6 +17,7 @@ export default class Input extends Component {
           type="text"
           value={this.props.inputValue}
           onChange={this.handleInputChange}
+          onKeyPress={this.handleKeyPress}
         ></input>
         <button
           type="button"

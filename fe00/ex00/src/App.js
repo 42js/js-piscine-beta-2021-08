@@ -1,6 +1,5 @@
 import './App.css';
 
-
 const TodoListTemplate = ({form, children}) => {
 
   form = "입력할 부분";

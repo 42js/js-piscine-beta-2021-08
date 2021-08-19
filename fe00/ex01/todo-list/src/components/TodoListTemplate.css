@@ -1,0 +1,30 @@
+.todo-list-template {
+	background: white;
+	width: 600px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); /* 그림자 */ 
+	margin: 0 auto; /* 페이지 중앙 정렬 */
+	margin-top: 4rem;
+}
+
+.title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	font-size: 3.0rem;
+	font-weight: 300;
+	border: 1px solid black;
+	color: black;
+}
+
+.form-wrapper {
+	display: flex;
+	padding: 1rem;
+	min-height: 4rem;
+	align-items: center;
+	border-bottom: 1px solid black;
+}
+
+.todos-wrapper {
+	min-height: 6rem;
+}

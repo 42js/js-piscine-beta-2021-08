@@ -4,6 +4,7 @@ const port = 4242;
 const hostname = "localhost";
 
 const fs = require("fs");
+const { TIMEOUT } = require("dns");
 const file = "./data.json";
 
 http.createServer((req, res) => {
@@ -68,7 +69,22 @@ http.createServer((req, res) => {
 		}
 	} else if (req.method === "DELETE") {
 		console.log("DELETE 요청이 왔습니다.");
-
+		if (req.url === `/file`) {
+			console.log("in delete");
+			fs.readFile(file, 'utf8', (err, value) => {
+				if (err)
+					return setError_500(res);
+				res.statusCode = 200;
+				res.setHeader("Content-Type", "Application/json");
+				var temp = JSON.parse(value);
+				// 지우기
+				delete temp.data;
+				temp["message"] = "Content deleted successfully."
+				res.end(JSON.stringify(temp));
+			})
+		} else {
+			setError_500(res);
+		}
 	} else {
 		setError_500(res);
 	}

@@ -4,10 +4,19 @@ import "./Item.css";
 
 export default class ItemList extends Component {
   render() {
+    const { items, onToggle, onDelete } = this.props;
+
     return (
       <div>
-        {this.props.items.map((item, index) => (
-          <Item key={index} value={item} />
+        {items.map(({ id, value, checked }) => (
+          <Item
+            key={id}
+            id={id}
+            value={value}
+            checked={checked}
+            onToggle={onToggle}
+            onDelete={onDelete}
+          />
         ))}
       </div>
     );

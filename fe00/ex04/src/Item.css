@@ -8,3 +8,8 @@ li {
 li:hover {
   background-color: #ccc;
 }
+
+li.done {
+  text-decoration: line-through;
+  color: #444;
+}

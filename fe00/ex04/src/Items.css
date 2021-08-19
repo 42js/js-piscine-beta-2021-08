@@ -1,0 +1,39 @@
+.Item {
+	padding: 0.3rem;
+	display: flex;
+	align-items: center;
+}
+.Item:nth-child(even) {
+	background: #f8f9fa;
+}
+.Item:hover {
+	background: #dee2e6;
+}
+.text {
+	margin-left: 0.5rem;
+	flex: 1;
+	font-size: 1rem;
+	background: none;
+	border: 0;
+	border-radius: 3px;
+}
+.remove {
+	display: flex;
+	align-items: center;
+	font-size: 1.2rem;
+	color: #ff6b6b;
+	cursor: pointer;
+	background: none;
+	outline: none;
+	border: none;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	transition: 0.1s background ease-in;
+}
+.remove:hover {
+	color: #a187ff;
+	background: none;
+}
+.Item + .Item {
+	border-top: 1px solid #dee2e6;
+}

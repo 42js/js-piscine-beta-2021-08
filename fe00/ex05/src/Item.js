@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './Item.css';
 
 class Item extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.checked !== nextProps.checked;
+  }
+
   render() {
     const { text, checked, id, onToggle, onRemove } = this.props;
 

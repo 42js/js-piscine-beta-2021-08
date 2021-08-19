@@ -1,4 +1,6 @@
 import http, { createServer } from 'http';
+import url from 'url';
+import console from 'console';
 
 const options = {
   hostname: 'localhost',
@@ -37,4 +39,6 @@ const server = createServer((req, res) => {
   res.write('</html>');
 });
 
-server.listen(4242);
+server.listen(4242, () => {
+  console.log(`Server is running on ${url}`);
+});

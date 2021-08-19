@@ -8,7 +8,7 @@
 }
 
 .todo-item:hover {
-	background: #e3fafc;
+	background: rgb(175, 170, 170);
 }
 
   /* todo-item 에 마우스가 있을때만 .remove 보이기 */
@@ -18,7 +18,7 @@
 
   /* todo-item 사이에 윗 테두리 */
 .todo-item + .todo-item {
-	border-top: 1px solid #f1f3f5;
+	border-top: 1px solid rgb(175, 170, 170);
 }
 
 .remove {

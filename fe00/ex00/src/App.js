@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+const TodoListTemplate = ({form, children}) => {
+
+  form = "입력할 부분";
+
+  return (
+    <main className="todo-list-template">
+      <div className="title">
+        TodoList
+      </div>
+      <section className="form-wrapper">
+        {form}
+      </section>
+      <section className="todos-wrapper">
+        할일 리스트 부분
+        { children }
+      </section>
+    </main>
+  );
+};
+
+export default TodoListTemplate;

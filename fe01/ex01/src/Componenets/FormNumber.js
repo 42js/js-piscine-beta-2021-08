@@ -4,7 +4,7 @@ function formNumber() {
   const [input, setInput] = useState(0);
 
   const handleChange = ({ target: { value } }) => {
-    setInput(value);
+    setInput(+value);
   };
 
   const handlePlusButton = (event) => {

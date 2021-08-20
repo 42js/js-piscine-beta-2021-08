@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Card, CardHeader, CardContent, Typography } from '@material-ui/core';
 
 const FirstContentBlock = styled.div`
 	font-weight: bold;
@@ -8,6 +9,16 @@ const FirstContentBlock = styled.div`
 const FirstContent = () => {
 	return (
 		<FirstContentBlock>
+			<Card elevation={5}>
+				<CardHeader title="kunlee card 컴포넌트입니다" />
+				<img src="/images/profile.png" alt="img" />
+				<CardContent>
+					<Typography variant="body1" component="p">
+						kunlee <br />
+					</Typography>
+				</CardContent>
+			</Card>
+			<br/>
 			<div>
 				배민 가고 싶은 kunlee 입니다.
 				소개할 내용이 딱히 없어서 글자수 채우기 하겠습니다.

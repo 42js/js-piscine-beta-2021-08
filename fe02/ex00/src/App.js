@@ -1,10 +1,14 @@
-import './App.css';
+import React from 'react';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div>
-    </div>
-  );
+const App = async () => {
+	const data = await axios.get();
+
+	return (
+		<div>
+			{data}
+		</div>
+	)
 }
 
 export default App;

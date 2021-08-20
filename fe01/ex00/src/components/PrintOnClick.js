@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './PrintOnClick.css';
 
-const PrintOnClick = ({ onChange, onKeyPress, onClick }) => {
+const PrintOnClick = ({ text, onChange, onKeyPress, onClick }) => {
   return (
     <div className="total">
       <form>
         <input
           className="input-box1"
           type="text"
+          value={text}
           onChange={onChange}
           onKeyPress={onKeyPress}
         />
@@ -23,6 +24,7 @@ const PrintOnClick = ({ onChange, onKeyPress, onClick }) => {
 };
 
 PrintOnClick.propTypes = {
+  text: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onKeyPress: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,

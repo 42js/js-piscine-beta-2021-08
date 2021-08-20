@@ -29,6 +29,6 @@
 }
 
 .print-button:hover {
-	background: grey;
+	background: rgb(243, 144, 144);
 	color: black;
 }

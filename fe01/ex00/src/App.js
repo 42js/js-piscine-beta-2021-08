@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PrintOnInput from './components/PrintOnInput';
 import PrintOnClick from './components/PrintOnClick';
 import './App.css';
@@ -24,18 +24,22 @@ function App() {
 
   const onChange2 = (e) => {
     setText2(e.target.value);
-    console.log(text2);
   };
+
+  useEffect(() => {
+    console.log(text2);
+  }, [text2]);
 
   return (
     <main className="print">
       <div className="title">Pull & Push</div>
       <PrintOnClick
+        text={text1}
         onChange={onChange1}
         onKeyPress={onKeyPress}
         onClick={onClick}
       />
-      <PrintOnInput onChange={onChange2} />
+      <PrintOnInput text={text2} onChange={onChange2} />
     </main>
   );
 }

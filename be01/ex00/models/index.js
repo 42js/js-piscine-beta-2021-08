@@ -29,21 +29,7 @@ Object.keys(db).forEach((modelName) => {
   }
 });
 
-const User = sequelize.define('users', {
-  id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
-  username: { type: Sequelize.STRING(20), allowNull: false, unique: true },
-  email: { type: Sequelize.STRING(50), allowNull: false, unique: true },
-  isCadet: { type: Sequelize.BOOLEAN },
-  careerYears: { type: Sequelize.INTEGER },
-  createdAt: { type: Sequelize.DATE, allowNull: false },
-  updatedAt: { type: Sequelize.DATE, allowNull: false },
-}, {
-  charset: 'utf8',
-  collate: 'utf8_general_ci',
-});
-
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-db.User = User;
 
 module.exports = db;

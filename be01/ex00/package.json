@@ -1,0 +1,18 @@
+{
+  "name": "ex00",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node models/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.3.0",
+    "npx": "^3.0.0",
+    "sequelize": "^6.6.5"
+  }
+}

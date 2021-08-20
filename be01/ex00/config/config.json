@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "root",
+    "password": "k8726523",
+    "database": "42overflow",
+    "host": "127.0.0.1",
+    "port": 4242,
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

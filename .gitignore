@@ -1,11 +1,9 @@
 // .gitignre
-package.json
-package-lock.json
-.prettierrc
-.eslintrc.js
-.eslintrc.json
+
+/package.json
+/package-lock.json
+/.prettierrc
+/.eslintrc.json
 node_modules
 
-## 프로젝트 제출 시 하위경로 파일 무시 제외
-!js00/**
-!js01/**
+

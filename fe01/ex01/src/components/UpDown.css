@@ -1,0 +1,29 @@
+.input-updown {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: auto;
+	min-height: 3rem;
+	padding: 1rem;
+	border-bottom: 1px solid rgb(243, 144, 144);
+}
+
+.input-box {
+	width: 20rem;
+	height: 3rem;
+	font-size: 3rem;
+	outline: none;
+	border: 1px solid rgb(243, 151, 14);
+}
+
+.button-up {
+	background-color: white;
+	border: 1px solid rgb(243, 144, 144);
+	font-size: 2.5rem;
+}
+
+.button-down {
+	background-color: white;
+	border: 1px solid rgb(243, 144, 144);
+	font-size: 2.5rem;
+}

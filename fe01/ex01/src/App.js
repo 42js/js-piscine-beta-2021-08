@@ -1,22 +1,13 @@
 import React, { useState } from 'react';
-import InputNum from './components/InputNum';
 import UpDown from './components/UpDown';
 import './App.css';
 
 function App() {
-  const [num, setNum] = useState(0);
+  const [num, setNum] = useState(NaN);
 
   const onChange = (e) => {
+    console.log(e.target);
     setNum(+e.target.value);
-  };
-
-  const onClick = () => {};
-
-  const onKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      onClick();
-    }
   };
 
   const onClickUp = () => {
@@ -28,16 +19,17 @@ function App() {
   };
 
   return (
-    <main className="print">
-      <div className="title">use functions</div>
-      <InputNum
-        num={num}
-        onChange={onChange}
-        onKeyPress={onKeyPress}
-        onClick={onClick}
-      />
-      <UpDown onClickUp={onClickUp} onClickDown={onClickDown} />
-    </main>
+    <>
+      <main className="print">
+        <div className="title">Up & Down</div>
+        <UpDown
+          num={num}
+          onChange={onChange}
+          onClickUp={onClickUp}
+          onClickDown={onClickDown}
+        />
+      </main>
+    </>
   );
 }
 

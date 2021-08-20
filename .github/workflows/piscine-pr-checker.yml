@@ -1,0 +1,23 @@
+name: 자동 PR 체크
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - main
+
+jobs:
+  PR_CHECKER:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "@42js/pr-checker"
+        uses: 42js/pr-checker@master
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          configuration-path: ".github/piscine-beta.yml"
+          currect-label: "✅ 정상적인 제출"
+          wrong-label: "❌ 비정상적인 제출"

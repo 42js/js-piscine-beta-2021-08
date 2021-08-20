@@ -1,18 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './PrintOnClick.css';
 
 const PrintOnClick = ({ onChange, onKeyPress, onClick }) => {
   return (
-    <>
+    <div className="total">
       <form>
-        <input type="text" onChange={onChange} onKeyPress={onKeyPress} />
+        <input
+          className="input-box1"
+          type="text"
+          onChange={onChange}
+          onKeyPress={onKeyPress}
+        />
       </form>
       <form>
-        <button type="button" onClick={onClick}>
+        <button className="print-button" type="button" onClick={onClick}>
           enter
         </button>
       </form>
-    </>
+    </div>
   );
 };
 

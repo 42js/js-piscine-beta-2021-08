@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './PrintOnInput.css';
 
 const PrintOnInput = ({ onChange }) => {
   return (
-    <form>
-      <input type="text" onChange={onChange} />
-    </form>
+    <div className="total">
+      <form>
+        <input className="input-box2" type="text" onChange={onChange} />
+      </form>
+    </div>
   );
 };
 

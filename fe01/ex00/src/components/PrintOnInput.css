@@ -1,0 +1,16 @@
+.total {
+	display: flex;
+	align-items: center;
+	height: auto;
+	min-height: 3rem;
+	padding: 1rem;
+	border-bottom: 1px solid rgb(243, 144, 144);
+}
+
+.input-box2 {
+	width: 25rem;
+	height: 3rem;
+	font-size: 3rem;
+	outline: none;
+	border: 1px solid rgb(243, 144, 144);
+}

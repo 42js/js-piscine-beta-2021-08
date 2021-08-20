@@ -1,0 +1,34 @@
+.total {
+	display: flex;
+	align-items: center;
+	height: auto;
+	min-height: 3rem;
+	padding: 1rem;
+	border-bottom: 1px solid rgb(243, 144, 144);
+}
+
+.input-box1 {
+	width: 25rem;
+	height: 3rem;
+	font-size: 3rem;
+	outline: none;
+	border: 1px solid rgb(243, 144, 144);
+}
+
+.print-button {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-left: 1rem;
+	background: rgb(245, 225, 225);
+	border: 0px;
+	color: black;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.print-button:hover {
+	background: grey;
+	color: black;
+}

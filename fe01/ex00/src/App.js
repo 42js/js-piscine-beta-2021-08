@@ -28,14 +28,15 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <main className="print">
+      <div className="title">Pull & Push</div>
       <PrintOnClick
         onChange={onChange1}
         onKeyPress={onKeyPress}
         onClick={onClick}
       />
       <PrintOnInput onChange={onChange2} />
-    </div>
+    </main>
   );
 }
 

@@ -4,6 +4,7 @@ import GlobalFonts from './fonts/Font';
 import Menu from './Menu';
 import Header from './Header';
 import { Content1, Content2, Content3 } from './Contents';
+import './stylesheet.scss';
 
 const MainWrapper = styled.div`
 	.menuContent {

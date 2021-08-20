@@ -1,0 +1,9 @@
+$theme-colors: (
+		"success": rgb(68, 225, 252),
+    "info": rgba(255, 227, 71, 0.87),
+		"warning": violet,
+    "danger": teal
+);
+
+@import '~bootstrap/scss/bootstrap.scss';
+

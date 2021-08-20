@@ -4,6 +4,8 @@
 /package-lock.json
 /.prettierrc
 /.eslintrc.json
+/index.html
+/.gitignore_fe
 node_modules
 
 

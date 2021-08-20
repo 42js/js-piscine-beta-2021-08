@@ -1,13 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
+import { Input1 } from "./Input";
+import { Input2 } from "./Input";
 
-class App extends Component {
-	
-	state = {
-		input: ''
-	}
-
-  	return (
-  	);
+const App = () => {
+	return (
+		<div>
+			<Input1 />
+			<Input2 />
+		</div>
+	);
 }
 
 export default App;

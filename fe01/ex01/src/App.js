@@ -7,7 +7,7 @@ function App() {
   const [num, setNum] = useState(0);
 
   const onChange = (e) => {
-    setNum(e.target.value);
+    setNum(+e.target.value);
   };
 
   const onClick = () => {};
@@ -28,10 +28,16 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <InputNum onChange={onChange} onKeyPress={onKeyPress} onClick={onClick} />
-      <UpDown num={num} onClickUp={onClickUp} onClickDown={onClickDown} />
-    </div>
+    <main className="print">
+      <div className="title">use functions</div>
+      <InputNum
+        num={num}
+        onChange={onChange}
+        onKeyPress={onKeyPress}
+        onClick={onClick}
+      />
+      <UpDown onClickUp={onClickUp} onClickDown={onClickDown} />
+    </main>
   );
 }
 

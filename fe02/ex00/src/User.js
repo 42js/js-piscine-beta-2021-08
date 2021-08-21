@@ -1,6 +1,7 @@
 import getNotionApi from "./notionApi";
 import { useEffect, useState } from "react";
-import "User.css";
+import "./User.css";
+
 function User() {
     const [users, setUsers] = useState([]);
 

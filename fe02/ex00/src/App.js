@@ -19,9 +19,12 @@ function App() {
       baseURL: `https://api.notion.com/v1/pages/${process.env.REACT_APP_NOTION_DATABASE_ID}`,
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_NOTION_TOKEN}`,
+        'Access-Control-Allow-Origin': '*',
       },
     })
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        console.log(res.data);
+      })
       .catch((err) => console.log(err));
   };
 

@@ -4,7 +4,8 @@
   "description": "login system",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app.js"
+    "test": "nodemon app.js",
+    "start": "npx sequelize db:create; node app.js"
   },
   "author": "jolim",
   "license": "ISC",

@@ -3,7 +3,7 @@ const app = express();
 const pass = require('./pass');
 
 const err = {ERR: '404 Not Found'};
-const port = 4242;
+const port = 80;
 
 app.use('/pass', pass);
 

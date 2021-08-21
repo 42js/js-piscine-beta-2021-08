@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "nodemon app.js",
-    "start": "npx sequelize db:create; node app.js"
+    "start": "npm install; npx sequelize db:create; node app.js"
   },
   "author": "jolim",
   "license": "ISC",

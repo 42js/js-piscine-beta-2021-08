@@ -25,8 +25,6 @@ function MyForm(props)
                 <label>Input : </label>
                 <input value={props.text} onChange={props.onChange}/>
                 {/* <p>{props.text}</p> */}
-            </form>
-            <form>
                 <button onClick={props.onClick}>
                     Click me
                 </button>

@@ -1,20 +1,24 @@
 const { Client } = require("@notionhq/client");
+const axios = require("axios");
 
 const notion = new Client({
     auth: process.env.REACT_APP_NOTION_ACCESS_TOKEN,
 })
 
 const list = (async () => {
-    const listUsersResponse = await notion.users.list()
-    console.log(listUsersResponse);
+	console.log(notion);
+  	const listUsersResponse = await axios({
+
+	});
+  	// console.log(listUsersResponse);
 })
 
 function App() {
-  list();
-  return (
-    <div>
-    </div>
-  );
+  	list();
+  	return (
+    	<div>
+    	</div>
+  	);
 }
 
 export default App;

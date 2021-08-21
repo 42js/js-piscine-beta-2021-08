@@ -64,7 +64,7 @@ const verifyToken = (req, res) => {
   } else {
     res.status(409).send(verifyFailed('jwt-cookie가 없습니다.'));
   }
-}
+};
 
 module.exports.issueToken = issueToken;
 module.exports.verifyToken = verifyToken;

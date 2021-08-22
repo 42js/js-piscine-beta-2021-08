@@ -5,6 +5,7 @@ import SearchBar from "./SearchBar";
 import Dialog from "./Dialog/Dialog";
 import useToggleDialog from "./Dialog/useToggleDialog";
 import { OverlayContainer } from "@react-aria/overlays";
+import CreateForm from "./CreateForm";
 
 function App() {
   const [input, setInput] = useState("");
@@ -37,7 +38,9 @@ function App() {
       />
       {state.isOpen && (
         <OverlayContainer>
-          <Dialog>Add new issue Modal!</Dialog>
+          <Dialog>
+            <CreateForm />
+          </Dialog>
         </OverlayContainer>
       )}
     </div>

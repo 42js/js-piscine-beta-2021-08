@@ -1,3 +1,26 @@
+* {
+  font-size: 62.5%;
+}
+
+body,
+h1,
+ul,
+li,
+input,
+button {
+  all: unset;
+}
+
 body {
-  background-color: #f9edf6;
+  background-color: #fff;
+  font-family: "Noto Sans KR", "Noto Sans";
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 500;
+  color: rgb(79, 87, 176);
+  margin: 40px 0;
 }

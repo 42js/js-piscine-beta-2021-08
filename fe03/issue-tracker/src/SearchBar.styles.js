@@ -1,22 +1,42 @@
 import styled from "styled-components";
 
 const SearchBarStyled = styled.div`
-  background-color: #fff;
-  width: 100%;
+  background-color: #eee;
+  width: 80vw;
   padding: 10px;
   margin: 20px auto;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
 
   input {
-    width: 50vw;
-    height: 30px;
+    color: #555;
+    width: calc(73vw - 60px);
+    height: 40px;
     box-sizing: border-box;
-    margin-right: 10px;
+    margin-right: 15px;
+    border: none;
+    background-color: #fff;
+    padding-left: 10px;
+    box-sizing: border-box;
   }
 
   button {
     width: 60px;
-    height: 33px;
+    height: 40px;
     box-sizing: border-box;
+    border: none;
+    background-color: #8993ff;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+
+    :hover {
+      background-color: #bbc3ff;
+      color: #444;
+    }
   }
 `;
 

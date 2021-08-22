@@ -3,7 +3,7 @@ import styled from "styled-components";
 const CreateFormStyled = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   padding: 10px 30px 0 30px;
   color: #555;
 
@@ -24,10 +24,11 @@ const CreateFormStyled = styled.div`
   }
 
   textarea {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     resize: none;
     height: 100px;
     padding: 5px;
+    border: 1px solid grey;
     :focus {
       outline: none;
     }

@@ -6,6 +6,7 @@ import Dialog from "./Dialog/Dialog";
 import useToggleDialog from "./Dialog/useToggleDialog";
 import { OverlayContainer } from "@react-aria/overlays";
 import CreateForm from "./CreateForm";
+import axios from "axios";
 
 function App() {
   const [input, setInput] = useState("");
@@ -20,6 +21,31 @@ function App() {
     setRepo(input);
   };
 
+  const handleAddClick = (_title, _body) => {
+    const fetchNewIssue = async () => {
+      try {
+        const headers = {
+          Accept: "application/vnd.github.v3+json",
+          Authorization: `token ${process.env.REACT_APP_GITHUB_API_KEY}`,
+        };
+        const response = await axios.post(
+          `https://api.github.com/repos/from97/Woodies/issues`,
+          {
+            headers,
+            data: {
+              title: _title,
+              body: _body,
+            },
+          }
+        );
+        console.log(response);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchNewIssue();
+  };
+
   return (
     <div className="App">
       <header>
@@ -31,7 +57,7 @@ function App() {
         handleClick={handleClick}
       />
       <IssueList
-        owner="42js"
+        owner="from97"
         repo={repo}
         openProps={openButtonProps}
         openRef={openButtonRef}
@@ -39,7 +65,7 @@ function App() {
       {state.isOpen && (
         <OverlayContainer>
           <Dialog>
-            <CreateForm />
+            <CreateForm handleAddClick={handleAddClick} />
           </Dialog>
         </OverlayContainer>
       )}

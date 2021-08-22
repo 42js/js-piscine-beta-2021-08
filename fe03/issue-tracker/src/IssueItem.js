@@ -3,9 +3,9 @@ import IssueItemStyled from "./IssueItem.styles";
 import Label from "./Label";
 
 const IssueItem = ({ issue }) => {
-  console.log(issue.state, issue.user.login, issue.assignee?.login);
+  console.log(issue.user.login);
   return (
-    <IssueItemStyled key={issue.id}>
+    <IssueItemStyled key={issue.id} isOpen={issue.state}>
       <IssueItemStyled.Assignee>
         {issue.assignee ? issue.assignee.login : "No Assignee"}
       </IssueItemStyled.Assignee>

@@ -6,7 +6,9 @@ const { User, Post, Reply } = require('../models/index');
 
 const router = express.Router();
 
+const badRequest = { msg: 'Bad Request' };
 const wrongApproach = { msg: 'Wrong approach' };
+const conflict = { msg: 'Not a valid reply post id' };
 
 const isNonNegativeInt = (number) => {
   if (!number || Number.isNaN(number) || !Number.isInteger(parseFloat(number))) {
@@ -23,5 +25,29 @@ const userIdToUserName = async (userId) => {
   return users[users.length - 1].dataValues.username;
 };
 
+const postExist = async (postId) => {
+  const posts = await Post.findAll({ where: { id: postId } });
+  return (posts.length !== 0)
+};
+
 router
-  .
+  .post('', async (req, res) => {
+    try {
+      if (req.query.id && req.body.content) {
+        if (!postExist(req.query.id)) {
+          res.status(409).send(conflict);
+        } else {
+          const username = await userIdToUserName(req.jwtPayload.id);
+          Reply.create({
+            username,
+            content: req.body.content,
+            userId: req.jwtPayload.id,
+            postId: req.query.id,
+          });
+          res.status(201).send({ msg: 'Successfuly replied'});
+        }
+      }
+    } catch (err) {
+
+    }
+  });

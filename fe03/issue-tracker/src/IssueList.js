@@ -3,7 +3,7 @@ import axios from "axios";
 import IssueItem from "./IssueItem";
 import IssueListStyled from "./IssueList.style";
 
-const IssueList = ({ owner, repo }) => {
+const IssueList = ({ owner, repo, openProps, openRef }) => {
   const [issues, setIssues] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -44,7 +44,7 @@ const IssueList = ({ owner, repo }) => {
     return <IssueListStyled>존재하지 않는 저장소입니다. </IssueListStyled>;
   return (
     <IssueListStyled>
-      <button type="button" className="addIssue">
+      <button type="button" className="addIssue" {...openProps} ref={openRef}>
         + Add new issue
       </button>
       {issues?.map((issue) => (

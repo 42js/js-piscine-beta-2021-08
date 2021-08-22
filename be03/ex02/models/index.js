@@ -39,8 +39,33 @@ const User = sequelize.define('user', {
   collate: 'utf8_general_ci',
 });
 
+const Post = sequelize.define('post', {
+  username: { type: Sequelize.STRING(20), allowNull: false },
+  title: { type: Sequelize.STRING(80), allowNull: false },
+  content: { type: Sequelize.STRING(1000) },
+});
+
+const Reply = sequelize.define('reply', {
+  username: { type: Sequelize.STRING(20), allowNull: false },
+  content: { type: Sequelize.STRING(200), allowNull: false },
+});
+
+User.hasMany(Post);
+Post.belongsTo(User);
+
+User.hasMany(Reply);
+Reply.belongsTo(User);
+
+Post.hasMany(Reply);
+Reply.belongsTo(Post);
+
+Reply.hasMany(Reply);
+Reply.belongsTo(Reply);
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 db.User = User;
+db.Post = Post;
+db.Reply = Reply;
 
 module.exports = db;

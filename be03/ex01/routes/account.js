@@ -9,7 +9,7 @@ const { User } = require('../models/index');
 const router = express.Router();
 
 const badRequest = { msg: 'Bad Request' };
-const exp = 120;
+const exp = 600;
 
 const emailValidator = (string) => /^(?=.{0,50})\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w+)+$/.test(string);
 const usernameValidator = (string) => /^(?=.{6,20}$)([a-z0-9]+)$/.test(string);

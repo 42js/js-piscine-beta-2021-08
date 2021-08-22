@@ -1,8 +1,6 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
-const bytes = require('bytes');
 require('dotenv').config();
 
 const router = express.Router();

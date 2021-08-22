@@ -1,7 +1,6 @@
 const express = require('express');
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
-const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
@@ -30,15 +29,16 @@ router.post('', async (req, res) => {
     }
     compareProfile()
         .then(() => {
-            const token = jwt.sign({ username: profile.username }, process.env.KEY, { expiresIn: '1h' });
-            res.cookie('username', token);
-            console.log(token);
+            jwt.sign({ username: profile.username }, process.env.KEY, { expiresIn: '1h' }, (err, token) => {
+                if (err) throw err;
+                res.cookie('username', token).send({
+                    msg: 'Sucess insert cookie',
+                    'token': token});
+            });
         })
         .catch((err) => {
             console.log(err);
         })
-}).get('', (req, res) => {
-    res.send(req.cookies.key);
-})
+});
 
 module.exports = router;

@@ -1,9 +1,10 @@
-POST http://127.0.0.1/signin HTTP/1.1
+POST http://127.0.0.1/change HTTP/1.1
 Content-Type: application/json
 Content-Length: 57
 
 {
     "username": "seokim",
-    "password": "Root1004",
-    "email": "test@test.com"
+    "password": "Root1006",
+    "email": "test@test.com",
+    "new_password" : "Root1007"
 }

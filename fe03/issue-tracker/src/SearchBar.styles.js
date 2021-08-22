@@ -3,9 +3,11 @@ import styled from "styled-components";
 const SearchBarStyled = styled.div`
   background-color: #eee;
   width: 80vw;
+  max-width: 600px;
   padding: 10px;
   margin: 20px auto;
   border-radius: 5px;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -14,6 +14,7 @@ button {
 body {
   background-color: #fff;
   font-family: "Noto Sans KR", "Noto Sans";
+  position: relative;
 }
 
 header {

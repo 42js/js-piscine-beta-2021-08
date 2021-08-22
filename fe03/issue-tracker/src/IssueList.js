@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import IssueItem from "./IssueItem";
+import IssueListStyled from "./IssueList.style";
+import IssueItemStyled from "./IssueItem.styles";
 
 const IssueList = ({ owner, repo }) => {
   const [issues, setIssues] = useState(null);
@@ -36,14 +38,20 @@ const IssueList = ({ owner, repo }) => {
     fetchIssues();
   }, [owner, repo]);
 
-  if (loading) return <div>로딩 중..</div>;
-  if (error) return <div>에러 발생</div>;
+  if (loading) return <IssueListStyled>로딩 중입니다..</IssueListStyled>;
+  if (error)
+    return <IssueListStyled>존재하지 않는 저장소입니다. </IssueListStyled>;
   return (
-    <div>
-      {issues?.map((issue) => (
-        <IssueItem key={issue.id} issue={issue} />
-      ))}
-    </div>
+    <>
+      <button type="button" className="addIssue">
+        + Add new issue
+      </button>
+      <IssueListStyled>
+        {issues?.map((issue) => (
+          <IssueItem key={issue.id} issue={issue} />
+        ))}
+      </IssueListStyled>
+    </>
   );
 };
 

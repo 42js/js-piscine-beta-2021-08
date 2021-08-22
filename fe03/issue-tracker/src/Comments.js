@@ -6,11 +6,10 @@ const Comments = ({ count, url }) => {
     const fetchComments = async () => {
       try {
         const response = await axios.get(url);
-        console.log(response);
+        console.log(response.data);
       } catch (e) {
         console.log(e);
       }
-      console.log(`loaded ${count} comments`);
     };
     fetchComments();
   });

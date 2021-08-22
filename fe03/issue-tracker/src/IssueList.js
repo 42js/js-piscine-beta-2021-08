@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Comments from "./Comments";
+import IssueItem from "./IssueItem";
 
 const IssueList = ({ owner, repo }) => {
   const [issues, setIssues] = useState(null);
@@ -30,7 +30,6 @@ const IssueList = ({ owner, repo }) => {
         console.log(e);
         setError(e);
       }
-      console.log("loaded");
       setLoading(false);
     };
 
@@ -42,13 +41,7 @@ const IssueList = ({ owner, repo }) => {
   return (
     <div>
       {issues?.map((issue) => (
-        <div key={issue.id}>
-          {issue.title} {issue.state} {issue.user.login} {issue.assignee.login}
-          {issue.labels?.map((label, index) => (
-            <span key={index}> {label.name} </span>
-          ))}
-          <Comments count={issue.comments} url={issue.comments_url} />
-        </div>
+        <IssueItem key={issue.id} issue={issue} />
       ))}
     </div>
   );

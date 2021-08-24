@@ -12,3 +12,4 @@ package-lock.json
 node_modules
 
 !/be00
+!/be00/.gitignore

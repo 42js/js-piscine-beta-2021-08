@@ -1,0 +1,19 @@
+.a {
+    display: flex;
+}
+.b {
+    display: flex;
+    margin: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+alert {
+    padding: auto;
+}
+.form-control {
+    width: 80% !important;
+    margin: 0.7rem;
+}
+
+.btn {
+    margin: 0.7rem;
+}

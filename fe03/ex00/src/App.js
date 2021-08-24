@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { user } from 'octonode';
+import React from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import Container from 'react-bootstrap/Container';
+import './App.css'
+import { IssuesProvider } from './Contexts';
+import Issues from './component/Issues';
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="maintemplate">
+      <IssuesProvider>
+        <Issues page={1}/>
+      </IssuesProvider>
+    </Container>
   );
 }
+
 
 export default App;

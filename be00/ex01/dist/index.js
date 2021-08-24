@@ -7,17 +7,24 @@ const http_1 = __importDefault(require("http"));
 const fs_1 = __importDefault(require("fs"));
 const port = 4242;
 const server = http_1.default.createServer((request, response) => {
-    fs_1.default.readFile('./index.html', (err, data) => {
-        if (err) {
-            throw err;
-        }
-        response.end(data);
-    });
-    // response.writeHead(200, {
-    //   'Content-Type': 'text/html',
-    //   // 'Content-Length': output.length,
-    // });
-    // // response.end(output);
+    console.log(request.url);
+    try {
+        if (!(request.url === '/' || request.url === '/index.html'))
+            throw new Error();
+        fs_1.default.readFile('./index.html', (err, data) => {
+            if (err) {
+                throw err;
+            }
+            response.end(data);
+        });
+    }
+    catch (err) {
+        response.writeHead(404, {
+            'Content-Type': 'text',
+            Connection: 'close',
+        });
+        response.end('file not found');
+    }
 });
 server.listen(port, () => {
     console.log(`Server running at http://localhost:${port}/`);

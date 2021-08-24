@@ -3,17 +3,22 @@ import fs from 'fs';
 
 const port = 4242;
 const server = http.createServer((request, response) => {
-  fs.readFile('./index.html', (err, data) => {
-    if (err) {
-      throw err;
-    }
-    response.end(data);
-  });
-  // response.writeHead(200, {
-  //   'Content-Type': 'text/html',
-  //   // 'Content-Length': output.length,
-  // });
-  // // response.end(output);
+  try {
+    if (!(request.url === '/' || request.url === '/index.html'))
+      throw new Error();
+    fs.readFile('./index.html', (err, data) => {
+      if (err) {
+        throw err;
+      }
+      response.end(data);
+    });
+  } catch (err) {
+    response.writeHead(404, {
+      'Content-Type': 'text',
+      Connection: 'close',
+    });
+    response.end('file not found');
+  }
 });
 
 server.listen(port, () => {

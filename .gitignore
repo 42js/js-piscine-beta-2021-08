@@ -3,6 +3,7 @@
 /package-lock.json
 /.prettierrc
 /.eslintrc.json
+/.tsconfig.json
 /index.html
 .gitignore_fe
 .gitignore_be

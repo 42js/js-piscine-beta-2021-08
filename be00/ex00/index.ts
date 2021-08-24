@@ -1,9 +1,14 @@
-import express from 'express';
+import http from 'http';
 
-function runServer() {
-  const app = express();
-  app.listen(4242, () => {
-    console.log('Server running at http://localhost:4242/');
+const output = '안녕, Node.js!';
+const server = http.createServer((request, response) => {
+  response.writeHead(200, {
+    'Content-Type': 'text',
+    'Content-Length': output.length,
   });
-}
-runServer();
+  response.end(output);
+});
+
+server.listen(4242, () => {
+  console.log('Server running at http://localhost:4242/');
+});

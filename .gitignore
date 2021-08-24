@@ -8,3 +8,5 @@
 .gitignore_be
 node_modules
 .gitignore
+
+!/be00/*

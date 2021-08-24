@@ -1,3 +1,5 @@
+.gitignore
+package-lock.json
 
 /package.json
 /package-lock.json
@@ -7,5 +9,4 @@
 .gitignore_fe
 .gitignore_be
 node_modules
-.gitignore
-!/be00
+

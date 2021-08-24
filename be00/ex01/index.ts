@@ -1,9 +1,21 @@
-import express from 'express';
+import http from 'http';
+import fs from 'fs';
 
-function runServer() {
-  const app = express();
-  app.listen(4242, () => {
-    console.log('Server running at http://localhost:4242/');
+const port = 4242;
+const server = http.createServer((request, response) => {
+  fs.readFile('./index.html', (err, data) => {
+    if (err) {
+      throw err;
+    }
+    response.end(data);
   });
-}
-runServer();
+  // response.writeHead(200, {
+  //   'Content-Type': 'text/html',
+  //   // 'Content-Length': output.length,
+  // });
+  // // response.end(output);
+});
+
+server.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}/`);
+});

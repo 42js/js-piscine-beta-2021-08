@@ -1,5 +1,5 @@
 
-package-lock.json
-.prettierrc
-.eslintrc.json
+/package-lock.json
+/.prettierrc
+/.eslintrc.json
 node_modules

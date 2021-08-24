@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 function runServer() {
     const app = express_1.default();
-    app.listen(5000, () => {
-        console.log('start server');
+    app.listen(4242, () => {
+        console.log('Server running at http://localhost:4242/');
     });
 }
 runServer();

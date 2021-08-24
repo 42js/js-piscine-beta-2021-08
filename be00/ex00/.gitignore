@@ -1,4 +1,4 @@
-
+.gitignore
 /package-lock.json
 /.prettierrc
 /.eslintrc.json

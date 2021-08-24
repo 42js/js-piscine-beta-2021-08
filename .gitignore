@@ -7,3 +7,4 @@
 .gitignore_fe
 .gitignore_be
 node_modules
+.gitignore

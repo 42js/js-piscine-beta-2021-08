@@ -9,4 +9,4 @@
 node_modules
 .gitignore
 
-!/be00/*
+!/be00

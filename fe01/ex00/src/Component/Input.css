@@ -1,8 +1,0 @@
-input {
-  flex: auto;
-}
-
-div .button {
-  cursor: pointer;
-  outline: black;
-}

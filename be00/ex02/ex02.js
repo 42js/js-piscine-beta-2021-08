@@ -1,6 +1,5 @@
 const http = require('http');
 const fs = require('fs');
-const { RSA_NO_PADDING } = require('constants');
 
 const checkIfFileExists = () => {
     if (!fs.existsSync("./data.json")) {

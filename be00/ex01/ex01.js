@@ -1,33 +1,16 @@
 import { createServer } from "http";
-import console from "console";
-import fs from "fs";
+import fs from "fs/promises";
 
-createServer((request, response) => {
-  const { headers, method, url } = request;
-  let body = [];
-
-  request //
-    .on("error", (err) => console.log(err))
-    .on("data", (chunk) => body.push(chunk))
-    .on("end", () => {
-      body = Buffer.concat(body).toString();
-      //   console.log(method);
-      //   console.log(url);
-      //   console.log(headers);
-      //   console.log(body);
-      fs.readFile("./ex01.html", (err, data) => {
-        if (err) {
-          response.writeHead(500, { "Content-Type": "text/html" });
-          response.write("<h1>500 Internal Server Error<h1>");
-          response.end();
-          console.log(err.toString());
-        } else {
-          response.writeHead(200, { "Content-Type": "text/html" });
-          response.write(data.toString());
-          response.end();
-        }
-      });
-    });
+createServer(async (req, res) => {
+  try {
+    const data = await fs.readFile("./ex01.html");
+    res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+    res.end(data);
+  } catch (err) {
+    console.log(err);
+    res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
+    res.end(err.message);
+  }
 }).listen(4242, () => {
-  console.log("Server is running at http://localhost:4242/");
+  console.log("Server running at http://localhost:4242/");
 });

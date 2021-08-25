@@ -1,47 +1,33 @@
-import http, { createServer } from "http";
+import { createServer } from "http";
 import console from "console";
 import fs from "fs";
 
-const SCHEME = "http";
-const HOSTNAME = "localhost";
-const PORT = 4242;
+createServer((request, response) => {
+  const { headers, method, url } = request;
+  let body = [];
 
-const server = createServer((req, res) => {
-  fs.readFile("./ex02.html", (err, data) => {
-    if (err) {
-      res.writeHead(500, { "Content-Type": "text/html" });
-      res.write("<h1>500 Internal Server Error<h1>");
-      res.end();
-      console.log(err.toString());
-    } else {
-      res.writeHead(200, { "Content-Type": "text/html" });
-      res.write(data.toString());
-      res.end();
-    }
-  });
-}).listen(PORT, () => {
-  console.log(`Server is running at ${SCHEME}://${HOSTNAME}:${PORT}/`);
+  request //
+    .on("error", (err) => console.log(err))
+    .on("data", (chunk) => body.push(chunk))
+    .on("end", () => {
+      body = Buffer.concat(body).toString();
+      //   console.log(method);
+      //   console.log(url);
+      //   console.log(headers);
+      //   console.log(body);
+      fs.readFile("./ex01.html", (err, data) => {
+        if (err) {
+          response.writeHead(500, { "Content-Type": "text/html" });
+          response.write("<h1>500 Internal Server Error<h1>");
+          response.end();
+          console.log(err.toString());
+        } else {
+          response.writeHead(200, { "Content-Type": "text/html" });
+          response.write(data.toString());
+          response.end();
+        }
+      });
+    });
+}).listen(4242, () => {
+  console.log("Server is running at http://localhost:4242/");
 });
-
-http
-  .get("http://localhost:4242", (res) => {
-    const { statusCode } = res;
-    const contentType = res.headers["content-type"];
-
-    let error;
-    if (statusCode !== 200 && statusCode !== 500) {
-      error = new Error(`Request Failed.\nStatus Code: ${statusCode}`);
-    } else if (!/^text\/html/.test(contentType)) {
-      error = new Error(
-        `Invalid content-type.\nExpected text/html but received ${contentType}`
-      );
-    }
-    if (error) {
-      console.error(error.message);
-      res.resume();
-      return;
-    }
-  })
-  .on("error", (e) => {
-    console.error(`Got error: ${e.message}`);
-  });

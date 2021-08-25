@@ -12,19 +12,16 @@ createServer((request, response) => {
     .on("data", (chunk) => body.push(chunk))
     .on("end", () => {
       body = Buffer.concat(body).toString();
-      console.log(method);
-      console.log(url);
-      console.log(headers);
-      console.log(body);
-      response.writeHead(200, {
-        "Content-Type": "text/plain; charset=utf-8",
-        Connection: "close",
-      });
+      //   console.log(method);
+      //   console.log(url);
+      //   console.log(headers);
+      //   console.log(body);
+      response.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
       response.write("안녕, Node.js!"); // content 내보내기: body 부분의 content
       response.end(); // content 출력 완료(응답 종료)
     });
 }).listen(4242, () => {
-  console.log(`Server is running at http://localhost:4242/`);
+  console.log("Server is running at http://localhost:4242/");
 });
 
 // favicon = favorite + icon

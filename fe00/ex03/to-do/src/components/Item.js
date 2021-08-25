@@ -3,10 +3,10 @@ import './Item.css'
 
 class Item extends Component {
     render() {
-        const {text, checked, id, onToggle, onRemove} = this.props;
+        const {text, checked, id} = this.props;
 
         return (
-            <div className="todo-item" onClick={()=>onToggle(id)}>
+            <div className="todo-item">
  
                 <div className={`todo-text ${checked && 'checked'}`}> 
                         <div>{text}</div>
@@ -16,7 +16,6 @@ class Item extends Component {
                 }
                 <div className="remove" onClick={(e)=>{
                     e.stopPropagation();
-                    onRemove(id)
                 }}>&times;</div>
                 </div>
         );

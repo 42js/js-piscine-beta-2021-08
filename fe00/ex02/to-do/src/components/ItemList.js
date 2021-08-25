@@ -3,10 +3,7 @@ import Item from './Item';
 
 class ItemList extends Component {
     render(){
-        const {todos, onToggle, onRemove} = this.props;
-        console.log(typeof onToggle);
-        console.log(typeof onRemove);
-        console.log(typeof todos);
+        const {todos} = this.props;
         return (
             <div>
                 <Item text="안녕"/>

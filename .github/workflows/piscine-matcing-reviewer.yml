@@ -40,11 +40,13 @@ jobs:
                   (label) => label.name === "${{ github.event.inputs.subject }}"
                 )
               ) {
+                console.log(`check pr #${pr.number}`)
                 if (
                   !!pr.labels.find(
                     (label) => label.name === "${{ github.event.inputs.currect-label }}"
                   )
                 ) {
+                  console.log(`set currect pr #${pr.number}`)
                   await github.pulls.requestReviewers({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
@@ -69,6 +71,7 @@ jobs:
                     (label) => label.name === "${{ github.event.inputs.wrong-label }}"
                   )
                 ) {
+                  console.log(`set wrong pr #${pr.number}`)
                   await github.issues.createComment({
                     owner: context.repo.owner,
                     repo: context.repo.repo,

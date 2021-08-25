@@ -38,13 +38,13 @@
   
   .checked {
     text-decoration: line-through;
+	margin-left: 0.5rem;
     color: #adb5bd;
   }
   
   .check-mark {
     font-size: 1.5rem;
     line-height: 1rem;
-    margin-left: 1rem;
     color: #3bc9db;
     font-weight: 800;
   }

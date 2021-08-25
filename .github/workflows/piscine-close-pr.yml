@@ -27,6 +27,7 @@ jobs:
                   (label) => label.name === "${{ github.event.inputs.subject }}"
                 )
               ) {
+                console.log(`close pr #${pr.number}`)
                 await github.issues.createComment({
                   owner: context.repo.owner,
                   repo: context.repo.repo,

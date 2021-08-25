@@ -7,15 +7,20 @@ const http_1 = __importDefault(require("http"));
 const fs_1 = __importDefault(require("fs"));
 const port = 4242;
 const server = http_1.default.createServer((request, response) => {
-    console.log(request.url);
     try {
         if (!(request.url === '/' || request.url === '/index.html'))
             throw new Error();
         fs_1.default.readFile('./index.html', (err, data) => {
             if (err) {
-                throw err;
+                console.log(err);
+                response.writeHead(500, {
+                    'Content-Type': 'text',
+                    Connection: 'close',
+                });
+                response.end();
             }
-            response.end(data);
+            else
+                response.end(data);
         });
     }
     catch (err) {

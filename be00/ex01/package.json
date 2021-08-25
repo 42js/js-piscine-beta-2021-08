@@ -1,0 +1,11 @@
+{
+  "name": "ex01",
+  "version": "1.0.0",
+  "description": "ex01",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "author": "chloek",
+  "license": "ISC"
+}

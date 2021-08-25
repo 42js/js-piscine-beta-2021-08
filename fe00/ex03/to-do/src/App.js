@@ -32,7 +32,7 @@ class App extends Component {
       })
     });
   }
-
+  
   handleKeyPress = (e) => {
     if (e.key === 'Enter')
       this.handleCreate();
@@ -51,7 +51,7 @@ class App extends Component {
                                     onKeyPress={handleKeyPress} 
                                     onChange={handleChange} 
                                     onCreate={handleCreate} />)}>
-         <ItemList todos={todos}/>
+         <ItemList todos={todos} />
        </TodoListTemplate>
     );
   }

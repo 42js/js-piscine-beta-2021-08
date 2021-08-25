@@ -4,7 +4,7 @@ import Item from './Item';
 class ItemList extends Component {
     render(){
         const {todos, onToggle, onRemove} = this.props;
- 
+        console.log(onToggle);
         const todoList = todos.map(
             ({id,text,checked})=>(
                 <Item 

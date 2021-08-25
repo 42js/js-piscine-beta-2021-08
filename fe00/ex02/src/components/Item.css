@@ -1,0 +1,46 @@
+.todo-item {
+  padding: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.todo-item:hover {
+  background: rgb(216, 255, 255);
+}
+
+.todo-item:hover .remove-item {
+  opacity: 1;
+}
+
+.todo-item + .todo-item {
+  border-top: 1px solid rgba(0,0,0,0.13);
+}
+
+.remove-item {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: crimson;
+  opacity: 0;
+}
+
+.todo-text {
+  flex: 1;
+  word-break: break-all;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: rgb(179, 179, 179);
+}
+
+.check-mark {
+  font-size: 1.5rem;
+  line-height: 1rem;
+  margin-left: 1rem;
+  color: limegreen;
+  font-weight: 800;
+}

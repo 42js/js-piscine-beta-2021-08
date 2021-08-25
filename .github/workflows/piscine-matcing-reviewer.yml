@@ -10,6 +10,10 @@ on:
         description: 정상적인 제출 확인용 라벨
         required: true
         default: "✅ 정상적인 제출"
+      wrong-label:
+        description: 비정상적인 제출 확인용 라벨
+        required: true
+        default: "❌ 비정상적인 제출"
       reviewer:
         description: 리뷰어로 지정될 팀명
         required: true

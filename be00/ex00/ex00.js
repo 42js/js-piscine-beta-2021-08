@@ -11,7 +11,7 @@ const server = createServer((req, res) => {
   res.write(JSON.stringify("안녕, Node.js!")); // content 내보내기: body 부분의 content: ;
   res.end(); // content 출력 완료(응답 종료)
 }).listen(4242, () => {
-  console.log(`Server is running at ${SCHEME}://${HOSTNAME}:${PORT}`);
+  console.log(`Server is running at ${SCHEME}://${HOSTNAME}:${PORT}/`);
 });
 
 http

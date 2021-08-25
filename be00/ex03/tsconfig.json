@@ -8,6 +8,6 @@
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  "include": ["./src/*.ts"],
+  "include": ["./src/*.ts", "src/routes/station.routes.ts", "src/routes/line.routes.ts", "src/routes/routes.ts"],
   "exclude": ["./dist/"]
 }

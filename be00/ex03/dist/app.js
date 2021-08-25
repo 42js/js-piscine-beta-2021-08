@@ -4,10 +4,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const routes_1 = __importDefault(require("./routes"));
+require("dotenv/config");
+// or
+// import * as dotenv from 'dotenv';
+const routes_1 = __importDefault(require("./routes/routes"));
+const returnErrorMessage_1 = __importDefault(require("./utils/returnErrorMessage"));
 const app = express_1.default();
+const port = process.env.PORT;
 app.use(express_1.default.json());
 app.use(routes_1.default);
-app.listen(3333, () => {
-    console.log('Server started');
+app.use((request, response) => {
+    response.json(returnErrorMessage_1.default(request.method, request.url, 400, 'Bad Request', ''));
+});
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
 });

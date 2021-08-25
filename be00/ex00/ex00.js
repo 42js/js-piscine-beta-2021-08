@@ -26,3 +26,6 @@ createServer((request, response) => {
 }).listen(4242, () => {
   console.log(`Server is running at http://localhost:4242/`);
 });
+
+// favicon = favorite + icon
+// 웹사이트 주소 옆이나 브라우저 탭에 나타나는 작은 아이콘

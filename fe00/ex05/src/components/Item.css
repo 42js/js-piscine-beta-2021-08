@@ -1,0 +1,41 @@
+.item {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+  /* text-decoration: line-through; */
+}
+  
+.item:hover {
+  background: silver;
+}
+  
+.item:hover .remove {
+  opacity: 1;
+}
+  
+.item + .item {
+  border-top: 1px solid #f1f3f5;
+}
+  
+.remove {
+  margin-right: 1rem;
+  color: #e64980;
+  font-weight: 600;
+  opacity: 0;
+}
+  
+.todo-text {
+  flex: 1;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: silver;
+}
+
+.check-mark {
+  margin-right: 1rem;
+}

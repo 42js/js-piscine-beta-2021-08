@@ -1,0 +1,12 @@
+.todo-input {
+    display: flex;
+}
+
+.todo-input input {
+    flex: 1;
+    font-size: 1.5rem;
+}
+
+.create_button {
+    margin-left: 3rem;
+}

@@ -11,3 +11,4 @@ package-lock.json
 node_modules
 
 package_typescript.json
+.prettierrc_typescript

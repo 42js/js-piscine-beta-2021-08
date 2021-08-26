@@ -6,7 +6,7 @@ function my_validator(req, res, next) {
     const regEmail = /^[\w]+@[\w.\-]+\.[A-Za-z]{2,3}$/g;
     const regPass =
         /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&\(\)\{\}\[\]:;<>,.?/~_+-=|]).{8,}$/;
-    const regName = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    const regName = /^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$/;
     console.log(email, username, password_request);
     if (
         !regEmail.test(email) ||

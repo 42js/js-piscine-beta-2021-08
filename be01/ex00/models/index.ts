@@ -4,10 +4,10 @@ import Sequelize from 'sequelize';
 
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = `${__dirname}/../config/config.json`[env];
+const config = require(`${__dirname}/../config/config.json`)[env];
 const db = { };
 
-let sequelize = Sequelize;
+let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {

@@ -10,6 +10,6 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["./models/*.ts", "./migrations/*.ts", "./seeders/*.ts"],
+  "include": ["./models/*.ts"],
   "exclude": ["./dist/"]
 }

@@ -1,13 +1,17 @@
 import fs from 'fs';
 import path from 'path';
-import Sequelize from 'sequelize';
+import { Sequelize } from 'sequelize';
 
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = JSON.parse(fs.readFileSync('../config/config.json'));
+const config = JSON.parse(
+  fs.readFileSync('../config/config.json').toString(),
+).env;
+
 const db = { };
 
-let sequelize: any;
+let sequelize: Sequelize;
+
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {

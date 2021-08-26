@@ -12,9 +12,6 @@ app.set('views', __dirname.replace('dist', 'views')); // set the directory where
 app.set('view engine', 'pug'); // set which template engine to use
 app.use(express_1.default.json());
 app.use(routes_1.default);
-// function renderMain(req: express.Request, res: express.Response) {
-//   res.render('temp', { time: Date(), _title: 'PUG' });
-// }
 function handleInaccessable(req, res) {
     res.render('inaccessable', { time: Date(), _title: 'PUG' });
 }

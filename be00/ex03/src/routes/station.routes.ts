@@ -3,8 +3,6 @@ import _ from 'lodash';
 import Metro from '../metro';
 import returnErrorMessage from '../utils/returnErrorMessage';
 
-console.log(Metro);
-
 const stationRouter = Router();
 const engRegExp = /^[a-zA-Z][a-zA-Z0-9 -]+$/;
 

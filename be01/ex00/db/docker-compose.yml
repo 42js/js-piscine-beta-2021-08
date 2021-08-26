@@ -13,8 +13,3 @@ services: # 이 항목 밑에 실행하려는 컨테이너 들을 정의
       - --collation-server=utf8mb4_unicode_ci
     volumes:
       - ./mariadb:/var/lib/mysql # -v 옵션 (다렉토리 마운트 설정)
-    healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:3306"]
-        interval: 30s
-        timeout: 10s
-        retries: 5

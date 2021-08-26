@@ -2,14 +2,16 @@
   "name": "ex00",
   "version": "0.1.0",
   "description": "",
-  "main": "./dist/app.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx tsc && nodemon dist/app.js"
+    "start": "npx tsc && nodemon dist/index.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^16.7.2",
+    "@types/validator": "^13.6.3",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
     "eslint": "^7.32.0",
@@ -27,6 +29,11 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^2.0.12"
+    "mysql2": "^2.3.0",
+    "nodemon": "^2.0.12",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0",
+    "sequelize-typescript": "^2.1.0"
   }
 }

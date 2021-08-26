@@ -9,7 +9,9 @@ package-lock.json
 /index.html
 .gitignore_fe
 .gitignore_be
+.env
 node_modules
+
 /temp.ts
 !/be00
 !/be00/.gitignore

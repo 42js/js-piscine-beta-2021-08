@@ -6,7 +6,7 @@ services: # 이 항목 밑에 실행하려는 컨테이너 들을 정의
     ports:
       - "3306:3306" # 접근 포트 설정 (컨테이너 외부:컨테이너 내부)
     environment: # -e 옵션
-      MYSQL_DATABASE: 42overflow
+      # MYSQL_DATABASE: 42overflow 필요 없음
       MYSQL_ROOT_PASSWORD: password  # MYSQL 패스워드 설정 옵션
     command: # 명령어 실행
       - --character-set-server=utf8mb4

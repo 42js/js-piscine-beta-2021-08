@@ -2,10 +2,10 @@
   "name": "ex00",
   "version": "0.1.0",
   "description": "",
-  "main": "./dist/index.js",
+  "main": "./dist/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx tsc && nodemon dist/index.js"
+    "start": "npx tsc && nodemon dist/app.js"
   },
   "author": "",
   "license": "ISC",

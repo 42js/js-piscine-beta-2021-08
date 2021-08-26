@@ -8,8 +8,10 @@
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
   },
-  "include": ["./models/*.ts"],
+  "include": ["./src/models/*.ts"],
   "exclude": ["./dist/"]
 }

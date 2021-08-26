@@ -18,7 +18,7 @@ function myValidator(
   request: express.Request,
   response: express.Response,
   next: express.NextFunction,
-): any {
+): void {
   if (
     request.body.email === undefined ||
     request.body.username === undefined ||

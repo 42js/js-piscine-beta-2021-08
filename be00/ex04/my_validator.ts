@@ -13,6 +13,7 @@ const userNameValidator = (input: string) => {
 const passwordValidator = (input: string) => {
   // 조건1. 6~20 영문 대소문자
   // 조건2. 최소 1개의 숫자 혹은 특수 문자를 포함해야 함
+  // ref: https://hee-kkk.tistory.com/22
   return /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$/.test(input);
 };
 

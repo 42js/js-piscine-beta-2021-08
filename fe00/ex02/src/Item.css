@@ -1,0 +1,22 @@
+.to-do-item {
+  width: 1024px;
+  height: 40px;
+  border-bottom: 1px solid #dbcaa6;
+}
+
+.to-do-item:hover {
+  background: #f4f4f4;
+}
+
+.to-do-name {
+  display: inline;
+  margin-left: 10px;
+}
+
+.to-do-remove {
+  display: inline;
+  color: red;
+  float: right;
+  margin-right: 10px;
+  height: 40px;
+}

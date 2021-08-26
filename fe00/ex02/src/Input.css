@@ -1,0 +1,23 @@
+.to-do-form {
+  display: flex;
+}
+
+.to-do-form input {
+  flex: 1;
+  font-size: 1.25rem;
+  outline: none;
+  border: none;
+}
+
+.to-do-add {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 1rem;
+  background: #dbcaa6;
+}
+
+.to-do-add:hover {
+  background: #bdad8a;
+}

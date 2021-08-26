@@ -1,0 +1,20 @@
+{
+  "name": "ex00",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ex02.js",
+  "scripts": {
+    "start": "nodemon ./ex02.js localhost 4242",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "http": "0.0.1-security"
+  },
+  "type": "module"
+}

@@ -1,7 +1,7 @@
 import { createServer } from "http";
 import fs from "fs";
 
-createServer(async (req, res) => {
+createServer((req, res) => {
   if (req.method === "GET") {
     fs.readFile("./ex01.html", (err, data) => {
       if (err) {

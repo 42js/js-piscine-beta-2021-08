@@ -24,8 +24,11 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
+const { sequelize } = require("../models");
 
-server.listen(port);
+server.listen(port, async () => {
+    await sequelize.sync();
+});
 server.on("error", onError);
 server.on("listening", onListening);
 

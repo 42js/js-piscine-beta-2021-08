@@ -1,17 +1,20 @@
 var express = require("express");
 var router = express.Router();
-const { sequlize, User } = require("../models");
+const { Users, sequelize } = require("../models");
 /* GET users listing. */
 router.post("/", async function (req, res, next) {
-    const { username, email, isCardet, careerYears } = req.body;
+    console.log(sequelize.models.User);
+    const { username, email, isCadet, carrerYears } = req.body;
     console.log(username);
     try {
-        const user = await User.create({
+        const user = await Users.create({
             username,
             email,
-            isCardet,
-            careerYears,
+            isCadet,
+            carrerYears,
         });
+        //
+        console.log(user);
 
         return res.status(200).json(user);
     } catch (error) {
@@ -20,4 +23,6 @@ router.post("/", async function (req, res, next) {
     }
 });
 
+//중복체크
+//content없음 표시
 module.exports = router;

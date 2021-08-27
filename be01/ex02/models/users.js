@@ -16,13 +16,14 @@ module.exports = (sequelize, DataTypes) => {
             username: { type: DataTypes.STRING(20), allowNull: false },
             email: { type: DataTypes.STRING(50), allowNull: false },
             isCadet: DataTypes.BOOLEAN,
-            carrerYears: DataTypes.INTEGER,
+            careerYears: DataTypes.INTEGER,
         },
         {
             sequelize,
             timestamps: true,
             createdAt: true,
             updatedAt: true,
+            tableName: "users",
             modelName: "Users",
         }
     );

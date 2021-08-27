@@ -7,7 +7,7 @@ const development = {
     database: env.MYSQL_DATABASE,
     host: "127.0.0.1",
     dialect: "mysql", //사용하는 db
-    port: env.MYSQL_PORT,
+    //port: env.MYSQL_PORT,
 };
 const test = {
     username: "root",

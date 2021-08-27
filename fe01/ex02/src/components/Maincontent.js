@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const DivStyle = styled.div`
     background : rgb(219, 216, 203);
     padding-left : 220px;
-    height : 800px;
+height : 800px;
 `
 const TitleStyle = styled.h1`
     text-align : center;

@@ -27,7 +27,7 @@ class PrintRealTime extends Component {
   
         return (
             <form>
-                <input type="text" onKeyDown={handleChange} ></input>
+                <input type="text" onChange={handleChange} ></input>
                 <input type="reset" onClick={handleReset} />
             </form>
         );

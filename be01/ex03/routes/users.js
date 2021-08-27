@@ -44,8 +44,37 @@ async function setUsers(req, res, next) {
     }
 }
 
-router.post("/", validReq, setUsers);
+async function findAllUsers(req, res, next) {
+    try {
+        const rt = {};
+        const users = await Users.findAll();
+        rt.message = "Users retrieved successfully.";
+        rt.data = users;
+        res.status(200).json(rt);
+    } catch (error) {
+        next(error);
+    }
+}
 
-//중복체크
-//content없음 표시
+async function findOneUser(req, res, next) {
+    try {
+        const id = req.params.id;
+        const rt = {};
+        const user = await Users.findOne({ where: { id } });
+        if (user) {
+            rt.message = "Users retrieved successfully.";
+            rt.data = user;
+            res.status(200).json(rt);
+        } else {
+            res.status(400).json({ message: "No users found." });
+        }
+    } catch (error) {
+        next(error);
+    }
+}
+
+router.post("/", validReq, setUsers);
+router.get("/", findAllUsers);
+router.get("/:id", findOneUser);
+
 module.exports = router;

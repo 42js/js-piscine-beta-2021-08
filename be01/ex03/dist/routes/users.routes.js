@@ -15,8 +15,6 @@ usersRouter.post('', (req, res) => {
     }
     else {
         const date = new Date();
-        console.log(req.body.isCadet);
-        console.log(req.body.careerYears);
         db_1.default.User.create({
             username: req.body.username,
             email: req.body.email,
@@ -33,7 +31,7 @@ usersRouter.post('', (req, res) => {
                 res.status(409).send({ message: 'User already exists.' });
             }
             else {
-                res.status(400).send({ message: String(err) });
+                return res.status(400).send({ message: String(err) });
             }
         });
     }
@@ -44,6 +42,26 @@ usersRouter.get('', async (req, res) => {
         res
             .status(200)
             .send({ message: 'Users retrieved successfully.', data: users });
+    }
+    catch (err) {
+        res.status(500).json({ message: 'Data is not available' });
+    }
+});
+usersRouter.get('/:id', async (req, res) => {
+    try {
+        const foundUser = await db_1.default.User.findAll({
+            where: { username: req.params.id },
+        });
+        if (req.params.id.length === 0 ||
+            req.params.id === undefined ||
+            Object.keys(foundUser).length === 0) {
+            res.status(409).send({ message: 'No users found' });
+        }
+        else {
+            res
+                .status(200)
+                .send({ message: 'User retrieved successfully.', data: foundUser });
+        }
     }
     catch (err) {
         res.status(500).send({ message: 'Data is not available' });

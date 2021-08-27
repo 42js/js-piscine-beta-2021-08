@@ -42,6 +42,27 @@ usersRouter.get('', async (req, res) => {
       .status(200)
       .send({ message: 'Users retrieved successfully.', data: users });
   } catch (err) {
+    res.status(500).json({ message: 'Data is not available' });
+  }
+});
+
+usersRouter.get('/:id', async (req, res) => {
+  try {
+    const foundUser = await db.User.findAll({
+      where: { username: req.params.id },
+    });
+    if (
+      req.params.id.length === 0 ||
+      req.params.id === undefined ||
+      Object.keys(foundUser).length === 0
+    ) {
+      res.status(409).send({ message: 'No users found' });
+    } else {
+      res
+        .status(200)
+        .send({ message: 'User retrieved successfully.', data: foundUser });
+    }
+  } catch (err) {
     res.status(500).send({ message: 'Data is not available' });
   }
 });

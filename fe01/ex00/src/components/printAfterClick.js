@@ -3,28 +3,17 @@ import React, { Component } from 'react';
 class PrintAfterClick extends Component {
    
     state = { 
-        input : '',
+        input : ''
     };
 
-    handleKeyDown = (e) => {
-  
-        if (e.key === 'Backspace' || e.key === 'Delete')
-            this.setState({
-                input: this.state.input.substring(0, this.state.input.length - 1)
-            });
-        else if (e.key.length === 1)
-        {
-            this.setState({
-                 input : this.state.input + e.key
-        });
-        }
-    };
-
+    handleChange = (e) => {
+        this.setState({
+            input : e.target.value
+        })
+    }
+    
     handleClick = (e) => {
         console.log(this.state.input);
-        this.setState({
-            input: ""
-        });
     };
 
     handleReset = (e) => {
@@ -32,18 +21,19 @@ class PrintAfterClick extends Component {
             input: ""
         })
     }
+
     render(){
         const {
-            handleKeyDown,
             handleClick,
-            handleReset
+            handleReset,
+            handleChange
         } = this;
   
         return (
             <form>
-                <input type="text" onKeyDown={handleKeyDown} ></input>
+                <input type="text" onChange={handleChange} ></input>
                 <input type="button" value="OK" onClick={handleClick}></input>
-                <input type="reset" onClick={handleReset} />
+                <input type="reset" onClick={handleReset} />          
             </form>
         );
     }

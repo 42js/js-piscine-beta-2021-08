@@ -1,0 +1,28 @@
+
+#show-count {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.buttons {
+    padding: 20px;
+   display : flex;
+   justify-content: center;
+}
+
+.buttons input{
+    width: 100px;
+    height : 40px;
+    font-size: 20px;
+    margin : 30px;
+}
+
+#plus {
+    background-color: pink;
+    border-color: pink;
+}
+
+#minus {
+    background-color: skyblue;
+    border-color: skyblue;
+}

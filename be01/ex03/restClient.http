@@ -1,0 +1,11 @@
+POST http://localhost:4242/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "i",
+  "email": "jiuno@mail.com",
+  "isCadet": true,
+  "careerYears": 3
+}
+
+

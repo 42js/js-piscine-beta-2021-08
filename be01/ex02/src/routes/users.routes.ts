@@ -18,7 +18,7 @@ router.post('', (req, res) => {
       username: req.body.username,
       email: req.body.email,
       isCadet: req.body.isCadet ? req.body.isCadet : null,
-      careerYears: req.body.careerYear ? req.body.careerYears : null,
+      careerYears: req.body.careerYears ? req.body.careerYears : null,
       created_at: date,
       updated_at: date,
     })

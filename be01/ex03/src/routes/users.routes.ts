@@ -1,10 +1,10 @@
-import express from 'express';
+import { Router } from 'express';
 
 import db from '../models/db';
 
-const router = express.Router();
+const usersRouter = Router();
 
-router.post('', (req, res) => {
+usersRouter.post('', (req, res) => {
   if (
     req.body.username === undefined ||
     req.body.email === undefined ||
@@ -18,7 +18,7 @@ router.post('', (req, res) => {
       username: req.body.username,
       email: req.body.email,
       isCadet: req.body.isCadet ? req.body.isCadet : null,
-      careerYears: req.body.careerYear ? req.body.careerYears : null,
+      careerYears: Number(req.body.careerYears) ? req.body.careerYears : null,
       created_at: date,
       updated_at: date,
     })
@@ -35,4 +35,15 @@ router.post('', (req, res) => {
   }
 });
 
-export default router;
+usersRouter.get('', async (req, res) => {
+  try {
+    const users = await db.User.findAll();
+    res
+      .status(200)
+      .send({ message: 'Users retrieved successfully.', data: users });
+  } catch (err) {
+    res.status(500).send({ message: 'Data is not available' });
+  }
+});
+
+export default usersRouter;

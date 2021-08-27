@@ -1,11 +1,16 @@
+import { verify } from 'crypto';
 import { Router } from 'express';
+import issueToken from '../auth/issue.auth';
+import verifyToken from '../auth/verify.auth';
 
 const passRouter = Router();
 
-passRouter.get('', (req, res) => {
-  if (req.cookies.special_cookie === '42')
-    return res.json({ msg: '🍪 쿠키의 세상에 오신 걸 환영 합니다~! 🍪' });
-  return res.json({ msg: '🍪 쿠키의 세상에 아무나 출입 할 수 없습니다!! 🍪' });
+passRouter.get('', verifyToken);
+passRouter.post('', (req, res, next) => {
+  issueToken(req, res, next);
+  console.log(res.statusCode);
+  res.send();
 });
+// passRouter.post('', (req, res) =>);
 
 export default passRouter;

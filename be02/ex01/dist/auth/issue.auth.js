@@ -8,7 +8,6 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const exp = 60;
 const issueToken = (req, res, next) => {
-    console.log(req.body.username);
     if (req.body.username) {
         jsonwebtoken_1.default.sign({ username: req.body.username }, String(process.env.SECRET_KEY), {
             expiresIn: 60,
@@ -16,15 +15,19 @@ const issueToken = (req, res, next) => {
             if (err) {
                 res.status(500);
                 res.json({ error: 'internal_server_error' });
+                return next();
             }
             res.status(200);
-            res.cookie('jwt_cookie', token);
+            res.cookie('jwt_cookie', token, {
+                expires: new Date(Date.now() + 1000 * 60 * 2),
+            });
+            return next();
         });
     }
     else {
         res.status(409);
         res.json({ error: 'hihi' });
+        return next();
     }
-    return next();
 };
 exports.default = issueToken;

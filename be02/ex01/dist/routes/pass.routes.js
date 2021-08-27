@@ -6,12 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const issue_auth_1 = __importDefault(require("../auth/issue.auth"));
 const verify_auth_1 = __importDefault(require("../auth/verify.auth"));
+const sendResponse_1 = __importDefault(require("../utils/sendResponse"));
 const passRouter = (0, express_1.Router)();
 passRouter.get('', verify_auth_1.default);
-passRouter.post('', (req, res, next) => {
-    (0, issue_auth_1.default)(req, res, next);
-    console.log(res.statusCode);
-    res.send();
-});
-// passRouter.post('', (req, res) =>);
+passRouter.post('', issue_auth_1.default, sendResponse_1.default);
 exports.default = passRouter;

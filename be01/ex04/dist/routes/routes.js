@@ -1,0 +1,25 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const sequelize_1 = require("sequelize");
+const index_1 = __importDefault(require("../models/index"));
+const user_models_1 = __importDefault(require("../models/user.models"));
+const question_models_1 = __importDefault(require("../models/question.models"));
+const answer_models_1 = __importDefault(require("../models/answer.models"));
+const db_1 = __importDefault(require("../models/db"));
+const user_routes_1 = __importDefault(require("./user.routes"));
+const question_routes_1 = __importDefault(require("./question.routes"));
+const answer_routes_1 = __importDefault(require("./answer.routes"));
+const routes = express_1.default.Router();
+db_1.default.sequelize = index_1.default;
+db_1.default.Sequelize = sequelize_1.Sequelize;
+db_1.default.User = user_models_1.default;
+db_1.default.Question = question_models_1.default;
+db_1.default.Answer = answer_models_1.default;
+routes.use('/users', user_routes_1.default);
+routes.use('/questions', question_routes_1.default);
+routes.use('/answers', answer_routes_1.default);
+exports.default = routes;

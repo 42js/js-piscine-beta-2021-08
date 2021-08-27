@@ -5,7 +5,7 @@ const Question = sequelize.define(
   'questions',
   {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    content: { type: DataTypes.STRING(191) },
+    content: { type: DataTypes.TEXT },
     createdAt: { type: DataTypes.DATE, allowNull: false },
     updatedAt: { type: DataTypes.DATE, allowNull: false },
   },

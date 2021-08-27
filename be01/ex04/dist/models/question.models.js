@@ -7,7 +7,7 @@ const sequelize_1 = require("sequelize");
 const index_1 = __importDefault(require("./index"));
 const Question = index_1.default.define('questions', {
     id: { type: sequelize_1.DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    content: { type: sequelize_1.DataTypes.STRING(191) },
+    content: { type: sequelize_1.DataTypes.TEXT },
     createdAt: { type: sequelize_1.DataTypes.DATE, allowNull: false },
     updatedAt: { type: sequelize_1.DataTypes.DATE, allowNull: false },
 }, {

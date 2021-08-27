@@ -15,4 +15,5 @@ export const sequelize = new Sequelize(
   },
 );
 
+sequelize.query('SET NAMES utf8mb4');
 export default sequelize;

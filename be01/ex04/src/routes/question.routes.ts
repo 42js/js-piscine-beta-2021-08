@@ -18,7 +18,8 @@ questionsRouter.post('', (req, res) => {
     const date = new Date();
     db.Question.create({
       userId: req.body.userId,
-      content: req.body.content,
+      // emoji!!!!
+      content: req.body.content.toString(),
       created_at: date,
       updated_at: date,
     })

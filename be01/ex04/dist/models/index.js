@@ -14,4 +14,5 @@ exports.sequelize = new sequelize_1.Sequelize(config_1.default.development.datab
         charset: 'utf8mb4',
     },
 });
+exports.sequelize.query('SET NAMES utf8mb4');
 exports.default = exports.sequelize;

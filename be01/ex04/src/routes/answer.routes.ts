@@ -21,7 +21,8 @@ answerRouter.post('', (req, res) => {
     db.Answer.create({
       userId: req.body.userId,
       questionId: req.body.questionId,
-      content: req.body.content,
+      // emoji!!!!
+      content: req.body.content.toString(),
       created_at: date,
       updated_at: date,
     })

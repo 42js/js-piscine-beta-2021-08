@@ -1,0 +1,47 @@
+name: PR Close
+
+on:
+  workflow_dispatch:
+    inputs:
+      subject:
+        description: Close 할 타겟 Subject
+        required: true
+
+jobs:
+  close-pr:
+    name: "해당 서브젝트 PR Close"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v4
+        with:
+          script: |
+            const prlistConfig = github.pulls.list.endpoint.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+            const prList = await github.paginate(prlistConfig);
+            for (const pr of prList) {
+              if (
+                pr.state === "open" &&
+                !!pr.labels.find(
+                  (label) => label.name === "${{ github.event.inputs.subject }}"
+                )
+              ) {
+                console.log(`close pr #${pr.number}`)
+                await github.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  body: [
+                    `ℹ️ 해당 시간을 기준으로 해당 PR를 최종 마감 설정 합니다.`,
+                    `- 정상적으로 처리가 되지 않는 경우에는 \`#team_qna\` 에 문의 해주세요!`,
+                  ].join("\n"),
+                });
+                await github.pulls.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                  state: "closed",
+                });
+              }
+            }

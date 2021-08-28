@@ -7,11 +7,12 @@ const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const issueToken = (req, res, next) => {
-    if (req.body.username === undefined ||
+    if (!req.body.username ||
+        req.body.username === undefined ||
         req.body.username.length === 0 ||
         Object.keys(req.body).length === 0) {
         res.status(409);
-        res.statusMessage = '409 Conflict; check your request body';
+        res.statusMessage = 'Conflict';
         return next();
     }
     jsonwebtoken_1.default.sign({ username: req.body.username }, String(process.env.SECRET_KEY), {
@@ -19,7 +20,7 @@ const issueToken = (req, res, next) => {
     }, (err, token) => {
         if (err) {
             res.status(500);
-            res.statusMessage = '500 Internal Server Error';
+            res.statusMessage = 'Internal Server Error';
             return next();
         }
         res.status(200);

@@ -6,12 +6,13 @@ dotenv.config();
 
 const issueToken = (req: Request, res: Response, next: NextFunction): void => {
   if (
+    !req.body.username ||
     req.body.username === undefined ||
     req.body.username.length === 0 ||
     Object.keys(req.body).length === 0
   ) {
     res.status(409);
-    res.statusMessage = 'Conflict; check your request body';
+    res.statusMessage = 'Conflict';
     return next();
   }
 

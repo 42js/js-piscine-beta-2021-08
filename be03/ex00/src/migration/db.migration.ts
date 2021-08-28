@@ -30,4 +30,5 @@ dbCreateSequelize
   })
   .catch((e) => {
     console.log('❗️error in create db : ', e);
+    process.exit(1);
   });

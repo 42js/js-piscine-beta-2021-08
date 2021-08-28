@@ -13,4 +13,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/pass", passRouter);
 
+app.use(function get404Err(req, res, next) {
+    res.status(404).json({ message: "404 not found" });
+});
 module.exports = app;

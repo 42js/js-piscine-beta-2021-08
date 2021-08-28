@@ -7,8 +7,9 @@
     "start": "npm run build:live",
     "build": "tsc -p .",
     "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/app.ts",
-    "compile": "npx tsc",
-    "compile:run": "npx tsc && nodemon dist/app.js"
+    "compile": "npm run compile:build && npm run compile:run",
+    "compile:build": "npx tsc",
+    "compile:run": "nodemon dist/app.js"
   },
   "keywords": [],
   "author": "",

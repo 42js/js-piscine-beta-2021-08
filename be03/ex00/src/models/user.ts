@@ -7,8 +7,6 @@ const User = sequelize.define(
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     username: { type: DataTypes.STRING(20), allowNull: false, unique: true },
     email: { type: DataTypes.STRING(50), allowNull: false, unique: true },
-    isCadet: { type: DataTypes.BOOLEAN },
-    careerYears: { type: DataTypes.INTEGER },
     createdAt: { type: DataTypes.DATE, allowNull: false },
     updatedAt: { type: DataTypes.DATE, allowNull: false },
   },

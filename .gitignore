@@ -9,6 +9,7 @@ package-lock.json
 .gitignore_fe
 .gitignore_be
 node_modules
+/typescript_base
 
 package_typescript.json
 .prettierrc_typescript

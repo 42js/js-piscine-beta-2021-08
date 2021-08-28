@@ -1,0 +1,9 @@
+li {
+  list-style: armenian;
+  margin: 3rem;
+  flex: auto;
+}
+
+ul {
+  list-style-type: circle;
+}

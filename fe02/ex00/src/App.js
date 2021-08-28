@@ -1,47 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-async function App() {
+function App() {
 
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        setError(null);
-        setUser(null);
-        setLoading(true);
-
         const getData = await axios.get("https://cors-anywhere.herokuapp.com/https://api.notion.com/v1/users", {
 					headers: {
-						"Authorization": `Bearer ${process.env.REACT_APP_NOTION_KEY}`,
-						"Notion-Version": "2021-08-16",
+						"Authorization": `Bearer ${process.env.REACT_APP_TOKEN}`,
+						"Notion-Version": "2021-08-28",
 					}
 				});
 				setUser(getData.data.results);
       } catch (e)  {
-        setError(e);
+        console.log(e);
       }
-      setLoading(false);
     };
-
+    
     fetchUser();
   }, []);
-
-  if (loading) return <div>로딩중...</div>;
-  if (error) return <div>Error: {error}</div>;
-  if (!user) return null;
+  
+  console.log(user);
   return (
-    <ul>
-      {user.map(user => (
-        <li key={user.id}>
-          {user.username} ({user.name})
-        </li>
-      ))}
-    </ul>
-  )
+		<div>
+			{user ? user.map((data) => (
+				<ul>
+					{data.avatar_url ?
+						<img src={data.avatar_url} alt="profile" key={`${data.id}0`}></img>
+						: <div></div> }
+					<li key={`${data.id}1`}>유저명: {data.name}</li>
+					<li key={`${data.id}2`}>e-mail: {data.person? data.person.email : 'e-mail 정보가 존재하지 않습니다.'}</li>
+					<li key={`${data.id}3`}>type: {data.type}</li>
+				</ul>
+			)) : '유저 정보가 없습니다.'}
+		</div>
+	)
 }
 
 export default App;

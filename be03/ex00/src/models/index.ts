@@ -8,6 +8,9 @@ export const sequelize = new Sequelize(
   {
     host: config.development.host,
     dialect: 'mysql',
+    dialectOptions: {
+      charset: 'utf8mb4',
+    },
   },
 );
 

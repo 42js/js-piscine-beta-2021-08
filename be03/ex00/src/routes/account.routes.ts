@@ -1,8 +1,8 @@
-import express from 'express';
+import { Router } from 'express';
 
 import * as auth from './auth/auth';
 
-const accountRouter = express.Router();
+const accountRouter = Router();
 
 accountRouter.use('/login', auth.postLogin);
 accountRouter.use('/logout', auth.getLoout);

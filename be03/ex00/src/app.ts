@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv';
 import express from 'express';
 import morgan from 'morgan';
 import { sequelize } from './models'; // 방금 만든 sequelize객체를 import해준다.(index.ts에 만들었으므로 폴더명만 입력하면 먼저 자동으로 index.ts를 찾아 그 안에 있는거 import)
-import router from './routes/users.routes';
+import routes from './routes/routes';
 
 dotenv.config();
 
@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(morgan('common'));
 
-app.use('/users', router);
+app.use(routes);
 
 app.listen(PORT, HOST, () => {
   console.log(`Server Listening on http://${HOST}:${PORT}`);

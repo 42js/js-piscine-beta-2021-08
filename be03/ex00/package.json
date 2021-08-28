@@ -15,23 +15,27 @@
   "license": "ISC",
   "devDependencies": {
     "@types/cookie-parser": "^1.4.2",
+    "@types/express-session": "^1.17.4",
+    "@types/morgan": "^1.9.3",
     "@types/node": "^16.7.4",
     "@types/validator": "^13.6.3",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
     "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.1",
     "prettier": "^2.3.2",
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "@types/express-session": "^1.17.4",
-    "@types/morgan": "^1.9.3",
+    "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
-    "eslint-config-airbnb-base": "^14.2.1",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.12"
   }
 }

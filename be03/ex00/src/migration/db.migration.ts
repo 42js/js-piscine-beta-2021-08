@@ -19,13 +19,14 @@ createDBOptions.dialect = 'mysql';
 
 const dbCreateSequelize = new Sequelize(createDBOptions);
 
-console.log(`======Create DataBase : ${config.development.database}======`);
+console.log(`Creating database [${config.development.database}]`);
 
 dbCreateSequelize
   .getQueryInterface()
   .createDatabase(config.development.database)
   .then(() => {
     console.log('✅db create success!');
+    process.exit(0);
   })
   .catch((e) => {
     console.log('❗️error in create db : ', e);

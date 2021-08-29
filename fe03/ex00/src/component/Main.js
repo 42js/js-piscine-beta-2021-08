@@ -91,6 +91,15 @@ const Main = () => {
     const postData = (e, number) => {
         e.preventDefault();
 
+        const body = e.target.innerText === '수정'
+        ? {
+            "title": issueTitle,
+            "body": issueBody
+        }
+        : {
+            "state": "closed",
+        }
+
         const fetchIssue = async () => {
             try {
                 if (e.target.innerText === 'Submit new issue') {
@@ -102,17 +111,8 @@ const Main = () => {
                             "Authorization": `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
                         }
                     });
-                } else if (e.target.innerText === '수정') {
-                    await axios.patch(`https://api.github.com/repos/${owner}/${name}/issues/${number}`, {
-                        "title": issueTitle,
-                        "body": issueBody
-                    }, {
-                        headers: {
-                            "Authorization": `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
-                        }
-                    });
-                } else if (e.target.innerText === '삭제') {
-                    await axios.delete(`https://api.github.com/repos/${owner}/${name}/issues/${number}`, {
+                } else {
+                    await axios.patch(`https://api.github.com/repos/${owner}/${name}/issues/${number}`, body, {
                         headers: {
                             "Authorization": `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
                         }

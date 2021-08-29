@@ -1,9 +1,16 @@
-var express = require('express');
-var router = express.Router();
+// router setting
+const express = require('express');
+const userRouter = express.Router();
+// db sequelize
+const models = require('../models');
+// controller setting
+const userController = require('../controller/userController');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+userRouter
+	.post('/signin', userController.signin)
+	.post('/signup', userController.signup)
+	.post('/auth', userController.auth)
+    .get('/', userController.findAll)
+	.get('/:id', userController.findOne);
 
-module.exports = router;
+module.exports = userRouter;

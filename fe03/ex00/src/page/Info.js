@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 const realpath = "https://api.github.com/repos/blbbyk/42/issues/"
-const key = "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";
+const key = "KEY";
 
 function sendCreate(e){
 

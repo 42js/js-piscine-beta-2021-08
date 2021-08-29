@@ -1,16 +1,53 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import { Container, Image } from 'react-bootstrap';
+import { Container, Image, Form, Button } from 'react-bootstrap';
 
 import IssueDetail from './IssueDetail';
 
-const Issue = ({ crudIssue, title, body, user, number, comments_url }) => {
+const Issue = ({ crudIssue, title, body, user, number, comments_url, repository_url }) => {
 
     const [ detail, setDetail ] = useState(false);
     const [ comment, setComment ] = useState(null);
+    const [ writeComment, setWrite ] = useState('');
 
-    const showDetail = () => {
+    const saveComment = (e) => {
+        setWrite(e.target.value);
+    }
+
+    const commentUpdateDelete = (e, id) => {
+        // e.preventDefault();
+
+        const fetchComment = async () => {
+            try {
+                if (e.target.innerText === 'Submit comment') {
+                    await axios.post(`${comments_url}`, { "body": writeComment }, {
+                        headers: {
+                            "Authorization": `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+                        }
+                    });
+                } else if (e.target.innerText === '수정') {
+                    await axios.patch(`${repository_url}/issues/comments/${id}`, { "body": writeComment }, {
+                        headers: {
+                            "Authorization": `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+                        }
+                    });
+                } else if (e.target.innerText === '삭제') {
+                    await axios.delete(`${repository_url}/issues/comments/${id}`, {
+                        headers: {
+                            "Authorization": `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+                        }
+                    });
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        fetchComment();
+    }
+
+    const showDetail = (e) => {
+        e.preventDefault();
         
         if (detail === false) {
             setDetail(true);
@@ -41,13 +78,23 @@ const Issue = ({ crudIssue, title, body, user, number, comments_url }) => {
             <div>
                 {
                     detail
-                    ? <IssueDetail
-                        crudIssue={crudIssue}
-                        body={body}
-                        user={user}
-                        comment={comment}
-                        number={number}
+                    ? <>
+                        <IssueDetail
+                            crudIssue={crudIssue}
+                            body={body}
+                            user={user}
+                            comment={comment}
+                            number={number}
+                            commentUpdateDelete={commentUpdateDelete}
                         />
+                         <Form className="mt-5 mb-5">
+                            <Form.Group className="mb-3">
+                                <Form.Control onChange={saveComment} as="textarea" rows={3} placeholder="Write a comment" />
+                            </Form.Group>
+                            <Button onClick={commentUpdateDelete} variant="success">Submit comment</Button>
+                        </Form>
+                    </>
+                        
                     : ''
                 }
             </div>

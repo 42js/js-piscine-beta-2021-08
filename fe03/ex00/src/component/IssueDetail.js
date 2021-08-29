@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
-const IssueDetail = ({ crudIssue, body, user, comment, number }) => {
+const IssueDetail = ({ crudIssue, body, user, comment, number, commentUpdateDelete }) => {
 
 
     return (
@@ -27,7 +27,7 @@ const IssueDetail = ({ crudIssue, body, user, comment, number }) => {
             {
                 comment
                 ? comment.map(
-                    ({ body, user }) => (
+                    ({ body, user, id }) => (
                         <Row style={{marginTop: '10px'}}>
                             <Col style={{color: 'skyblue'}} sm={1}>Comment</Col>
                             <Col style={{textAlign: 'center'}} sm={6}>{body}</Col>
@@ -35,8 +35,8 @@ const IssueDetail = ({ crudIssue, body, user, comment, number }) => {
                             {
                             process.env.REACT_APP_REQUEST_USER === user.login
                             ? <Col sm={2}>
-                                <Button style={{marginRight: '3px'}} variant="secondary" size="sm">수정</Button>
-                                <Button variant="secondary" size="sm">삭제</Button>
+                                <Button onClick={(e) => {commentUpdateDelete(e, id)}} style={{marginRight: '3px'}} variant="secondary" size="sm">수정</Button>
+                                <Button onClick={(e) => {commentUpdateDelete(e, id)}} variant="secondary" size="sm">삭제</Button>
                                 </Col>
                             : <Col sm={2}></Col>
                     }

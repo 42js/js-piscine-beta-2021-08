@@ -4,7 +4,7 @@ import Issue from './Issue';
 const IssueList = ({ crudIssue, list }) => {
 
     const issue = list.map(
-        ({ title, body, user, number, comments_url, repository_url }) => (
+        ({ title, body, user, number, comments_url, repository_url, assignee }) => (
             <Issue
                 title={title}
                 body={body}
@@ -13,6 +13,7 @@ const IssueList = ({ crudIssue, list }) => {
                 repository_url={repository_url}
                 number={number}
                 crudIssue={crudIssue}
+                checkAssign={assignee}
                 />
             )
         )

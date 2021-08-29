@@ -1,36 +1,31 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import axios from 'axios';
 
 import { Container, Row, Col, Button, Dropdown } from 'react-bootstrap';
 
-const IssueDetail = ({ crudIssue, body, user, comment, number, commentUpdateDelete, repository_url, assignees }) => {
-
-    const [ assignState, setAssignState ] = useState(false);
-    const [ assignName, setAssignName ] = useState('none');
-
-    const changeAssign = (e, state, assignees) => {
+const IssueDetail = ({ crudIssue, body, user, comment, number, commentUpdateDelete, repository_url, assignees, checkAssign}) => {
+    
+    const changeAssign = (e, state, assignee) => {
         e.preventDefault();
 
         const fetchAssign = async () => {
             try {
                 if (state === 'create') {
-                    const getData = await axios.post(`${repository_url}/issues/${number}/assignees`, { "assignees": [assignees]}, {
+                    await axios.post(`${repository_url}/issues/${number}/assignees`, { "assignees": [assignee]}, {
                         headers: {
                             "Authorization": `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
                         }
                     });
-                    setAssignState(true);
-                    setAssignName(getData.data.user.login);
                 } else if (state === 'delete') {
                     await axios.delete(`${repository_url}/issues/${number}/assignees`, {
-                        "assignees": [assignees],
-                    }, {
                         headers: {
                             "Authorization": `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+                        },
+                        data: {
+                            "assignees": [assignee],
                         }
                     });
-                    setAssignState(false);
                 }
             } catch (e) {
                 console.log(e);
@@ -42,7 +37,7 @@ const IssueDetail = ({ crudIssue, body, user, comment, number, commentUpdateDele
     return (
         <Container>
             {
-                assignState === false
+                checkAssign === null
                 ? <Row>
                     <Dropdown>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -63,8 +58,8 @@ const IssueDetail = ({ crudIssue, body, user, comment, number, commentUpdateDele
                     </Dropdown>
                 </Row>
                 : <Row>
-                    <Col>담당자 : {assignName}</Col>
-                    <Col><Button onClick={(e) => {changeAssign(e, 'delete', assignName)}}>담당자 삭제</Button></Col>
+                    <Col>담당자 : {checkAssign.login}</Col>
+                    <Col><Button onClick={(e) => {changeAssign(e, 'delete', checkAssign.login)}}>담당자 삭제</Button></Col>
                 </Row>
             }
             {

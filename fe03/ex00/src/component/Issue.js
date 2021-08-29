@@ -5,7 +5,7 @@ import { Container, Image, Form, Button } from 'react-bootstrap';
 
 import IssueDetail from './IssueDetail';
 
-const Issue = ({ crudIssue, title, body, user, number, comments_url, repository_url }) => {
+const Issue = ({ crudIssue, title, body, user, number, comments_url, repository_url, checkAssign }) => {
 
     const [ detail, setDetail ] = useState(false);
     const [ comment, setComment ] = useState(null);
@@ -82,10 +82,9 @@ const Issue = ({ crudIssue, title, body, user, number, comments_url, repository_
     return (
         <Container>
             <div>{number} {title} <Image onClick={showDetail} style={{width: '15px', height: '15px'}} src="https://icons.iconarchive.com/icons/icons8/windows-8/256/Arrows-Down-icon.png"/></div>
-            <div>
                 {
                     detail
-                    ? <>
+                    ? <div>
                         <IssueDetail
                             crudIssue={crudIssue}
                             body={body}
@@ -95,6 +94,7 @@ const Issue = ({ crudIssue, title, body, user, number, comments_url, repository_
                             commentUpdateDelete={commentUpdateDelete}
                             repository_url={repository_url}
                             assignees={assignees}
+                            checkAssign={checkAssign}
                         />
                          <Form className="mt-5 mb-5">
                             <Form.Group className="mb-3">
@@ -102,11 +102,10 @@ const Issue = ({ crudIssue, title, body, user, number, comments_url, repository_
                             </Form.Group>
                             <Button onClick={commentUpdateDelete} variant="success">Submit comment</Button>
                         </Form>
-                    </>
+                    </div>
                         
                     : ''
                 }
-            </div>
         </Container>
     )
 };

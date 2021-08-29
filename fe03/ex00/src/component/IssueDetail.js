@@ -1,12 +1,72 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import axios from 'axios';
 
-const IssueDetail = ({ crudIssue, body, user, comment, number, commentUpdateDelete }) => {
+import { Container, Row, Col, Button, Dropdown } from 'react-bootstrap';
 
+const IssueDetail = ({ crudIssue, body, user, comment, number, commentUpdateDelete, repository_url, assignees }) => {
+
+    const [ assignState, setAssignState ] = useState(false);
+    const [ assignName, setAssignName ] = useState('none');
+
+    const changeAssign = (e, state, assignees) => {
+        e.preventDefault();
+
+        const fetchAssign = async () => {
+            try {
+                if (state === 'create') {
+                    const getData = await axios.post(`${repository_url}/issues/${number}/assignees`, { "assignees": [assignees]}, {
+                        headers: {
+                            "Authorization": `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+                        }
+                    });
+                    setAssignState(true);
+                    setAssignName(getData.data.user.login);
+                } else if (state === 'delete') {
+                    await axios.delete(`${repository_url}/issues/${number}/assignees`, {
+                        "assignees": [assignees],
+                    }, {
+                        headers: {
+                            "Authorization": `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+                        }
+                    });
+                    setAssignState(false);
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        fetchAssign();
+    }
 
     return (
         <Container>
+            {
+                assignState === false
+                ? <Row>
+                    <Dropdown>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                            담당자 선택
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            {
+                                assignees
+                                ? assignees.map(
+                                    ({ login }) => (
+                                        <Dropdown.Item onClick={(e) => {changeAssign(e, 'create', login)}}>{login}</Dropdown.Item>
+                                    )
+                                )
+                                : <Dropdown.Item>None</Dropdown.Item>
+                            }
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </Row>
+                : <Row>
+                    <Col>담당자 : {assignName}</Col>
+                    <Col><Button onClick={(e) => {changeAssign(e, 'delete', assignName)}}>담당자 삭제</Button></Col>
+                </Row>
+            }
             {
                 body != null
                 ? <Row style={{marginTop: '10px'}}>

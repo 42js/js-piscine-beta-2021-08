@@ -10,13 +10,14 @@ const Issue = ({ crudIssue, title, body, user, number, comments_url, repository_
     const [ detail, setDetail ] = useState(false);
     const [ comment, setComment ] = useState(null);
     const [ writeComment, setWrite ] = useState('');
+    const [ assignees, setAssignees ] = useState(null);
 
     const saveComment = (e) => {
         setWrite(e.target.value);
     }
 
     const commentUpdateDelete = (e, id) => {
-        // e.preventDefault();
+        e.preventDefault();
 
         const fetchComment = async () => {
             try {
@@ -60,7 +61,13 @@ const Issue = ({ crudIssue, title, body, user, number, comments_url, repository_
                             "Authorization": `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
                         }
                     });
+                    const getAssignees = await axios.get(`${repository_url}/assignees`, {
+                        headers: {
+                            "Authorization": `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+                        }
+                    })
                     setComment(getData.data);
+                    setAssignees(getAssignees.data);
                 } catch (e) {
                     console.log(e);
                 }
@@ -86,6 +93,8 @@ const Issue = ({ crudIssue, title, body, user, number, comments_url, repository_
                             comment={comment}
                             number={number}
                             commentUpdateDelete={commentUpdateDelete}
+                            repository_url={repository_url}
+                            assignees={assignees}
                         />
                          <Form className="mt-5 mb-5">
                             <Form.Group className="mb-3">

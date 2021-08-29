@@ -1,0 +1,14 @@
+version: "3" # 파일 규격 버전
+services: # 이 항목 밑에 실행하려는 컨테이너 들을 정의
+  db: # 서비스 명
+    image: mysql:latest # 사용할 이미지
+    container_name: mysql_database # 컨테이너 이름 설정
+    environment: # -e 옵션
+      MYSQL_DATABASE: 42overflow
+      MYSQL_ROOT_PASSWORD: 1234  # MYSQL 패스워드 설정 옵션
+    command: # 명령어 실행
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./mariadb:/var/lib/mysql # -v 옵션 (다렉토리 마운트 설정)
+    network_mode: "host"

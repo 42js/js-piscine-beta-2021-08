@@ -1,0 +1,43 @@
+#body {
+    padding-top : 10rem;
+}
+.inputbox {
+    padding : 3rem;
+    padding-top : 8rem;
+    display : flex;
+    justify-content: center;
+}
+
+input {
+    padding : 0.5rem;
+    font-size : 1.5rem;
+
+}
+
+#userinput {
+    background-color: pink;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-color : white;
+}
+
+#userinput:focus {
+    outline-width : 0;
+}
+
+
+#userbutton {
+    margin-left : 20px;
+    background-color: pink;
+    border-width : thin;
+    border-radius: 10px;
+    border-color : white;
+    color : white;
+}
+
+#userbutton:hover {
+    color : pink;
+    background-color: white;
+    cursor: pointer;
+}

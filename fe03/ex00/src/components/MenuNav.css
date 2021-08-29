@@ -1,0 +1,17 @@
+.menublock {
+    padding : 1rem;
+    display : flex;
+    justify-content: space-between;
+}
+
+.menublock input {
+    font-size : 20px;
+    background-color : plum;
+    color : white;
+    cursor : pointer;
+    border-radius: 10% ;
+    border-style : none;
+    padding : 0.5rem;
+
+
+}

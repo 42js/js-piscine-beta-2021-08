@@ -1,0 +1,11 @@
+
+h1 { 
+    color : white;
+    margin : 0;
+    padding : 2rem;
+    font-size : 50px;
+    text-align: center;
+    font-family : "Monospace";
+    font-weight : 600;
+    text-shadow: 1px 1px 10px grey;
+}
